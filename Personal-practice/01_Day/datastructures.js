@@ -49,4 +49,16 @@ const phones = [
     {features: ['black','5000mAh','super']},
     ]
  console.log(phones)
- 
+
+ //Creating an array using split
+
+let individuaLetters = 'ABCDE'
+
+console.log(individuaLetters.split(''))
+
+// or 
+
+let individuaLetters = 'ABCDE'
+const seperateLetters = individuaLetters.split('')
+
+console.log(seperateLetters)
