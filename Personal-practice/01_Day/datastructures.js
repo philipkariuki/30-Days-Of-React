@@ -29,3 +29,24 @@ console.log('Number of fruits:', fruits.length)  // Number of fruits: 4
 
 console.log('Animal products:', animalProducts)
 console.log('Number of animal products:', animalProducts.length)
+
+// Arrays can have items of different data types
+
+const vituMingi = [
+  'Nokia',
+  20000,
+  true,
+  { country: 'Finland', city: 'Helsinki' },
+  { features: ['Android 12', 'Gmail', '5000 mah battery'] },
+]
+console.log(vituMingi)
+
+const phones = [
+    'Android',
+    12,
+    true,
+    { Brand: 'Nokia', Model: '208' },
+    {features: ['black','5000mAh','super']},
+    ]
+ console.log(phones)
+ 
