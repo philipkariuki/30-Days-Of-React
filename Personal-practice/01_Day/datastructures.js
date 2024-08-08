@@ -71,3 +71,21 @@ const lastCar = cars.length - 1
 console.log(carOne)  // bmw
 console.log(lastCar)  // 2
 console.log(cars[lastCar]) // audi
+
+// Modifying array element
+// An array is mutable(modifiable). Once an array is created, we can modify the contents of the array elements.
+
+const food = [
+    'Ugali',
+    'Mboga',
+    'Rice',
+    'Beef',
+    'Beans'
+]
+
+food[0] = 'Uji'
+food[2] = 'Wali'
+let lastFood = food.length - 1
+food[lastFood] = 'Maharagwe'  // Replacing Beans with Maharagwe
+
+console.log(food)     // ["Uji", "Mboga", "Wali", "Beef", "Maharagwe"]
