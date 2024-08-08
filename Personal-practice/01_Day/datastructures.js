@@ -62,3 +62,12 @@ let individuaLetters = 'ABCDE'
 const seperateLetters = individuaLetters.split('')
 
 console.log(seperateLetters)
+
+// Accessing array items using index
+let cars = ['bmw','mercedes','audi']
+const carOne = cars[0]
+const lastCar = cars.length - 1
+
+console.log(carOne)  // bmw
+console.log(lastCar)  // 2
+console.log(cars[lastCar]) // audi
