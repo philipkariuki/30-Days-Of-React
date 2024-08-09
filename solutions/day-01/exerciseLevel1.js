@@ -64,4 +64,29 @@ let mixedDataTypes = [
 
 console.log(mixedDataTypes.length)
 
+// 6. Declare an array variable name itCompanies and assign initial values Facebook, Google, Microsoft, Apple, IBM, Oracle and Amazon
+
+const itCompanies = ['Facebook','Google','Microsoft','Apple','IBM','Oracle','Amazon']
+
+// 7. Print the array using console.log()
+console.log(itCompanies)  // [ "Facebook", "Google", "Microsoft", "Apple", "IBM", "Oracle", "Amazon" ]
+
+// 8. Print the number of companies in the array
+let numberOfCompanies = itCompanies.length
+console.log(numberOfCompanies)  // 7
+
+// 9. Print the first company, middle and last company
+// First company
+let firstCompany = itCompanies[0]
+console.log(firstCompany)  // Facebook
+
+// Last Company
+let lastCompanyIndex = itCompanies.length -1
+let lastCompany = itCompanies[lastCompanyIndex]
+console.log(lastCompany)  // Amazon
+
+// Middle Company
+let middleCompanyIndex = Math.floor(itCompanies.length/2)  // gets array length,divides by 2,rounds down,gives index value of middle element
+let middleCompany = itCompanies[middleCompany]  // value of middle index
+console.log(middleCompany)   // Apple
 
