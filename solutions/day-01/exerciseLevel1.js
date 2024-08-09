@@ -35,12 +35,13 @@ console.log(thelastItem)
 // iii) Getting middle item
 
 // For odd number of array elements eg 5
-let oddArray = [1,2,3,4,5]  // formula to find middle item is n+1/2 where n is size of the array
-let oddMiddleNumber = Math.floor((oddArray.length+1)/2)
-console.log(oddMiddleNumber)  // 3
+let oddArray = [1,2,7,4,5]  // formula to find middle item is n+1/2 where n is size of the array
+let oddMiddleNumberIndex = Math.floor((oddArray.length)/2)  // 2
+let oddMiddleNumber = oddArray[oddMiddleNumberIndex]  // value of index 2
+console.log(oddMiddleNumber)  // 7
 // or
-let oddMiddle = (oddArray.length+1)/2 
-console.log(oddMiddle)  // 3
+let oddMiddleN = Math.floor((oddArray.length)/2)
+console.log(oddArray[oddMiddleN])  // 7
 
 // For even number of array elements eg 8  ----> will have 2 elements since it's even
 let evenArray = [1,2,3,4,5,6,7,8]
@@ -87,6 +88,6 @@ console.log(lastCompany)  // Amazon
 
 // Middle Company
 let middleCompanyIndex = Math.floor(itCompanies.length/2)  // gets array length,divides by 2,rounds down,gives index value of middle element
-let middleCompany = itCompanies[middleCompany]  // value of middle index
+let middleCompany = itCompanies[middleCompanyIndex]  // value of middle index
 console.log(middleCompany)   // Apple
 
