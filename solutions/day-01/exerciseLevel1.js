@@ -111,7 +111,7 @@ function printkampuni() {
         console.log(kampuni);
     }
 }
-printCompanies()
+printkampuni()
 
 // Solution 3
 function printCompanies() {
