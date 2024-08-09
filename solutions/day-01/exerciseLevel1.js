@@ -35,7 +35,7 @@ console.log(thelastItem)
 // iii) Getting middle item
 
 // For odd number of array elements eg 5
-let oddArray = [1,2,7,4,5]  // formula to find middle item is n+1/2 where n is size of the array
+let oddArray = [1,2,7,4,5]
 let oddMiddleNumberIndex = Math.floor((oddArray.length)/2)  // 2
 let oddMiddleNumber = oddArray[oddMiddleNumberIndex]  // value of index 2
 console.log(oddMiddleNumber)  // 7
@@ -90,4 +90,35 @@ console.log(lastCompany)  // Amazon
 let middleCompanyIndex = Math.floor(itCompanies.length/2)  // gets array length,divides by 2,rounds down,gives index value of middle element
 let middleCompany = itCompanies[middleCompanyIndex]  // value of middle index
 console.log(middleCompany)   // Apple
+
+// 10. Print out each company
+
+// Solution 1
+itCompanies.forEach(function(company){
+    console.log(company);
+})
+
+// Solution 2
+for (let index = 0; index < itCompanies.length; index++) {
+    const kampuni = itCompanies[index];
+    console.log(kampuni);
+    
+}
+// or
+function printkampuni() {
+    for (let index = 0; index < itCompanies.length; index++) {
+        const kampuni = itCompanies[index];
+        console.log(kampuni);
+    }
+}
+printCompanies()
+
+// Solution 3
+function printCompanies() {
+    for (let index = 0; index < itCompanies.length; index++) {
+        console.log(itCompanies[index]);
+    }
+}
+
+printCompanies()
 
