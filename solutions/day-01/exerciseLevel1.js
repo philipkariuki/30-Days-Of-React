@@ -131,3 +131,16 @@ for (const kampuni of itCompanies) {
 
 let sentence = itCompanies.slice(0, -1).join(', ') + ' and ' + itCompanies.slice(-1) + ' are big IT companies.'
 console.log(sentence)  // Facebook, Google, Microsoft, Apple, IBM, Oracle and Amazon are big IT companies.
+
+// 13. Check if a certain company exists in the itCompanies array. If it exists return the company else return a company is not found
+function checkCompany(company) {
+    if (itCompanies.includes(company)) {
+        return company;
+    } else {
+        return 'Company is not found';
+    }
+}
+
+console.log(checkCompany('IBM'))  // IBM
+console.log(checkCompany('ibm'))  // Company is not found
+console.log(checkCompany('Tesla'));  // Company is not found
