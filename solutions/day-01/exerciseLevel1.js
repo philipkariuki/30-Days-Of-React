@@ -127,3 +127,7 @@ for (const kampuni of itCompanies) {
     console.log(kampuni.toUpperCase())
   }
 
+// 12. Print the array like as a sentence: Facebook, Google, Microsoft, Apple, IBM,Oracle and Amazon are big IT companies.
+
+let sentence = itCompanies.slice(0, -1).join(', ') + ' and ' + itCompanies.slice(-1) + ' are big IT companies.'
+console.log(sentence)  // Facebook, Google, Microsoft, Apple, IBM, Oracle and Amazon are big IT companies.
