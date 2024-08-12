@@ -144,3 +144,20 @@ function checkCompany(company) {
 console.log(checkCompany('IBM'))  // IBM
 console.log(checkCompany('ibm'))  // Company is not found
 console.log(checkCompany('Tesla'));  // Company is not found
+
+// 14. Filter out companies which have more than one 'o' without the filter method
+let filteredCompanies = [];
+for (let i = 0; i < itCompanies.length; i++) {
+  let companyName = itCompanies[i];
+  let count = 0;
+  for (let j = 0; j < companyName.length; j++) {
+    if (companyName[j] === 'o') {
+      count++;
+    }
+  }
+  if (count <= 1) {
+    filteredCompanies.push(itCompanies[i]);
+  }
+}
+console.log(filteredCompanies); // Output: [ "Apple", "IBM", "Oracle", "Amazon" ]
+
