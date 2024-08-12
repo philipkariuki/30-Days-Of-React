@@ -161,3 +161,9 @@ for (let i = 0; i < itCompanies.length; i++) {
 }
 console.log(filteredCompanies); // Output: [ "Apple", "IBM", "Oracle", "Amazon" ]
 
+// 15. Sort the array using sort() method
+let sortedCompanies = itCompanies.sort()  // sort: arranges array elements in ascending order
+console.log(sortedCompanies)  // [ "Amazon", "Apple", "Facebook", "Google", "IBM", "Microsoft", "Oracle" ]
+
+
+
