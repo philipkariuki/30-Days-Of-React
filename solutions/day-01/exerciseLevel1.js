@@ -165,5 +165,39 @@ console.log(filteredCompanies); // Output: [ "Apple", "IBM", "Oracle", "Amazon" 
 let sortedCompanies = itCompanies.sort()  // sort: arranges array elements in ascending order
 console.log(sortedCompanies)  // [ "Amazon", "Apple", "Facebook", "Google", "IBM", "Microsoft", "Oracle" ]
 
+// 16. Reverse the array using reverse() method
+let reversedCompanies = itCompanies.reverse()  // reverses the order of an array
+console.log(reversedCompanies) // [ "Amazon", "Oracle", "IBM", "Apple", "Microsoft", "Google", "Facebook" ]
 
+// 17. Slice out the first 3 companies from the array
+const firstThreeCompanies = itCompanies.slice(0, 3);
+console.log(firstThreeCompanies); // Output: ['Facebook', 'Google', 'Microsoft']
+
+// 18. Slice out the last 3 companies from the array
+const lastThreeCompanies = itCompanies.slice(-3);
+console.log(lastThreeCompanies); // Output: ['IBM', 'Oracle', 'Amazon']
+
+// 19. Slice out the middle IT company or companies from the array
+const middleCompanyIndex = Math.floor(itCompanies.length/2)
+const middleCompany = itCompanies[middleCompanyIndex].slice()
+console.log(middleCompany)   // Apple
+
+// 20. Remove the first IT company from the array
+itCompanies.shift()  // shift removes first item from the beginning
+console.log(itCompanies)  // [ "Google", "Microsoft", "Apple", "IBM", "Oracle", "Amazon" ]
+
+// 21. Remove the middle IT company or companies from the array
+
+// Splice takes three parameters:Starting position, number of times to be removed and number of items to be added
+let middleCompanyIndex = Math.floor(itCompanies.length/2)
+itCompanies.splice(middleCompanyIndex, 1) // takes 2 parameters; the middle index and no. of times to remove it
+console.log(itCompanies)  // [ "Facebook", "Google", "Microsoft", "IBM", "Oracle", "Amazon" ]
+
+// 22. Remove the last IT company from the array
+let lastCompanyIndex = itCompanies.length -1
+itCompanies.splice(lastCompanyIndex,1)  // Amazon
+console.log(itCompanies)  // ['Facebook','Google','Microsoft','Apple','IBM','Oracle']
+
+// 23. Remove all IT companies
+console.log(itCompanies.splice()) // []
 
