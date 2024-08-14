@@ -14,3 +14,7 @@ const shoppingCart = ['Milk', 'Coffee', 'Tea', 'Honey']
 // Add 'Meat' in the beginning of your shopping cart if it has not been already added
 shoppingCart.splice(0,0, 'Meat') // use splice to add items in this case,first 0 is index position 0, second 0 means number of times to delete, 'Meat' is the item being inserted at index 0
 console.log(shoppingCart)  // [ "Meat", "Milk", "Coffee", "Tea", "Honey" ]
+ 
+// or(easier method)
+shoppingCart.unshift('Meat')  // inserts new element at start of array
+console.log(shoppingCart)  //  [ "Meat", "Milk", "Coffee", "Tea", "Honey" ]
