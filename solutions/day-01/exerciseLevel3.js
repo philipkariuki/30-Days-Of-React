@@ -22,7 +22,6 @@ const ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24];
 ages.sort((a, b) => a - b);
 
 // Find the median age
-let median;
 const mid = Math.floor(ages.length / 2);
 
 if (ages.length % 2 === 0) {  // even array with 2 medians
@@ -32,3 +31,23 @@ if (ages.length % 2 === 0) {  // even array with 2 medians
 }
 
 console.log("Median age:", median);  // Median age: 24
+
+// Q1.3 Find the average age
+const total = ages.reduce((sum, age) => sum + age, 0); // reduce method is used to sum up all the ages
+const average = total / ages.length;  // divides the total by the length of the array to get the average
+console.log(average); // Output: 22.8
+
+// 1. The `reduce` method is used to iterate over the array and accumulate a single value from its elements. It takes a callback function and an initial value as arguments.
+
+// 2. The callback function, in this case (sum, age) => sum + age, is executed for each element in the array. It has two parameters:
+//    - sum: This is the accumulator that holds the accumulated value from the previous iterations.
+//    - age: This is the current element being processed in the array.
+
+// 3. Accumulation: For each element in the array, the callback function adds the current `age` to the `sum`. This process continues for all elements in the array.
+
+// 4. Initial Value: The second argument to `reduce` is `0`, which is the initial value of `sum`. This means the accumulation starts from `0`.
+
+// So, the `reduce` method iterates over the `ages` array, adding each `age` to the `sum`, and finally returns the total sum of all ages in the array. This total is then assigned to the `total` variable.
+
+
+
