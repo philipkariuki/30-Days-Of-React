@@ -14,8 +14,6 @@ console.log("Sorted ages:", ages);  // Sorted ages:[ 19, 19, 20, 22, 24, 24, 24,
 console.log("Minimum age:", minAge);  // Minimum age: 19
 console.log("Maximum age:", maxAge);  // Maximum age: 26
 
-const ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24];
-
 
 // Q1.2 Find the median age(one middle item or two middle items divided by two)
 // Sort the array in ascending order
@@ -50,4 +48,10 @@ console.log(average); // Output: 22.8
 // So, the `reduce` method iterates over the `ages` array, adding each `age` to the `sum`, and finally returns the total sum of all ages in the array. This total is then assigned to the `total` variable.
 
 
+// Q1.4 Find the range of the ages(max minus min)
+//To find the range, subtract the lowest value from the greatest value, ignoring the others.
+const maxAge = Math.max(19, 22, 19, 24, 20, 25, 26, 24, 25, 24)  // 19
+const minAge = Math.min(19, 22, 19, 24, 20, 25, 26, 24, 25, 24)  // 26
+const range = maxAge - minAge  // 26-19 = 7
 
+console.log(range)  // 7
