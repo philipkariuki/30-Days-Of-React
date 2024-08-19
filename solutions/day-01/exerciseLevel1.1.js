@@ -45,3 +45,15 @@ let a = 4;
 let b = 3;
 let result = (a > b) ? `${a} is greater than ${b}` : `${a} is less than ${b}`;
 console.log(result);
+
+
+// Q4 Even numbers are divisible by 2 and the remainder is zero. How do you check, if a number is even or not using JavaScript?
+let number = 8;
+
+if (number % 2 === 0) {
+    console.log(`${number} is even.`);  // 8 is even
+} else {
+    console.log(`${number} is odd.`);
+}
+
+
