@@ -19,3 +19,8 @@ if (countries.includes('Ethiopia')) {
     countries.push('Ethiopia');
 }
 
+
+// Q2 Slice the first ten countries from the countries array(Ex Lvl3)
+let slicedCtrys = countries.slice(0,10)
+console.log(slicedCtrys) // [ "Albania", "Bolivia", "Canada", "Denmark", "Ethiopia", "Finland", "Germany", "Hungary", "Ireland", "Japan" ]
+
