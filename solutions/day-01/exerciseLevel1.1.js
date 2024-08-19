@@ -13,3 +13,16 @@ if (age >= 18) {
     alert(`You need to wait ${yearsToWait} more year(s) to turn 18.`);
 }
 
+// Q2 Compare the values of myAge and yourAge using if … else. Based on the comparison and log the result to console stating who is older (me or you). Use prompt(“Enter your age:”) to get the age as input.
+let myAge = 25
+let yourAge = prompt("Enter your age:");
+
+yourAge = Number(yourAge);
+
+if (yourAge > myAge) {
+    console.log("You are older than me.");
+} else if (yourAge < myAge) {
+    console.log("I am older than you.");
+} else {
+    console.log("We are the same age.");
+}
