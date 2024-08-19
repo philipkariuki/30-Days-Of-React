@@ -40,3 +40,8 @@ if (a > b) {
     console.log(`${a} is less than ${b}`);
 }
 
+// ii)Using ternary operator
+let a = 4;
+let b = 3;
+let result = (a > b) ? `${a} is greater than ${b}` : `${a} is less than ${b}`;
+console.log(result);
