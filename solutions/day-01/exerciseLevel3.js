@@ -50,8 +50,23 @@ console.log(average); // Output: 22.8
 
 // Q1.4 Find the range of the ages(max minus min)
 //To find the range, subtract the lowest value from the greatest value, ignoring the others.
-const maxAge = Math.max(19, 22, 19, 24, 20, 25, 26, 24, 25, 24)  // 19
-const minAge = Math.min(19, 22, 19, 24, 20, 25, 26, 24, 25, 24)  // 26
+const maxAge = Math.max(19, 22, 19, 24, 20, 25, 26, 24, 25, 24)  // 26
+const minAge = Math.min(19, 22, 19, 24, 20, 25, 26, 24, 25, 24)  // 19
 const range = maxAge - minAge  // 26-19 = 7
 
 console.log(range)  // 7
+
+// Q1.5 Compare the value of (min - average) and (max - average), use abs() method
+
+// Math.abs() method returns the absolute value of a number (The absolute value (or modulus) | x | of a real number x is the non-negative value of x without regard to its sign)
+const totalAges = ages.reduce((sum, age) => sum + age, 0)
+const average = totalAges / ages.length
+
+const maxAge = Math.max(19, 22, 19, 24, 20, 25, 26, 24, 25, 24)  // 26
+const minAge = Math.min(19, 22, 19, 24, 20, 25, 26, 24, 25, 24)  // 19
+
+const minDiff = Math.abs(minAge - average)
+const maxDiff = Math.abs(maxAge - average)
+
+console.log(`The absolute difference between min and average is ` + minDiff) // The absolute difference between min and average is 3.8000000000000007
+console.log(`The absolute difference between max and average is ${maxDiff}`) // The absolute difference between max and average is 3.1999999999999993
