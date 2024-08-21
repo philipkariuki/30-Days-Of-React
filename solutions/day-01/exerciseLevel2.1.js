@@ -50,3 +50,42 @@ function getSeason(month) {
 let userMonth = prompt("Enter a month:");
 alert("The season is " + getSeason(userMonth));
 
+
+// Q3     Check if a day is weekend day or a working day. Your script will take day as an input:
+// What is the day today? Saturday
+// Saturday is a weekend
+
+function checkDay() {
+    const day = prompt("Please enter a day of the week (e.g., 'Monday', 'friday'):");
+    const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    const dayIndex = daysOfWeek.findIndex(d => d.toLowerCase() === day.toLowerCase());  // findIndex is a method that searches the array for an element that satisfies the provided testing function. It returns the index of the first element that matches the condition. If no element matches, it returns -1
+
+    if (dayIndex === -1) {
+        alert("Invalid day entered. Please try again.");
+    } else {
+        const dayName = daysOfWeek[dayIndex];
+        alert(`${dayName} is a ${dayIndex === 0 || dayIndex === 6 ? 'weekend' : 'working day'}.`);  /*  ?'weekend': If the condition is true, the expression returns the string 'weekend'. : 'working day': If the condition is false (i.e., dayIndex is any value other than 0 or 6), the expression returns the string 'working day'. */
+    }
+}
+
+checkDay();  // Tuesday is a working day.    or  Sunday is a weekend.  etc
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
