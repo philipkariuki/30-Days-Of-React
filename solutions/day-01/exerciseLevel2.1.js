@@ -69,23 +69,3 @@ function checkDay() {
 }
 
 checkDay();  // Tuesday is a working day.    or  Sunday is a weekend.  etc
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
