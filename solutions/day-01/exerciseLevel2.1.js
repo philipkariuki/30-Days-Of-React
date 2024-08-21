@@ -50,3 +50,4 @@ function getSeason(month) {
 let userMonth = prompt("Enter a month:");
 alert("The season is " + getSeason(userMonth));
 
+
