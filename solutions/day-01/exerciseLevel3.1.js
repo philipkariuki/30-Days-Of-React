@@ -36,3 +36,43 @@ function promptUserForMonth() {
 promptUserForMonth();
 
 
+// Q2    Write a program which tells the number of days in a month, now consider leap year.
+
+/* A year is a leap year if:
+It is divisible by 4.
+However, if it is also divisible by 100, it is not a leap year unless:
+It is divisible by 400. */
+
+
+function getDaysInMonth(month, year) {
+    const daysInMonths = {
+        January: 31,
+        February: (year % 4 === 0 && (year % 100 !== 0 || year % 400 === 0)) ? 29 : 28,  /*    year % 4 === 0 checks if the year is divisible by 4    year % 100 !== 0 checks if the year is not divisible by 100    year % 400 === 0 checks if the year is divisible by 400   */    
+        March: 31,
+        April: 30,
+        May: 31,
+        June: 30,
+        July: 31,
+        August: 31,
+        September: 30,
+        October: 31,
+        November: 30,
+        December: 31
+    };
+    return daysInMonths[month];
+}
+
+function promptUserForMonth() {
+    const monthInput = prompt("Enter a month:").toLowerCase();
+    const month = monthInput.charAt(0).toUpperCase() + monthInput.slice(1);
+    const year = new Date().getFullYear(); // You can modify this to prompt for a specific year if needed
+    const days = getDaysInMonth(month, year);
+
+    if (days) {
+        alert(`${month} has ${days} days.`);
+    } else {
+        alert("Invalid month entered. Please try again.");
+    }
+}
+
+promptUserForMonth();
