@@ -35,3 +35,14 @@ let doggo= {
 // to get fur colour value
 console.log(doggo['fur color']) // black
 
+
+// Q5 Set new properties the dog object: breed, getDogInfo
+
+dog.breed = "Alsatian";
+dog.getDogInfo = function() {
+    return `Name: ${this.name}, Breed: ${this.breed}, Age: ${this.age}, Color: ${this.color}, Legs: ${this.legs}, Bark: ${this.bark()}`;
+};
+
+console.log(dog.getDogInfo())  // Name: Rosco, Breed: Alsatian, Age: 2, Color: brown, Legs: 4, Bark: woof woof
+
+
