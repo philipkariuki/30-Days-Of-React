@@ -17,3 +17,21 @@ let dog = {
 
 console.log(dog)  //  Object { name: "Rosco", legs: 4, color: "brown", age: 2, bark: bark() }
 console.log(dog.bark()) // woof woof
+
+// Q4 Get name, legs, color, age and bark value from the dog object
+console.log(dog.name)  // Rosco
+console.log(dog.legs)  // 4
+console.log(dog.color)  // brown
+console.log(dog.age)  // 2
+console.log(dog.bark())  // woof woof
+
+
+// NB: If the dog object had a property eg fur colour:
+let doggo= {
+    name: "Bosco",
+    'fur color': "black",
+};
+
+// to get fur colour value
+console.log(doggo['fur color']) // black
+
