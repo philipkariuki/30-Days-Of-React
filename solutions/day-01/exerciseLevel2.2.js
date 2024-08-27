@@ -114,4 +114,17 @@ for (let user in users) {
 
 console.log(`Number of logged-in users: ${loggedInCount}`)  // Number of logged-in users: 2
 
+// ii) Count users having greater than or equal to 50 points
+
+let over50 = 0;
+
+for (let user in users) {
+  if (users[user].points>=50) {
+    over50++;
+  }
+}
+
+console.log(`Users having 50 points or more = ${over50}`)  // Users having 50 points or more = 3
+
+
 
