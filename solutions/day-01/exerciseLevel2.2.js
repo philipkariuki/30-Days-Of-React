@@ -127,4 +127,19 @@ for (let user in users) {
 console.log(`Users having 50 points or more = ${over50}`)  // Users having 50 points or more = 3
 
 
+// Q3 Find people who are MERN stack developers
+// MERN : MongoDB, Express, React, and Node
+
+let mernDevelopers = [];
+
+for (let user in users) {
+  const skills = users[user].skills;
+  if (skills.includes('MongoDB') && skills.includes('Express') && skills.includes('React') && skills.includes('Node')) {
+    mernDevelopers.push(user);
+  }
+}
+
+console.log(`MERN stack developers: ${mernDevelopers.join(', ')}`) // MERN stack developers: Asab, Paul
+
+
 
