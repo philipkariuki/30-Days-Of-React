@@ -155,6 +155,11 @@ const newUser = {
   
   const updatedUsers = { ...users, ...newUser };  //   The spread operator (...) allows you to expand elements of an iterable (like an array, string, or object) into individual elements. In this case, it's used to combine multiple objects(users and newUser) into one
   
-  console.log(updatedUsers)  // includes new user Peter
-  
+console.log(updatedUsers)  // includes new user Peter
+
+
+// Q5 Get all keys or properties of users object
+const userKeys = Object.keys(users)
+
+console.log(userKeys) // [ "Alex", "Asab", "Brook", "Daniel", "John", "Thomas", "Paul" ]
 
