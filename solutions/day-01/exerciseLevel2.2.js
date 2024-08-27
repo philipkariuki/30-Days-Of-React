@@ -100,3 +100,18 @@ The loop iterates through the users object using a for...in loop. This type of l
 This process ensures that by the end of the loop, `mostSkilledUser` holds the name of the user with the most skills, and `maxSkills` holds the highest number of skills found. */
 
 
+
+// Q2 Count logged in users,count users having greater than equal to 50 points from the following object
+// i) Count logged in users
+
+let loggedInCount = 0;
+
+for (let user in users) {
+  if (users[user].isLoggedIn) {
+    loggedInCount++;
+  }
+}
+
+console.log(`Number of logged-in users: ${loggedInCount}`)  // Number of logged-in users: 2
+
+
