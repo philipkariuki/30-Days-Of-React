@@ -141,5 +141,20 @@ for (let user in users) {
 
 console.log(`MERN stack developers: ${mernDevelopers.join(', ')}`) // MERN stack developers: Asab, Paul
 
+// Q4 Set your name in the users object without modifying the original users object
 
+const newUser = {
+    Peter: {
+      email: 'peter@peter.com',
+      skills: ['HTML', 'CSS', 'JavaScript', 'Python'],
+      age: 28,
+      isLoggedIn: true,
+      points: 60
+    }
+  };
+  
+  const updatedUsers = { ...users, ...newUser };  //   The spread operator (...) allows you to expand elements of an iterable (like an array, string, or object) into individual elements. In this case, it's used to combine multiple objects(users and newUser) into one
+  
+  console.log(updatedUsers)  // includes new user Peter
+  
 
