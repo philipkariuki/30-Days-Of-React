@@ -169,3 +169,41 @@ const userValues = Object.values(users)
 
 console.log(userValues) // lists all the values of the keys/users
 
+
+// Q7 Use countries object to print a country name, capital, populations and languages.
+
+const countries = {
+    Kenya: {
+        capital: "Nairobi",
+        population: 53000000,
+        languages: ["Swahili", "English"]
+    },
+    Japan: {
+        capital: "Tokyo",
+        population: 126000000,
+        languages: ["Japanese"]
+    },
+    Germany: {
+        capital: "Berlin",
+        population: 83000000,
+        languages: ["German"]
+    }
+};
+
+function printCountryDetails(country) {
+    if (countries[country]) {
+        console.log(`Country: ${country}`);
+        console.log(`Capital: ${countries[country].capital}`);
+        console.log(`Population: ${countries[country].population}`);
+        console.log(`Languages: ${countries[country].languages.join(", ")}`);
+    } else {
+        console.log(`Country ${country} not found.`);
+    }
+}
+
+printCountryDetails("Kenya");
+// Country: Kenya
+// Capital: Nairobi
+// Population: 53000000
+// Languages: Swahili, English
+printCountryDetails("Maldives");  // Country Maldives not found.
