@@ -163,3 +163,9 @@ const userKeys = Object.keys(users)
 
 console.log(userKeys) // [ "Alex", "Asab", "Brook", "Daniel", "John", "Thomas", "Paul" ]
 
+// Q6 Get all the values of users object
+
+const userValues = Object.values(users)
+
+console.log(userValues) // lists all the values of the keys/users
+
