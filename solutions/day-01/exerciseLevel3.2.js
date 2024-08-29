@@ -49,9 +49,16 @@ const personAccount = {
       
       
 console.log(personAccount.accountInfo());
+/* Name: Samueli Musa
+Total Income: 6500
+Total Expense: 1300 */
 personAccount.addIncome('Bonus', 2000);
 personAccount.addExpense('Utilities', 150);
 console.log('Updated Account Info:', personAccount.accountInfo());
+/* Updated Account Info: Name: Samueli Musa
+Total Income: 8500
+Total Expense: 1450 */
 console.log('Account Balance:', personAccount.accountBalance());
+// Account Balance: 7050
 
 
