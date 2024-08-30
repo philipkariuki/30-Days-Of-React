@@ -152,36 +152,64 @@ function signUp(newUser) {
       users.push(newUser);
       return 'User successfully signed up';
     }
-  }
+}
 
- /*  alternative
-  function signUp(newUser) {
-    let userExists = false;                       // Here we initialize userExists to false
-    for (let i = 0; i < users.length; i++) {     // We loop through each user in the users array
-      if (users[i].email === newUser.email) {   // If we find a user with the same email as newUser, we set userExists to true and break out of the loop
-        userExists = true;
+/*  alternative
+function signUp(newUser) {
+let userExists = false;                       // Here we initialize userExists to false
+for (let i = 0; i < users.length; i++) {     // We loop through each user in the users array
+    if (users[i].email === newUser.email) {   // If we find a user with the same email as newUser, we set userExists to true and break out of the loop
+    userExists = true;
+    break;
+    }
+}
+
+if (userExists) {
+    return 'User already has an account';
+} else {      
+    users.push(newUser);
+    return 'User successfully signed up';
+}
+} */
+  
+// Example:
+const newUser = {
+_id: 'newId',
+username: 'NewUser',
+email: 'newuser@newuser.com',
+password: 'newpassword',
+createdAt: new Date().toLocaleString(),
+isLoggedIn: false,
+};
+
+console.log(signUp(newUser)); // User successfully signed up
+console.log(signUp(newUser)); // User already has an account
+
+
+
+// Q3 Create a function called signIn which allows user to sign in to the application
+
+function signIn(email, password) {
+    // Find the user with the matching email and password
+    const user = users.find(user => user.email === email && user.password === password);  // find method is used to search for a user in the users array whose email and password match the provided values
+    // or 
+    /*  let user = null;
+        for (let i = 0; i < users.length; i++) {
+        if (users[i].email === email && users[i].password === password) {
+        user = users[i];
         break;
-      }
-    }
-    
-    if (userExists) {
-      return 'User already has an account';
-    } else {      
-      users.push(newUser);
-      return 'User successfully signed up';
-    }
+        }
     } */
   
-  // Example:
-  const newUser = {
-    _id: 'newId',
-    username: 'NewUser',
-    email: 'newuser@newuser.com',
-    password: 'newpassword',
-    createdAt: new Date().toLocaleString(),
-    isLoggedIn: false,
-  };
+    if (user) {
+      user.isLoggedIn = true;   //  If a matching user is found, their isLoggedIn status is set to true
+      return 'User successfully signed in';
+    } else {
+      return 'Invalid email or password';
+    }
+}
   
-  console.log(signUp(newUser)); // User successfully signed up
-  console.log(signUp(newUser)); // User already has an account
-  
+// Example:
+console.log(signIn('alex@alex.com', '123123')); // User successfully signed in
+console.log(signIn('alex@alex.com', 'wrongpassword123')); // Invalid email or password
+
