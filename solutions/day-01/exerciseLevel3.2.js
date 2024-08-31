@@ -194,9 +194,9 @@ function signIn(email, password) {
     const user = users.find(user => user.email === email && user.password === password);  // find method is used to search for a user in the users array whose email and password match the provided values
     // or 
     /*  let user = null;
-        for (let i = 0; i < users.length; i++) {
-        if (users[i].email === email && users[i].password === password) {
-        user = users[i];
+        for (let i = 0; i < users.length; i++) {   // We loop through each user in the users array
+        if (users[i].email === email && users[i].password === password) {  // Inside the loop we check if the current user’s email and password match the provided email and password
+        user = users[i];  // If a match is found, we assign the current user to the user variable and break out of the loop
         break;
         }
     } */
@@ -212,4 +212,48 @@ function signIn(email, password) {
 // Example:
 console.log(signIn('alex@alex.com', '123123')); // User successfully signed in
 console.log(signIn('alex@alex.com', 'wrongpassword123')); // Invalid email or password
+
+
+
+// Q4 The products array has three elements and each of them has six properties. 
+// a) Create a function called rateProduct which rates the product
+
+function rateProduct(productId, userId, rating) {          // takes 3 parameters; productId, userId, rating)
+    // Check if the rating is valid. Valid rating is any number between 1-10
+    if (typeof rating !== 'number' || rating < 1 || rating > 10) {
+      return 'Please input a valid rating between 1 and 10';
+    }
+  
+    // Find the product by ID
+    const product = products.find(product => product._id === productId);
+    
+  
+    if (!product) {
+      return 'Product not found';
+    }
+  
+    // Check if the user has already rated the product
+    const existingRating = product.ratings.find(r => r.userId === userId);
+    // r is a parameter name used in the arrow function to represent each element in the ratings array as the find method iterates through it. You can think of r as a placeholder for each rating object in the ratings array.
+    // .find(r => r.userId === userId): The find method iterates over each element in the ratings array, passing each element to the arrow function.
+    // r: Represents the current rating object being processed in the ratings array.
+    // r.userId === userId: Checks if the userId of the current rating object matches the provided userId
+
+  
+    if (existingRating) {
+      // Update the existing rating
+      existingRating.rate = rating;
+    } else {
+      // Add a new rating
+      product.ratings.push({ userId, rate: rating });
+    }
+  
+    return 'Product rated successfully';
+  }
+  
+// Example:
+console.log(rateProduct('eedfcf', 'ab12ex', 4)); // Output: 'Product rated successfully'
+console.log(rateProduct('aegfal', 'fg12cy', 11)); // Output: 'Please input a valid rating between 1 and 10'
+console.log(rateProduct('nonexistent', 'fg12cy', 5)); // Output: 'Product not found'
+console.log(rateProduct('eedfcf', 'ab12ex', 'five')); // Output: 'Please input a valid rating between 1 and 10'
 
