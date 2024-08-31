@@ -299,3 +299,33 @@ console.log(averageRating('eedfcf')); // 4.75
 console.log(averageRating('aegfal')); // No ratings for this product
 console.log(averageRating('hedfcg')); // 5
 console.log(averageRating('nonexistent')); // Product not found
+
+
+// c) Create a function called likeProduct. This function will help to like the product if it is not liked, and remove like if it was already liked
+
+function likeProduct(productId, userId) {
+    // Find the product by ID
+    const product = products.find(product => product._id === productId);
+  
+    if (!product) {
+      return 'Product not found';
+    }
+  
+    // Check if the user has already liked the product
+    const likeIndex = product.likes.indexOf(userId);  // The indexOf method searches the likes array for the specified userId and returns the index of the first occurrence. If the userId is not found, it returns -1
+  
+    if (likeIndex === -1) {  // If the userId is not found, likeIndex will be -1
+      // User has not liked the product, so add the like
+      product.likes.push(userId);    //  If the userId is not found, this line adds the userId to the likes array using the push method
+      return 'Product liked successfully';
+    } else {
+      // User has already liked the product, so remove the like
+      product.likes.splice(likeIndex, 1);  //  The splice method removes one element(represented by the 1 parameter) at the position likeIndex. This effectively removes the userId from the likes array, meaning the user is unliking the product
+      return 'Product unliked successfully';
+    }
+  }
+  
+// Example:
+console.log(likeProduct('eedfcf', 'ab12ex')); // Product liked successfully or Product unliked successfully
+console.log(likeProduct('aegfal', 'fg12cy')); // Product liked successfully or Product unliked successfully
+console.log(likeProduct('nonexistent', 'fg12cy')); // Product not found
