@@ -257,3 +257,45 @@ console.log(rateProduct('aegfal', 'fg12cy', 11)); // Output: 'Please input a val
 console.log(rateProduct('nonexistent', 'fg12cy', 5)); // Output: 'Product not found'
 console.log(rateProduct('eedfcf', 'ab12ex', 'five')); // Output: 'Please input a valid rating between 1 and 10'
 
+
+// b) Create a function called averageRating which calculates the average rating of a product
+
+function averageRating(productId) {
+    // Find the product by ID
+    const product = products.find(product => product._id === productId);
+  
+    if (!product) {
+      return 'Product not found';
+    }
+  
+    // Check if the product has any ratings
+    if (product.ratings.length === 0) {
+      return 'No ratings for this product';
+    }
+  
+    // Calculate the sum of all ratings
+    const sum = product.ratings.reduce((acc, rating) => acc + rating.rate, 0);
+    // acc is the accumulator, which accumulates the sum of the ratings. It starts with the initial value provided, in this case, 0
+    // rating: This represents the current rating object being processed in the ratings array
+    // acc + rating.rate: This adds the rate property of the current rating object to the accumulator
+    // 0: is the initial value for the accumulator. The reduce method starts with this value and then adds each rating.rate to it
+
+    // Initial Value: The accumulator (acc) starts at 0
+    // First Iteration: The first rating object is processed, and its rate is added to the accumulator
+    // If the first rating is { userId: 'fg12cy', rate: 5 }, then acc becomes 0 + 5 = 5
+    // Second Iteration: The next rating object is processed, and its rate is added to the accumulator
+    // If the second rating is { userId: 'zwf8md', rate: 4.5 }, then acc becomes 5 + 4.5 = 9.5
+    // And so on: This process continues for all rating objects in the ratings array
+    // The final value of acc after all iterations is the sum of all rate values in the ratings array
+  
+    // Calculate the average rating
+    const average = sum / product.ratings.length;    // divides the sum by the number of ratings to get the average rating
+  
+    return average;
+  }
+  
+// Example:
+console.log(averageRating('eedfcf')); // 4.75
+console.log(averageRating('aegfal')); // No ratings for this product
+console.log(averageRating('hedfcg')); // 5
+console.log(averageRating('nonexistent')); // Product not found
