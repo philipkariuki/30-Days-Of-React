@@ -30,3 +30,16 @@ function areaOfCircle(radius) {
 console.log(areaOfCircle(3)) // 28.274333882308138
 
 
+// Q4 Temperature in °C can be converted to  °F using this formula:  °F = ( °C x 9/5) + 32. Write a function which convert  °C to  °F convertCelciusToFahrenheit
+function convertCelciusToFahrenheit(celsius) {
+    return (celsius * 9/5) + 32;
+}
+
+// Example
+let tempInCelsius = 37
+let tempInFahrenheit = convertCelciusToFahrenheit(tempInCelsius)
+console.log(`${tempInCelsius}°C is equal to ${tempInFahrenheit}°F`)  // 37°C is equal to 98.6°F
+       //  or
+console.log(convertCelciusToFahrenheit(37.8)) // 100.03999999999999
+
+
