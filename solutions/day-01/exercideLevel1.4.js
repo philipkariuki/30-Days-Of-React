@@ -21,4 +21,12 @@ let addNumberz = (e,f) => e + f
 console.log(addNumbers(3,4)); // 7
 
 
+// Q3 Area of a circle is calculated as follows: area = π x r x r. Write a function which calculates _areaOfCircle
+function areaOfCircle(radius) {
+    return Math.PI * radius * radius;
+}
+
+
+console.log(areaOfCircle(3)) // 28.274333882308138
+
 
