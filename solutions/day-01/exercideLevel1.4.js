@@ -26,7 +26,10 @@ function areaOfCircle(radius) {
     return Math.PI * radius * radius;
 }
 
+console.log(areaOfCircle(3)) // 28.274333882308138
 
+// using arrow function
+let areaOfCircle = radius => Math.PI * radius * radius
 console.log(areaOfCircle(3)) // 28.274333882308138
 
 
@@ -41,5 +44,13 @@ let tempInFahrenheit = convertCelciusToFahrenheit(tempInCelsius)
 console.log(`${tempInCelsius}°C is equal to ${tempInFahrenheit}°F`)  // 37°C is equal to 98.6°F
        //  or
 console.log(convertCelciusToFahrenheit(37.8)) // 100.03999999999999
+
+// using arrow function
+const convertCelciusToFahrenheit = celsius => (celsius * 9/5) + 32
+console.log(convertCelciusToFahrenheit(37.8))   // 100.03999999999999
+
+// rounded off
+const convertCelciusToFahrenheits = celsius => Math.round(celsius * 9/5) + 32
+console.log(convertCelciusToFahrenheit(37.8))   // 100
 
 
