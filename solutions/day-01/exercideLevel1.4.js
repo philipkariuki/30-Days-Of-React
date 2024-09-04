@@ -95,3 +95,60 @@ console.log(checkBmi(70,1.77))  // Your bmi of 22.34 is normal weight
 console.log(checkBmi(85,1.8))  //  { bmi: "26.23", category: "overweight" }
 
 
+// Q6 Write a function called checkSeason, it takes a month parameter and returns the season:Autumn, Winter, Spring or Summer
+function checkSeason(month) {
+    if (month < 1 || month > 12) {
+        return "Invalid month";
+    }
+
+    switch (month) {
+        case 12:
+        case 1:
+        case 2:
+            return "Winter";
+        case 3:
+        case 4:
+        case 5:
+            return "Spring";
+        case 6:
+        case 7:
+        case 8:
+            return "Summer";
+        case 9:
+        case 10:
+        case 11:
+            return "Autumn";
+        default:
+            return "Invalid month";
+    }
+}
+
+console.log(checkSeason(3)) // Spring
+console.log(checkSeason(7)) // Summer
+console.log(checkSeason(10)) // Autumn
+console.log(checkSeason(1)) // Winter
+
+// alternative
+function checkSeason(month) {
+    if (month < 1 || month > 12) {
+        return "Invalid month";
+    }
+
+    if (month === 12 || month === 1 || month === 2) {
+        return "Winter";
+    } else if (month === 3 || month === 4 || month === 5) {
+        return "Spring";
+    } else if (month === 6 || month === 7 || month === 8) {
+        return "Summer";
+    } else if (month === 9 || month === 10 || month === 11) {
+        return "Autumn";
+    } else {
+        return "Invalid month";
+    }
+}
+
+console.log(checkSeason(5)) // Spring
+console.log(checkSeason(8)) // Summer
+console.log(checkSeason(11)) // Autumn
+console.log(checkSeason(12)) // Winter
+
