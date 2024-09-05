@@ -54,9 +54,21 @@ let myArray = [1, 2, 3, 4, 5]
 printArray(myArray)  // prints 1 - 5
 
 
+// Q3 Write a function name showDateTime which shows time in this format: 08/01/2020 04:08 using the Date object.
+function showDateTime() {
+    const now = new Date();  //  creates a new Date object to get the current date and time
+    const year = now.getFullYear();  //  extract the year, month, day, hours, and minutes from the Date object
+    const month = String(now.getMonth() + 1).padStart(2, '0'); // Months are zero-based ie January=0  || To convert this zero-based month value to a more human-readable format (where January is 1, February is 2, etc.), we add 1 to the result of getMonth()
+    const day = String(now.getDate()).padStart(2, '0');  // we use String().padStart(2, '0') to ensure that month, day, hours, and minutes values are always two digits.
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+
+    const formattedDateTime = `${month}/${day}/${year} ${hours}:${minutes}`;  //  format the date and time as MM/DD/YYYY HH:MM
+    console.log(formattedDateTime);
+}
 
 
-
+showDateTime();  // 09/05/2024 11:38
 
 
 
