@@ -42,6 +42,19 @@ console.log(solveQuadEquation(1, -6, 9));  // The roots are 3 and 3
 console.log(solveQuadEquation(1, -3, 10)); // The roots are 1.50 + 2.78i and 1.50 - 2.78i
 
 
+// Q2 Declare a function name printArray. It takes array as a parameter and it prints out each value of the array.
+
+function printArray(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        console.log(arr[i]);
+    }
+}
+
+let myArray = [1, 2, 3, 4, 5]
+printArray(myArray)  // prints 1 - 5
+
+
+
 
 
 
