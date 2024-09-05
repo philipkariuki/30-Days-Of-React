@@ -140,3 +140,19 @@ console.log(capitalizedWords); // ['These', 'Are', 'Words']
 
 
 
+// Q7 Declare a function name addItem. It takes an item parameter and it returns an array after adding the item
+
+function addItem(item) {
+    // Initialize an empty array
+    let array = [];
+    
+    // Add the item to the array
+    array.push(item);
+    
+    // Return the updated array
+    return array;
+}
+
+console.log(addItem('apple')) // ['apple']
+
+
