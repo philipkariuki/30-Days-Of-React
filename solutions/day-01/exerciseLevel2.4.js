@@ -72,3 +72,17 @@ showDateTime();  // 09/05/2024 11:38
 
 
 
+// Q4 Declare a function name swapValues. This function swaps value of x to y
+
+function swapValues(x, y) {
+    [x, y] = [y, x];  // Array Destructuring is used to swap variables. Destructuring assignment is a convenient way to extract values from arrays or properties from objects into distinct variables
+    return [x, y];
+}
+
+swapValues(3,4)  // [4,3]
+// or
+let [x, y] = swapValues(3, 4);
+console.log(`x=> ${x}, y=> ${y}`); // x=> 4, y=> 3
+
+
+
