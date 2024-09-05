@@ -156,3 +156,27 @@ function addItem(item) {
 console.log(addItem('apple')) // ['apple']
 
 
+// Q8 Declare a function name evensAndOdds . It takes a positive integer as parameter and it counts number of evens and odds in the number.
+
+function evensAndOdds(n) {
+    let evens = 0;
+    let odds = 0;
+
+    for (let i = 1; i <= n; i++) {
+        if (i % 2 === 0) {
+            evens++;
+        } else {
+            odds++;
+        }
+    }
+
+    return { evens, odds };  // returns an object with the counts of even and odd numbers
+}
+
+// Example
+const result = evensAndOdds(101);
+console.log(`The number of evens are ${result.evens}`);  // The number of evens are 50
+console.log(`The number of odds are ${result.odds}`);  // The number of odds are 51
+
+
+
