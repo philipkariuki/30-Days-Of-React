@@ -124,3 +124,19 @@ let reversd = reverseArray(originlArray);
 console.log(reversd); // [5, 4, 3, 2, 1]
 
 
+
+// Q6 Declare a function name capitalizeArray. It takes array as a parameter and it returns the - capitalizedarray.
+
+function capitalizeArray(array) {
+    return array.map(function(element) {  // map method creates a new array populated with the results of calling a provided function on every element
+        return element.charAt(0).toUpperCase() + element.slice(1).toLowerCase();  // For each element in the array, the callback function(element) capitalizes the first letter and converts the rest to lowercase
+    });
+}
+
+// Example:
+const words = ['these', 'are', 'words'];
+const capitalizedWords = capitalizeArray(words);
+console.log(capitalizedWords); // ['These', 'Are', 'Words']
+
+
+
