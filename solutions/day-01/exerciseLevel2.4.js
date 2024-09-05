@@ -86,3 +86,41 @@ console.log(`x=> ${x}, y=> ${y}`); // x=> 4, y=> 3
 
 
 
+// Q5 Declare a function name reverseArray. It takes array as a parameter and it returns the reverse of the array (don't use the reverse method)
+
+function reverseArray(array) {
+    // Create a new array to store the reversed elements
+    let reversedArray = [];
+    
+    for (let i = 0; i < array.length; i++) {
+        reversedArray.unshift(array[i]);  // unshift method adds elements to the beginning of a new array. The loop will start adding new elements at the beginning of the array, from 1, then 2, then 3 etc, until 5 is at the beginning
+    }
+    
+    return reversedArray;
+}
+
+let originalArray = [1, 2, 3, 4, 5];
+let reversed = reverseArray(originalArray);
+console.log(reversed); // [5, 4, 3, 2, 1]
+
+
+// another method
+function reverseArray(array) {
+    // Create a new array to store the reversed elements
+    let reversedArray = [];
+    
+    // Loop through the original array from the end to the beginning
+    for (let i = array.length - 1; i >= 0; i--) {
+        // Push each element to the new array
+        reversedArray.push(array[i]);
+    }
+    
+    // Return the new array
+    return reversedArray;
+}
+
+let originlArray = [1, 2, 3, 4, 5];
+let reversd = reverseArray(originlArray);
+console.log(reversd); // [5, 4, 3, 2, 1]
+
+
