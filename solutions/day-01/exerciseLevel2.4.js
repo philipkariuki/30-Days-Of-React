@@ -200,3 +200,14 @@ console.log(sum(1, 2, 3, 4)) // 10
 
 
 
+// Q10 Declare a function name userIdGenerator. When this function is called it generates seven character id. The function return the id
+
+function userIdGenerator() {
+    return Math.random().toString(36).substring(2, 9);  // toString(36) converts the randomly generated number to a base-36 string (which includes digits and letters ie [0-9,A-Z])
+}  // Math.random() returns a random number between 0 (inclusive) and 1 (exclusive)
+   // substring(2, 9) extracts characters between two indices from a string and returns the substring. Since math.random() will generate figures such as 0.07514356187832741, we extract a substring of 7 characters starting from the third character(index 2) to ensure the ID is seven characters long
+
+console.log(userIdGenerator()) // 9br799x
+
+
+
