@@ -180,3 +180,23 @@ console.log(`The number of odds are ${result.odds}`);  // The number of odds are
 
 
 
+// Q9 Write a function which takes any number of arguments and return the sum of the arguments
+
+function sum() {
+    let total = 0;
+    for (let i = 0; i < arguments.length; i++) {
+        total += arguments[i];   // += is the addition assignment operator
+    }
+    return total;
+}
+
+console.log(sum(5, 10, 15))  // 30
+
+// or
+function sum(...args) {   // the (...args) syntax allows the function to accept an indefinite number of arguments as an array 
+    return args.reduce((acc, curr) => acc + curr, 0);  // acc: accumulator is the accumulated value. curr is the Current Value being processed in the array
+}
+console.log(sum(1, 2, 3, 4)) // 10
+
+
+
