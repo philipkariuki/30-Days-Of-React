@@ -211,3 +211,17 @@ console.log(userIdGenerator()) // 9br799x
 
 
 
+// Q11 Declare a function name removeItem. It takes an index parameter and it returns an array after removing an item
+
+function removeItem(array, index) {
+    return array.reduce(function(acc, item, i) {
+        if (i !== index) {
+            acc.push(item);  // if the current index i is not equal to the index parameter, the current item is added to the accumulator array acc
+        }
+        return acc;  // The reduce method returns the acc array, which is the original array minus the item at the specified index
+    }, []);
+}
+
+let myarray= [1,2,3,5,7]
+removeItem(myarray,2)  // [1,2,5,7]
+
