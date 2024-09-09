@@ -81,3 +81,21 @@ Why (i + 1): If you just multiplied by i, the random number would be between 0 a
 So, multiplying by (i + 1) ensures that when you round down, you get a whole number that can be any value from 0 up to i. This way, the random index j is always within the range you need for each iteration of the loop. */
 
 
+// Q4 Call your function factorial, it takes a whole number as a parameter and it return a factorial of the number
+
+
+// The factorial function (symbol: !) says to multiply all whole numbers from our chosen number down to 1
+// Formula is: n! = n × (n−1)!
+// The factorial of any number is that number times the factorial of (that number minus 1)
+
+function factorial(n) {
+    if (n === 0) {   // 0! = 1
+        return 1;
+    } else {
+        return n * factorial(n - 1);
+    }
+}
+
+console.log(factorial(5)) // 120
+
+
