@@ -99,3 +99,30 @@ function factorial(n) {
 console.log(factorial(5)) // 120
 
 
+// Q5 Call your function isEmpty, it takes a parameter and it checks if it is empty or not
+
+function isEmpty(value) {
+    if (value === null || value === undefined) {
+        return true;
+    }
+    if (typeof value === 'object') {  //the typeof operator in js returns a string indicating the type of the operand.When you use typeof value === 'object', it checks if the type of value is 'object'.
+        return Object.keys(value).length === 0;  // If value is an object, the function checks if it has any own properties. If the object has no properties, it returns true
+    }
+    if (typeof value === 'string') {
+        return value.trim().length === 0;  // If value is a string, the function trims any whitespace from the string and checks its length. If the trimmed string is empty, it returns true
+    }
+    if (Array.isArray(value)) {  // Array.isArray() method is used to determine if a given value is an array
+        return value.length === 0; // If value is an array, the function checks its length. If the array is empty, it returns true
+    }
+    return false;
+}
+
+// Example usage:
+console.log(isEmpty({})); // true
+console.log(isEmpty([])); // true
+console.log(isEmpty('')); // true
+console.log(isEmpty()); // true
+console.log(isEmpty('Hello')); // false
+console.log(isEmpty({ name: 'John' })); // false
+
+
