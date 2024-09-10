@@ -49,3 +49,11 @@ function getPersonInfo({ firstName, lastName, age, country, job, skills, languag
 
 console.log(getPersonInfo(person));  // Asabeneh Yetayeh lives in Finland. He is 250 years old. He is an Instructor and Developer. He teaches HTML, CSS, JavaScript, React, Redux, Node, MongoDB, Python, D3.js. He speaks Amharic, English, Suomi(Finnish).
   
+
+// iii) Compare the cleanness of the code
+
+/* 
+Regular Way: This method involves explicitly extracting each property from the object and then using them in the function. It can be more verbose and repetitive.
+
+Destructuring: This method is more concise and cleaner. It directly extracts the properties from the object in the function parameter, reducing the amount of code and making it easier to read. 
+*/
