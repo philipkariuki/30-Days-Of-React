@@ -42,4 +42,10 @@ function getPersonInfo(person) {
 console.log(getPersonInfo(person));  // Asabeneh Yetayeh lives in Finland. He is 250 years old. He is an Instructor and Developer. He teaches HTML, CSS, JavaScript, React, Redux, Node, MongoDB, Python, D3.js. He speaks Amharic, English, Suomi(Finnish).
 
 
+// ii) Using destructuring
+function getPersonInfo({ firstName, lastName, age, country, job, skills, languages }) {
+    return `${firstName} ${lastName} lives in ${country}. He is ${age} years old. He is an ${job}. He teaches ${skills.join(', ')}. He speaks ${languages.join(', ')}.`;
+  }
 
+console.log(getPersonInfo(person));  // Asabeneh Yetayeh lives in Finland. He is 250 years old. He is an Instructor and Developer. He teaches HTML, CSS, JavaScript, React, Redux, Node, MongoDB, Python, D3.js. He speaks Amharic, English, Suomi(Finnish).
+  
