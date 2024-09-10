@@ -126,3 +126,29 @@ console.log(isEmpty('Hello')); // false
 console.log(isEmpty({ name: 'John' })); // false
 
 
+// Q6 Write a function called average, it takes an array parameter and returns the average of the items. Check if all the array items are number types. If not give return reasonable feedback.
+
+function average(arr) {
+    if (!Array.isArray(arr)) {
+        return "Input is not an array.";
+    }
+
+    if (arr.length === 0) {
+        return "Array is empty.";
+    }
+
+    for (let i = 0; i < arr.length; i++) {
+        if (typeof arr[i] !== 'number') {
+            return "All items in the array must be numbers.";
+        }
+    }
+
+    const sum = arr.reduce((acc, curr) => acc + curr, 0);
+    return sum / arr.length;
+}
+
+
+console.log(average([1, 2, 3, 4, 5])); // 3
+console.log(average([1, '2', 3])); // All items in the array must be numbers.
+console.log(average([])); // Array is empty.
+console.log(average('not an array')); // Input is not an array.
