@@ -36,3 +36,20 @@ products.forEach(item => {
   The price of coffee is 10
   The price of tea is not available */
 
+//Q2 Print the product items 
+
+products.forEach(item => {
+    if (typeof item.price === 'number' && !isNaN(item.price)) {
+      console.log(`The price of ${item.product} is ${item.price} euros.`);
+    } else {
+      console.log(`The price of ${item.product} is unknown`);
+    }
+  })
+
+/* The price of banana is 3 euros.
+The price of mango is 6 euros.
+The price of potato is unknown.
+The price of avocado is 8 euros.
+The price of coffee is 10 euros.
+The price of tea is unknown. */
+
