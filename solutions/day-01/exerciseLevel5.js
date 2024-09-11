@@ -53,3 +53,17 @@ The price of avocado is 8 euros.
 The price of coffee is 10 euros.
 The price of tea is unknown. */
 
+//Q3 Calculate the sum of all the prices using forEach
+
+let sumOfPrices = 0;
+
+products.forEach(item => {
+  // Convert price to a number and add to sum if it's a valid number
+  const price = parseFloat(item.price);
+  if (!isNaN(price)) {  // (!isNaN(price)) returns true if price is a valid number and false if it is NaN
+    sumOfPrices += price;
+  }
+});
+
+console.log(sumOfPrices)  // 27
+
