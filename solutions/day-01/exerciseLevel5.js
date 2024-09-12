@@ -81,3 +81,12 @@ const pricez = products.map(function(item) {
 console.log(pricez) // [ 3, 6, " ", 8, 10, "" ]
 
 
+// Q5 Filter products with prices
+
+const validPrices = products
+  .map(item => item.price)
+  .filter(price => typeof price === 'number' && !isNaN(price));
+
+console.log(validPrices) // [3, 6, 8, 10]
+
+
