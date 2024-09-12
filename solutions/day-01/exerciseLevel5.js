@@ -90,3 +90,13 @@ const validPrices = products
 console.log(validPrices) // [3, 6, 8, 10]
 
 
+// Q6 Use method chaining to get the sum of the prices(map, filter, reduce)
+// Method chaining in JavaScript is a programming technique that allows you to call multiple methods on the same object sequentially in a single statement
+
+const total = products
+  .map(item => item.price) // extract the prices
+  .filter(price => typeof price === 'number' && !isNaN(price)) //  filter valid prices
+  .reduce((sum, price) => sum + price, 0); // sum the filtered prices
+
+console.log(total) // 27
+
