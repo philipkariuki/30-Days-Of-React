@@ -67,3 +67,17 @@ products.forEach(item => {
 
 console.log(sumOfPrices)  // 27
 
+// Q4 Create an array of prices using map and store it in a variable prices
+
+// We use the map method whenever we like to modify an array. We use the map method only with arrays and it always returns an array
+// The Array.map() method creates a new array from the results of calling a function for every element.
+
+const prices = products.map(item => item.price);
+console.log(prices)  // [ 3, 6, " ", 8, 10, "" ]
+// long form
+const pricez = products.map(function(item) {
+    return item.price;
+  });
+console.log(pricez) // [ 3, 6, " ", 8, 10, "" ]
+
+
