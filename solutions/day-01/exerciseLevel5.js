@@ -163,35 +163,35 @@ array.forEach(element => console.log(element)); // 1 2 3
 
 
 // ii) map:
-Purpose: Creates a new array from calling a function for every array element
+/* Purpose: Creates a new array from calling a function for every array element
 Returns: A new array
 Use Case: When you need to transform each element in an array
 Example:
 
 const array = [1, 2, 3];
 const newArray = array.map(element => element * 2);
-console.log(newArray); // [2, 4, 6]
+console.log(newArray); // [2, 4, 6] */
 
 
 // iii) filter:
-Purpose: Creates a new array with all elements that pass the test implemented by the provided function
+/* Purpose: Creates a new array with all elements that pass the test implemented by the provided function
 Returns: A new array
 Use Case: When you need to filter out elements from an array based on a condition
 Example:
 
 const array = [1, 2, 3, 4];
 const filteredArray = array.filter(element => element > 2);
-console.log(filteredArray); // [3, 4]
+console.log(filteredArray); // [3, 4] */
 
 
 // iv) reduce:
-Purpose: Executes a reducer function (that you provide) on each element of the array, resulting in a single output value
+/* Purpose: Executes a reducer function (that you provide) on each element of the array, resulting in a single output value
 Returns: A single value
 Use Case: When you need to accumulate values from an array into a single value (e.g., sum, product)
 Example:
 
 const array = [1, 2, 3, 4];
 const sum = array.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
-console.log(sum); // 10
+console.log(sum); // 10 */
 
 
