@@ -123,3 +123,12 @@ const firstProductWithoutPrice = products.find(item => !parseFloat(item.price) &
 console.log(firstProductWithoutPrice); // { product: "potato", price: " " }
 
 
+// Q9 Find the index of the first product which does not have price value
+
+const index = products.findIndex(item => item.price === '' || item.price === ' ' || item.price === undefined || item.price === null);
+// checks for empty strings, spaces, undefined, and null values to determine if a product does not have a price.
+// The findIndex method will return the index of the first product that meets this condition
+
+console.log(index); // 2
+
+
