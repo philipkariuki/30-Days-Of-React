@@ -132,3 +132,12 @@ const index = products.findIndex(item => item.price === '' || item.price === ' '
 console.log(index); // 2
 
 
+// Q10 Check if some products do not have a price value
+
+const hasMissingPrice = products.some(item => item.price === '' || item.price === ' ' || item.price === undefined || item.price === null);
+// The some() method checks if any array elements pass a test (provided as a callback function). It executes the callback function once for each array element. The method returns true (and stops) if the function returns true for one of the array elements.
+// In this case, it will return true because ‘potato’ and ‘tea’ do not have valid price values.
+
+console.log(hasMissingPrice); // Output: true
+
+
