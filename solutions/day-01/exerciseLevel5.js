@@ -100,3 +100,14 @@ const total = products
 
 console.log(total) // 27
 
+
+// Q7 Calculate the sum of all the prices using reduce only
+
+const total = products.reduce((sum, item) => {
+  const price = parseFloat(item.price) || 0; // Convert price to a number, default to 0 if NaN
+  return sum + price;
+}, 0);
+
+console.log(total); // 27
+
+
