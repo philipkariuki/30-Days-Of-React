@@ -141,3 +141,12 @@ const hasMissingPrice = products.some(item => item.price === '' || item.price ==
 console.log(hasMissingPrice); // Output: true
 
 
+// Q11 Check if all the products have price value
+
+const allHavePrices = products.every(item => item.price !== '' && item.price !== ' ' && item.price !== undefined && item.price !== null);
+// The every() method returns true if every element in an array pass a function test.
+// It returns true if the function returns true for all elements, and false if the function returns false for one element.
+
+console.log(allHavePrices); // Output: false
+
+
