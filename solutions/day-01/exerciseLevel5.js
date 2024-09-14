@@ -153,13 +153,13 @@ console.log(allHavePrices); // Output: false
 // Q12 Explain the difference between forEach, map, filter and reduce
 
 // i) forEach:
-Purpose: Executes a provided function once for each array element
+/* Purpose: Executes a provided function once for each array element
 Returns: undefined
 Use Case: When you need to perform side effects (e.g., logging, modifying external variables) for each element in an array
 Example:
 
 const array = [1, 2, 3];
-array.forEach(element => console.log(element)); // 1 2 3
+array.forEach(element => console.log(element)); // 1 2 3 */
 
 
 // ii) map:
