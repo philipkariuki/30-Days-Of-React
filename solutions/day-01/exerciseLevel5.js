@@ -111,3 +111,15 @@ const total = products.reduce((sum, item) => {
 console.log(total); // 27
 
 
+// Q8 Find the first product which doesn't have a price value
+
+const firstProductWithoutPrice = products.find(item => !parseFloat(item.price) && item.price !== 0);
+// parseFloat(item.price) attempts to convert the price to a floating-point number. 
+// if parseFloat(item.price) can’t turn the price into a number (like if it’s an empty string or a non-numeric value), it returns NaN (Not-a-Number). The ! operator then turns NaN into true
+// && item.price !== 0 makes sure the price is not exactly 0. If price is 0, parseFloat(item.price) would return 0, and !0 would be true, which we don’t want. So, we add item.price !== 0 to exclude 0 prices
+// therefore (!parseFloat(item.price)) && item.price !== 0 checks if the price is either an empty string,a non-numeric value, or a string that cannot be converted to a number,but not exactly 0
+// so firstProductWithoutPrice will be the first product in the array where the price is not a valid number or is an empty string, but not 0
+
+console.log(firstProductWithoutPrice); // { product: "potato", price: " " }
+
+
