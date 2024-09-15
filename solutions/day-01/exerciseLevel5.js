@@ -230,3 +230,25 @@ const foundIndex = array.findIndex(element => element > 2);
 console.log(foundIndex); // 2 
 
 
+// Q14 Explain the difference between some and every
+
+// i) some:
+/* Purpose: Checks if at least one element in the array satisfies the provided function.
+Returns: true if any element passes the test; otherwise, false.
+Use Case: Use some when you need to check if any element meets a condition (e.g., at least one number is even). */
+Example:
+
+const numbers = [1, 2, 3, 4];
+const hasEven = numbers.some(num => num % 2 === 0);
+console.log(hasEven); // Output: true
+
+
+// ii) every:
+/* Purpose: Checks if all elements in the array satisfy the provided function.
+Returns: true if every element passes the test; otherwise, false.
+Use Case: Use every when you need to ensure all elements meet a condition (e.g., all numbers are even). */
+Example:
+
+const numberz = [3, 5, 7, 9];
+const allOdd = numberz.every(num => num % 2 !== 0);
+console.log(allOdd); // true
