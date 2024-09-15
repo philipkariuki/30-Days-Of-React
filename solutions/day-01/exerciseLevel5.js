@@ -195,3 +195,38 @@ const sum = array.reduce((accumulator, currentValue) => accumulator + currentVal
 console.log(sum); // 10 */
 
 
+// Q13 Explain the difference between filter, find and findIndex
+
+// i) filter:
+/* Purpose: Creates a new array with all elements that pass the test implemented by the provided function.
+Returns: A new array containing all elements that satisfy the condition.
+Use Case: When you need to get all elements that meet a specific condition. */
+Example:
+
+const array = [1, 2, 3, 4, 5];
+const filteredArray = array.filter(element => element > 2);
+console.log(filteredArray); // [3, 4, 5] 
+
+
+// ii) find:
+/* Purpose: Returns the value of the first element in the array that satisfies the provided testing function.
+Returns: The first element that satisfies the condition, or undefined if no such element is found.
+Use Case: When you need to find a single element that meets a specific condition. */
+Example:
+
+const array = [1, 2, 3, 4, 5];
+const foundElement = array.find(element => element > 2);
+console.log(foundElement); // 3  
+
+
+// iii) findIndex:
+/* Purpose: Returns the index of the first element in the array that satisfies the provided testing function.
+Returns: The index of the first element that satisfies the condition, or -1 if no such element is found.
+Use Case: When you need to find the position of a single element that meets a specific condition. */
+Example:
+
+const array = [1, 2, 3, 4, 5];
+const foundIndex = array.findIndex(element => element > 2);
+console.log(foundIndex); // 2 
+
+
