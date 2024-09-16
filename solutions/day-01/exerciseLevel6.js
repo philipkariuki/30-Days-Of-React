@@ -44,3 +44,27 @@ console.log(thaAnimal.move()); // Elephant is moving around.
 
 
 
+// Q2 Create a Dog and Cat child class from the Animal Class.
+
+// i) Dog class
+
+class Dog extends Animal {
+    constructor(name, age, color, legs, breed) { // adds new property, breed
+        super(name, age, color, legs);  // We call the super() function to access all the properties (and methods) from the parent class constructor
+        this.breed = breed;  // Additional property specific to Dog
+    }
+
+    // Additional method specific to Dog
+    fetch() {
+        return `${this.name} is fetching the ball.`;
+    }
+}
+
+const myDog = new Dog('Bud', 2, 'Brown', 4, 'Labrador');
+
+console.log(myDog.displayDetails());  // Name: Bud, Age: 3, Color: Brown, Legs: 4
+console.log(myDog.speak());  // Bud makes a sound.
+console.log(myDog.eat('omena'));  // Bud is eating omena.
+console.log(myDog.fetch());  // Bud is fetching the ball.
+
+
