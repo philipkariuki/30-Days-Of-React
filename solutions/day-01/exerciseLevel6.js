@@ -68,3 +68,25 @@ console.log(myDog.eat('omena'));  // Bud is eating omena.
 console.log(myDog.fetch());  // Bud is fetching the ball.
 
 
+// ii) Cat class
+
+class Cat extends Animal {
+    constructor(name, age, color, legs, isIndoor) { // adds new property, isIndoor(boolean)
+        super(name, age, color, legs);  // Call the parent class constructor
+        this.isIndoor = isIndoor;  // Additional property specific to Cat
+    }
+
+    // Additional method specific to Cat
+    scratch() {
+        return `${this.name} is scratching the furniture.`;
+    }
+}
+
+const fatCat = new Cat('Paka', 2, 'Orange', 4, true);
+
+console.log(fatCat.displayDetails());  // Name: Paka, Age: 2, Color: Orange, Legs: 4
+console.log(fatCat.speak());  // Paka makes a sound.
+console.log(fatCat.eat('omena'));  // Paka is eating omena.
+console.log(fatCat.scratch());  // Paka is scratching the furniture.
+
+
