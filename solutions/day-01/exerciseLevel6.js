@@ -90,3 +90,62 @@ console.log(fatCat.eat('omena'));  // Paka is eating omena.
 console.log(fatCat.scratch());  // Paka is scratching the furniture.
 
 
+// Q3 Override the method you create in Animal class
+
+// i) Override in Animal class
+
+/* In object-oriented programming, overriding typically occurs in a subclass, not within the parent class itself. The concept of overriding is designed to allow a subclass to provide a specific implementation of a method that is already defined in its parent class.
+However, if you want to modify the behavior of a method within the same class, you can simply redefine/re-edit the method.
+True method overriding happens when a subclass provides a new implementation for a method inherited from its parent class. */
+
+
+// ii) Override in Dog class
+
+class DogWithOveride extends Animal {
+    constructor(name, age, color, legs, breed) {
+        super(name, age, color, legs);  // Call the parent class constructor
+        this.breed = breed;  // Additional property specific to Dog
+    }
+
+    // Override the displayDetails method
+    displayDetails() {
+        return `${super.displayDetails()}, Breed: ${this.breed}`;
+    }
+
+    // Override the speak method
+    speak() {
+        return `${this.name} barks.`;
+    }
+}
+
+const daDog = new DogWithOveride('Tom', 5, 'Black and brown', 4, 'Mixed breed');
+
+console.log(daDog.displayDetails());  // Name: Tom, Age: 5, Color: Black and brown, Legs: 4, Breed: Mixed breed
+console.log(daDog.speak());  // Tom barks.
+
+
+// iii) Override in Cat class
+
+class CatWithOveride extends Animal {
+    constructor(name, age, color, legs, isIndoor) { // adds new property, isIndoor(boolean)
+        super(name, age, color, legs);  // Call the parent class constructor
+        this.isIndoor = isIndoor;  // Additional property specific to Cat
+    }
+
+    // Override the displayDetails method
+    displayDetails() {
+        return `${super.displayDetails()}, Indoor: ${this.isIndoor}`;
+    }
+
+    // Override the speak method
+    speak() {
+        return `${this.name} meows.`;
+    }
+}
+
+const daCat = new CatWithOveride('Paka', 2, 'Orange', 4, true);
+
+console.log(daCat.displayDetails());  // Name: Paka, Age: 2, Color: Orange, Legs: 4, Indoor: true
+console.log(daCat.speak());  // Paka meows.
+
+
