@@ -23,11 +23,19 @@
       const rootElement = document.querySelector('.root')
 
       // JSX element
-      const jsxElement = <h1>I am a JSX element</h1>
+      const header = (
+        <header>
+          <h1>Welcome to 30 Days Of React</h1>
+          <h2>Getting Started React</h2>
+          <h3>JavaScript Library</h3>
+          <p>Asabeneh Yetayeh</p>
+          <small>Nov 1, 2024</small>
+        </header>
+      )
 
       // we render the JSX element using the ReactDOM package
       // ReactDOM has the render method and the render method takes two arguments
-      ReactDOM.render(jsxElement, rootElement)
+      ReactDOM.render(header, rootElement)
     </script>
   </body>
 </html>
