@@ -22,20 +22,50 @@
       // To get the root element from the HTML document
       const rootElement = document.querySelector('.root')
 
-      // JSX element
+      // JSX element for the header part of the website
       const header = (
         <header>
           <h1>Welcome to 30 Days Of React</h1>
-          <h2>Getting Started React</h2>
+          <h2>Getting Started on React</h2>
           <h3>JavaScript Library</h3>
-          <p>Asabeneh Yetayeh</p>
+          <p>Your Name</p>
           <small>Nov 1, 2024</small>
         </header>
       )
 
+      // JSX element for the main part of the website
+      const main = (
+        <main>
+          <p>Prerequisite to get started on React.js:</p>
+          <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+          </ul>
+        </main>
+      )
+
+      // JSX element for the footer part of the website
+      const footer = (
+        <footer>
+          <p>Copyright 2024</p>
+        </footer>
+      )
+
+      // JSX element which contain all, it is a container or parent
+      const app = (
+        <div>
+          {header}
+          {main}
+          {footer}
+        </div>
+      )
+
       // we render the JSX element using the ReactDOM package
       // ReactDOM has the render method and the render method takes two arguments
-      ReactDOM.render(header, rootElement)
+      ReactDOM.render(app, rootElement)
+      // or
+      //  ReactDOM.render([header, main, footer], rootElement)
     </script>
   </body>
 </html>
