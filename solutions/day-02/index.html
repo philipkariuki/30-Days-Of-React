@@ -23,10 +23,13 @@
       const rootElement = document.querySelector('.root')
 
       // JSX element for the header part of the website
+      const style = { border: '2px solid orange', color: 'black', fontSize: '18px' }
+      
       const header = (
-        <header
-          style={{ border: '2px solid orange', color: 'black', fontSize: '18px' }}
-        >
+        /* <header style={{ border: '2px solid orange', color: 'black', fontSize: '18px' }}
+        > */
+        // or 
+        <header style={style}>
           <h1>Welcome to 30 Days Of React</h1>
           <h2>Getting Started on React</h2>
           <h3>JavaScript Library</h3>
