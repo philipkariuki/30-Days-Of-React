@@ -22,19 +22,26 @@
       // To get the root element from the HTML document
       const rootElement = document.querySelector('.root')
 
-      // JSX element for the header part of the website
-      const style = { border: '2px solid orange', color: 'black', fontSize: '18px' }
-      
+
+      // style
+      const headerStyles = {
+        backgroundColor: '#61DBFB',
+        fontFamily: 'Helvetica Neue',
+        padding: 25,
+        lineHeight: 1.5,
+      }
+
+
+      // JSX element for the header part of the website      
       const header = (
-        /* <header style={{ border: '2px solid orange', color: 'black', fontSize: '18px' }}
-        > */
-        // or 
-        <header style={style}>
-          <h1>Welcome to 30 Days Of React</h1>
-          <h2>Getting Started on React</h2>
-          <h3>JavaScript Library</h3>
-          <p>Your Name</p>
-          <small>Nov 1, 2024</small>
+        <header style={headerStyles}>
+          <div className='header-wrapper'>
+            <h1>Welcome to 30 Days Of React</h1>
+            <h2>Getting Started on React</h2>
+            <h3>JavaScript Library</h3>
+            <p>Your Name</p>
+            <small>Nov 1, 2024</small>
+          </div>
         </header>
       )
 
