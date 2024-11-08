@@ -159,9 +159,21 @@
         </main>
         )
 
+      const copyRight = 'Copyright 2024'
+      // JSX element, footer
+      const footer = (
+        <footer>
+          <div className='footer-wrapper'>
+            <p>{copyRight}</p>
+          </div>
+        </footer>
+      )
+
+      
+
       // we render the JSX element using the ReactDOM package
       // ReactDOM has the render method and the render method takes two arguments
-      ReactDOM.render([header, main], rootElement)
+      ReactDOM.render([header, main, footer], rootElement)
     </script>
   </body>
 </html>
