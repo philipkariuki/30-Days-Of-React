@@ -169,11 +169,19 @@
         </footer>
       )
 
+       // JSX element, app
+      const app = (
+        <div className='app'>
+          {header}
+          {main}
+          {footer}
+        </div>
+      )
       
 
       // we render the JSX element using the ReactDOM package
       // ReactDOM has the render method and the render method takes two arguments
-      ReactDOM.render([header, main, footer], rootElement)
+      ReactDOM.render(app, rootElement)
     </script>
   </body>
 </html>
