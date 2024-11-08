@@ -108,8 +108,10 @@
       const welcome = 'Welcome to 30 Days Of React'
       const title = 'Getting Started on React'
       const subtitle = 'JavaScript Library'
-      const authorFirstName = 'Your'
-      const authorLastName = 'Name'
+      const author = {
+        firstName: 'Your',
+        lastName: 'Name',
+      }
       const date = 'Nov 1, 2024'
       
 
@@ -120,7 +122,7 @@
                 <h1>{welcome}</h1>
                 <h2>{title}</h2>
                 <h3>{subtitle}</h3>
-                <p>{authorFirstName} {authorLastName}</p>
+                <p>{author.firstName} {author.lastName}</p>
                 <small>Date: {date}</small>                
 
             </div>
@@ -140,7 +142,7 @@
       const yearBorn = 1920
       const currentYear = new Date().getFullYear()
       const age = currentYear - yearBorn
-      const personAge = <p> {age}</p>
+      const personAge = <p> {author.firstName} {author.lastName} is {age} years old </p>
       // JSX element, main
       const main = (
         <main>
