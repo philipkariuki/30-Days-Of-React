@@ -61,9 +61,22 @@
         </header>
       )
 
+      const techs = ['HTML', ' CSS', ' JavaScript']
+      // JSX element, main
+      const main = (
+        <main>
+            <div className='main-wrapper'>
+                <p>Prerequisite to get started on 
+                    <strong><em> React.js:</em></strong>
+                </p>
+                <ul>{techs}</ul>
+            </div>
+        </main>
+        )
+
       // we render the JSX element using the ReactDOM package
       // ReactDOM has the render method and the render method takes two arguments
-      ReactDOM.render(header, rootElement)
+      ReactDOM.render([header, main], rootElement)
     </script>
   </body>
 </html>
