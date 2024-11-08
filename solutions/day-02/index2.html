@@ -112,6 +112,24 @@
       const authorLastName = 'Name'
       const date = 'Nov 1, 2024'
       
+
+      // JSX element, header
+      const header = (
+        <header>
+            <div className='header-wrapper'>
+                <h1>{welcome}</h1>
+                <h2>{title}</h2>
+                <h3>{subtitle}</h3>
+                <p>{authorFirstName} {authorLastName}</p>
+                <small>Date: {date}</small>                
+
+            </div>
+        </header>
+      )
+
+
+      
+      const techs = ['HTML', ' CSS', ' JavaScript']
       const numOne = 3
       const numTwo = 2
       const result = (
@@ -123,28 +141,6 @@
       const currentYear = new Date().getFullYear()
       const age = currentYear - yearBorn
       const personAge = <p> {age}</p>
-
-      // JSX element
-      const header = (
-        <header>
-            <div className='header-wrapper'>
-                <h1>{welcome}</h1>
-                <h2>{title}</h2>
-                <h3>{subtitle}</h3>
-                <p>{authorFirstName} {authorLastName}</p>
-                <small>Date: {date}</small>
-
-
-                <p>{result}</p>
-                <p>{yearBorn}</p>
-                <p>{currentYear}</p>
-                <p>{personAge}</p>
-
-            </div>
-        </header>
-      )
-
-      const techs = ['HTML', ' CSS', ' JavaScript']
       // JSX element, main
       const main = (
         <main>
@@ -153,6 +149,10 @@
                     <strong><em> React.js:</em></strong>
                 </p>
                 <ul>{techs}</ul>
+                <p>{result}</p>
+                <p>{yearBorn}</p>
+                <p>{currentYear}</p>
+                <p>{personAge}</p>
             </div>
         </main>
         )
