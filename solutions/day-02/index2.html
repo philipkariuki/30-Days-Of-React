@@ -132,6 +132,8 @@
 
       
       const techs = ['HTML', ' CSS', ' JavaScript']
+      const techsFormatted = techs.map((tech) => <li>{tech}</li>)
+
       const numOne = 3
       const numTwo = 2
       const result = (
@@ -150,7 +152,7 @@
                 <p>Prerequisite to get started on 
                     <strong><em> React.js:</em></strong>
                 </p>
-                <ul>{techs}</ul>
+                <ul>{techsFormatted}</ul>
                 <p>{result}</p>
                 <p>{yearBorn}</p>
                 <p>{currentYear}</p>
