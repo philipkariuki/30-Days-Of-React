@@ -132,7 +132,13 @@
 
       
       const techs = ['HTML', ' CSS', ' JavaScript']
-      const techsFormatted = techs.map((tech) => <li>{tech}</li>)
+      const techsFormatted = techs.map((tech) => <li key={tech}>{tech}</li>)
+      /* The map function is a method that creates a new array by applying a function to each element in the original array.
+      (tech) => <li key={tech}>{tech}</li>:
+      The function takes a single argument, tech, which represents each element in the techs array.
+      The function returns a <li> JSX element.
+      <li key={tech}>{tech}</li>:
+      key={tech}: The key attribute is a special attribute that helps React identify which items have changed, been added, or been removed. In this case, the tech value is used as the key, ensuring each list item is unique. */
 
       const numOne = 3
       const numTwo = 2
