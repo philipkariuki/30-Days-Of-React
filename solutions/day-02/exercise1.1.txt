@@ -1,0 +1,12 @@
+Q1. What is React?
+
+A. React is a JavaScript library for building a reusable user interface(UI). React is used to build single page applications (an application which has only one HTML page).
+When we work with React we do not interact directly with the DOM. React has its own way to handle the DOM manipulation. React uses its virtual DOM to make new changes and it updates only the element, that needs changing. We use react to make reusable UI components of a website.
+Some key featues of React are:
+    -> Component-Based: React allows you to build complex UIs from small, isolated pieces of code called components.
+
+    -> Declarative: React makes it easy to create interactive UIs by managing the state of your application and efficiently updating and rendering the right components when your data changes.
+
+    -> Virtual DOM: React uses a virtual DOM to improve performance. Instead of manipulating the real DOM directly, React creates a virtual representation of it and then updates the real DOM only where changes have occurred.
+
+    -> Unidirectional Data Flow: React enforces a one-way data flow, which makes it easier to debug and understand how data changes in your application.
