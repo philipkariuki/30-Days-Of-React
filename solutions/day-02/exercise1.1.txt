@@ -29,3 +29,7 @@ Q5. What is the latest version of React?
 
 A. The latest version of React is **React 19**, which was officially released on April 25, 2024. This version brings several new features and improvements designed to enhance the developer experience and application performance.
 
+Q6. What is DOM?
+
+A. DOM (Document Object Model) is a programming interface provided by web browsers that allows scripts to update the content, structure, and style of a document while it is being displayed. Essentially, the DOM represents the HTML or XML documents as a tree structure where each node corresponds to a part of the document (like elements, attributes, and text). This hierarchical structure enables developers to easily navigate and manipulate the document's structure.
+
