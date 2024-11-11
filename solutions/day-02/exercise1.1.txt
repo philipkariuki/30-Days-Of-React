@@ -10,3 +10,9 @@ Some key featues of React are:
     -> Virtual DOM: React uses a virtual DOM to improve performance. Instead of manipulating the real DOM directly, React creates a virtual representation of it and then updates the real DOM only where changes have occurred.
 
     -> Unidirectional Data Flow: React enforces a one-way data flow, which makes it easier to debug and understand how data changes in your application.
+
+
+Q2. What is a library?
+
+A. In the context of programming, a library is a collection of pre-written code that developers can use to perform common tasks without having to write the code from scratch. Libraries provide functions, classes, and routines to simplify and accelerate the development process. They are designed to be reusable and can be easily integrated into various projects to enhance functionality and efficiency.
+Libraries help developers save time and effort by offering pre-built solutions to common problems.
