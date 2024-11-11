@@ -16,3 +16,7 @@ Q2. What is a library?
 
 A. In the context of programming, a library is a collection of pre-written code that developers can use to perform common tasks without having to write the code from scratch. Libraries provide functions, classes, and routines to simplify and accelerate the development process. They are designed to be reusable and can be easily integrated into various projects to enhance functionality and efficiency.
 Libraries help developers save time and effort by offering pre-built solutions to common problems.
+
+Q3. What is a single page application?
+
+A. A Single Page Application (SPA) is a type of web application that loads a single HTML page and dynamically updates the content as the user interacts with the app, without requiring a full page reload. This approach provides a more seamless and responsive user experience, similar to that of a desktop application. SPAs typically use frameworks and libraries like React, Angular, or Vue.js to manage the user interface and handle navigation and data fetching behind the scenes.
