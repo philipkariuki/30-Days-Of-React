@@ -24,3 +24,8 @@ A. A Single Page Application (SPA) is a type of web application that loads a sin
 Q4. What is a component?
 
 A. A component is a self-contained, reusable piece of code that encapsulates specific functionality or logic. In frameworks like React, components are the building blocks used to construct the user interface. Each component can manage its own state and lifecycle methods, allowing developers to create dynamic and interactive applications. Components can range from simple elements, like buttons or input fields, to complex structures, like entire forms or navigation menus. Their modular nature makes it easy to develop, maintain, and scale applications.
+
+Q5. What is the latest version of React?
+
+A. The latest version of React is **React 19**, which was officially released on April 25, 2024. This version brings several new features and improvements designed to enhance the developer experience and application performance.
+
