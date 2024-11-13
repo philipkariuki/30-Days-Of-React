@@ -37,3 +37,31 @@ Q7. What is React Virtual DOM?
 
 A. The React Virtual DOM is a lightweight, in-memory representation of the real DOM elements. When a component's state or props change, React updates the virtual DOM first instead of making changes directly to the real DOM. It then compares the new virtual DOM with the previous version (a process called "diffing") to identify what has changed. React then updates only those parts of the real DOM that have changed, resulting in faster and more efficient updates. This process minimizes the number of direct manipulations needed to the actual DOM, enhancing the overall performance and user experience of the application.
 An in-memory representation refers to how data structures, like objects or DOM elements, are stored and manipulated directly in the computer's RAM rather than being stored on disk or in a database. This means the data is readily accessible and can be quickly modified or read by the program. In the context of the React Virtual DOM, an in-memory representation means that React keeps a copy of the DOM elements in the computer's memory. This copy allows React to make changes and calculations very rapidly without directly interacting with the slower, real DOM. Once the updates are determined, only the necessary changes are applied to the actual DOM, resulting in faster performance and a more responsive user experience.
+
+Q8. What does a web application /website have/is composed of?
+
+A. A web application or a website is composed of several key components that work together to provide a seamless user experience. Here's a high-level overview:
+
+1. **Frontend (Client-Side)**:
+   - **HTML (HyperText Markup Language)**: The skeleton of the web page, defining its structure and content.
+   - **CSS (Cascading Style Sheets)**: The styling layer, responsible for the visual presentation, including layout, colors, fonts, and responsiveness.
+   - **JavaScript**: The scripting language used to create interactive and dynamic features, such as animations, form validations, and asynchronous data loading.
+
+2. **Backend (Server-Side)**:
+   - **Server**: Handles requests from the client, processes data, and sends responses back. Common server-side languages include Node.js, Python, Ruby, PHP, and Java.
+   - **Database**: Stores and manages data for the web application. Examples include SQL databases (like MySQL, PostgreSQL) and NoSQL databases (like MongoDB).
+   - **APIs (Application Programming Interfaces)**: Facilitate communication between the frontend and backend, allowing data to be exchanged securely and efficiently.
+
+3. **Hosting and Infrastructure**:
+   - **Web Server**: Hosts the web application and delivers content to users over the internet. Examples include Apache, Nginx, and Microsoft IIS.
+   - **Cloud Services**: Platforms like AWS, Azure, and Google Cloud provide scalable infrastructure, storage, and other services required to run web applications.
+
+4. **Security**:
+   - **SSL/TLS Certificates**: Encrypt data transmitted between the client and server to ensure secure communication.
+   - **Authentication and Authorization**: Mechanisms to verify user identity and control access to different parts of the application.
+
+5. **Version Control and Deployment**:
+   - **Version Control Systems**: Tools like Git help manage code changes and collaborate with other developers.
+   - **Continuous Integration/Continuous Deployment (CI/CD)**: Automates the process of testing, building, and deploying applications to ensure rapid and reliable releases.
+
+These components work together to create a functional, efficient, and secure web application or website, delivering content and services to users across the globe.
