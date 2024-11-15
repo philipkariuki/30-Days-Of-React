@@ -101,3 +101,7 @@ A. To determine the popularity of a technology, library, or framework like React
 
 These measures together provide a comprehensive view of a technology's popularity and its impact on the developer community and the industry at large.
 
+Q11. What is more popular, React or Vue?
+
+A. Based on recent data, React is more popular than Vue. According to the Stack Overflow 2023 Developer Survey, React is used by approximately 29,137 developers, while Vue is used by around 11,761 developers. React has consistently been one of the most popular front-end frameworks, thanks to its strong community support, extensive ecosystem, and backing by Facebook.
+That said, Vue is also a popular choice, especially for its simplicity and ease of integration into existing projects. It's a great option for developers looking for a lightweight and easy-to-learn framework.
