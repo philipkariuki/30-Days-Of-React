@@ -111,3 +111,22 @@ Q12. What is an HTML element?
 A. An HTML element is a fundamental building block of an HTML document, representing a piece of content on a web page. It consists of a start tag, content, and an end tag.
 For example: <p>This is a paragraph.</p>
 In this example, <p> is the start tag, This is a paragraph. is the content, and </p> is the end tag. HTML elements can include text, images, links, lists, forms, and much more. They define the structure and content of a web page, allowing browsers to render and display the information to users.
+
+Q13. How to write a self closing HTML element?
+
+A. To write a self-closing HTML element, you simply use an element that does not require a closing tag. These elements are typically void elements, meaning they do not have any content. You write them with a slash at the end of the start tag, like this:
+
+<img src="image.jpg" alt="Description" />
+
+Here are some examples of common self-closing HTML elements:
+
+- `<img />` for images
+- `<br />` for line breaks
+- `<hr />` for horizontal rules
+- `<input />` for input fields
+
+While the trailing slash is optional in HTML5, it can help in making the code XHTML-compliant. However, it's important to note that in HTML, you can also write these elements without the trailing slash, like this:
+
+<img src="image.jpg" alt="Description">
+
+Either format is acceptable, but consistency is key.
