@@ -130,3 +130,41 @@ While the trailing slash is optional in HTML5, it can help in making the code XH
 <img src="image.jpg" alt="Description">
 
 Either format is acceptable, but consistency is key.
+
+Q14. What is an HTML attribute? Write some of them
+
+A. An HTML attribute provides additional information about an HTML element. Attributes are always included in the opening tag and are usually written as name/value pairs, like this: `name="value"`. They control various aspects of the element's behavior and appearance.
+
+Here are some common HTML attributes:
+
+    1. **`id`**: Provides a unique identifier for the element.
+    <div id="header"></div>
+
+    2. **`class`**: Assigns one or more class names to the element, used for styling with CSS.
+    <p class="text-large bold"></p>
+
+    3. **`src`**: Specifies the source URL of an embedded content like an image, video, or script.
+    <img src="image.jpg" alt="A beautiful scenery" />
+
+    4. **`alt`**: Provides alternative text for an image if it cannot be displayed.
+    <img src="image.jpg" alt="A beautiful scenery" />
+
+    5. **`href`**: Specifies the URL of a linked resource.
+    <a href="https://example.com">Visit Example</a>
+
+    6. **`title`**: Gives additional information about the element, usually displayed as a tooltip.
+    <abbr title="HyperText Markup Language">HTML</abbr>
+
+    7. **`style`**: Defines inline CSS styles for the element.
+    <p style="color: blue; font-size: 16px;"></p>
+
+    8. **`type`**: Specifies the type of an input element or button.
+    <input type="text" placeholder="Enter your name" />
+
+    9. **`placeholder`**: Provides a hint to the user about what to enter in an input field.
+    <input type="text" placeholder="Enter your name" />
+
+    10. **`disabled`**: Disables the element so it cannot be interacted with.
+    <button disabled>Submit</button>
+
+These attributes enhance the functionality and accessibility of HTML elements, making them more versatile and interactive.
