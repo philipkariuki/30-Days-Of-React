@@ -1,0 +1,3 @@
+//  Q1. Write your name in a JSX element and store it in a name variable
+
+const name = <p>Yako Jina</p>
