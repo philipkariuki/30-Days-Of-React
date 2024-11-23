@@ -14,3 +14,12 @@ const user = (
     <p>Phone Number: +17 321-456-0789</p>
   </div>
 )
+
+// Q3. Write a footer JSX element
+
+const footer = (
+  <footer>
+    <p>&copy; 2024 Skillieum Works. All rights reserved.</p>
+    <p>Contact: <a href="mailto:@yakojina@names.com">yakojina@names.com</a></p>
+  </footer>
+)
