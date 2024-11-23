@@ -168,3 +168,8 @@ Here are some common HTML attributes:
     <button disabled>Submit</button>
 
 These attributes enhance the functionality and accessibility of HTML elements, making them more versatile and interactive.
+
+Q15. What is JSX?
+
+A. JSX (JavaScript XML) is a syntax extension for JavaScript that is commonly used with React. JSX allows us to write HTML-like code within JavaScript, which makes it easier to create and manipulate the structure of our UI components. JSX ultimately gets compiled into regular JavaScript by tools like Babel, making it browser-compatible. It enhances the readability and maintainability of your code, especially when working on complex UIs.
+
