@@ -177,3 +177,6 @@ Q16. What is babel?
 
 A. Babel is a popular JavaScript compiler that allows developers to write modern JavaScript code and have it work in older browsers. Essentially, it transforms ECMAScript 2015+ (ES6 and beyond) code into a backward-compatible version of JavaScript for older environments that might not support the latest features.
 Babel is a library which transpiles JSX to pure JavaScript and latest JavaScript to older versions.
+
+Q17. A transpiler, short for "transcompiler," is a type of translator that converts source code written in one programming language into another language with a similar level of abstraction. The main purpose of a transpiler is to enable developers to write code in a language that has more modern or desirable features and then transform it into a language that can run in a wider range of environments or older versions of the same language.
+Transpilers are especially useful in web development where different environments (browsers) might support different features or versions of a language. They allow developers to take advantage of modern programming features while maintaining compatibility with older systems.
