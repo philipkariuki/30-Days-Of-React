@@ -1,3 +1,16 @@
 //  Q1. Write your name in a JSX element and store it in a name variable
 
 const name = <p>Yako Jina</p>
+
+// Q2. Write a JSX element which displays your full name, country, title, gender, email, phone number. Use h1 for the name and p for the rest of the information and store it in a user variable
+
+const user = (
+  <div>
+    <h1>Yako Jina</h1>
+    <p>Country: England</p>
+    <p>Title: Mr. </p>
+    <p>Gender: Male</p>
+    <p>Email: yakojina@names.com</p>
+    <p>Phone Number: +17 321-456-0789</p>
+  </div>
+)
