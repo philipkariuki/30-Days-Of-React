@@ -173,3 +173,7 @@ Q15. What is JSX?
 
 A. JSX (JavaScript XML) is a syntax extension for JavaScript that is commonly used with React. JSX allows us to write HTML-like code within JavaScript, which makes it easier to create and manipulate the structure of our UI components. JSX ultimately gets compiled into regular JavaScript by tools like Babel, making it browser-compatible. It enhances the readability and maintainability of your code, especially when working on complex UIs.
 
+Q16. What is babel?
+
+A. Babel is a popular JavaScript compiler that allows developers to write modern JavaScript code and have it work in older browsers. Essentially, it transforms ECMAScript 2015+ (ES6 and beyond) code into a backward-compatible version of JavaScript for older environments that might not support the latest features.
+Babel is a library which transpiles JSX to pure JavaScript and latest JavaScript to older versions.
