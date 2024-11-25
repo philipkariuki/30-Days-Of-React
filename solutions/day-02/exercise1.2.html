@@ -1,25 +1,70 @@
-//  Q1. Write your name in a JSX element and store it in a name variable
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Doto:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Exercise 1.2</title>
+  </head>
 
-const name = <p>Yako Jina</p>
+  <body>
+    <div class="root"></div>
 
-// Q2. Write a JSX element which displays your full name, country, title, gender, email, phone number. Use h1 for the name and p for the rest of the information and store it in a user variable
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
 
-const user = (
-  <div>
-    <h1>Yako Jina</h1>
-    <p>Country: England</p>
-    <p>Title: Mr. </p>
-    <p>Gender: Male</p>
-    <p>Email: yakojina@names.com</p>
-    <p>Phone Number: +17 321-456-0789</p>
-  </div>
-)
+      // To get the root element from the HTML document
+      const rootElement = document.querySelector('.root')
 
-// Q3. Write a footer JSX element
+      //  Q1. Write your name in a JSX element and store it in a name variable
 
-const footer = (
-  <footer>
-    <p>&copy; 2024 Skillieum Works. All rights reserved.</p>
-    <p>Contact: <a href="mailto:@yakojina@names.com">yakojina@names.com</a></p>
-  </footer>
-)
+      const names = <p>Yako Jina</p>
+
+      // Q2. Write a JSX element which displays your full name, country, title, gender, email, phone number. Use h1 for the name and p for the rest of the information and store it in a user variable
+
+      const user = (
+        <div>
+          <h1>Yako Jina</h1>
+          <p>Country: England</p>
+          <p>Title: Mr. </p>
+          <p>Gender: Male</p>
+          <p>Email: yakojina@names.com</p>
+          <p>Phone Number: +17 321-456-0789</p>
+        </div>
+      )
+
+      // Q3. Write a footer JSX element
+
+      const footer = (
+        <footer>
+          <p>&copy; 2024 Skillieum Works. All rights reserved.</p>
+          <p>Contact: <a href="mailto:@yakojina@names.com">yakojina@names.com</a></p>
+        </footer>
+      )            
+
+      
+
+       // JSX element, app
+      const app = (
+        <div>
+          {names}
+          {user}
+          {footer}
+        </div>
+      )
+
+      ReactDOM.render(app, rootElement)
+    </script>
+  </body>
+</html>
