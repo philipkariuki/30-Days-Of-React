@@ -60,10 +60,20 @@
 
       // Q3. Write a footer JSX element
 
+      // Q5. Create a style object for the footer and app JSX
+
       // footer JSX element
 
+      const footerStyles = {
+        background: 'rgb(210, 228, 177)',
+        background: 'linear-gradient(90deg, rgba(210, 228, 177, 1) 53%, rgba(20, 159, 212, 1) 100%)',
+        fontFamily: 'Doto, serif',
+        padding: 25,
+        textAlign: 'center',
+      }
+
       const footer = (
-        <footer>
+        <footer style={footerStyles}>
           <p>&copy; 2024 Skillieum Works. All rights reserved.</p>
           <p>Contact: <a href="mailto:@yakojina@names.com">yakojina@names.com</a></p>
         </footer>
@@ -71,9 +81,19 @@
 
       
 
-       // JSX element, app
+      // JSX element, app
+
+      // Q5. Create a style object for the footer and app JSX
+
+      const appStyles = {
+        background: 'rgb(210, 228, 177)',
+        background: 'linear-gradient(90deg, rgba(210, 228, 177, 1) 53%, rgba(20, 159, 212, 1) 100%)',
+        fontFamily: 'Doto, serif',
+        padding: 25,
+      }
+
       const app = (
-        <div>
+        <div style={appStyles}>
           {names}
           {user}
           {footer}
