@@ -29,12 +29,26 @@
 
       //  Q1. Write your name in a JSX element and store it in a name variable
 
+      // header JSX element
+
       const names = <p>Yako Jina</p>
 
       // Q2. Write a JSX element which displays your full name, country, title, gender, email, phone number. Use h1 for the name and p for the rest of the information and store it in a user variable
 
+      // Q4. Create a style object for the main JSX
+
+      // main JSX element
+
+      const mainStyles = {
+        background: 'rgb(210, 228, 177)',
+        background: 'linear-gradient(90deg, rgba(210, 228, 177, 1) 53%, rgba(20, 159, 212, 1) 100%)',
+        fontFamily: 'Doto, serif',
+        padding: 25,
+        lineHeight: 1.2,
+      }
+
       const user = (
-        <div>
+        <div style={mainStyles}>
           <h1>Yako Jina</h1>
           <p>Country: England</p>
           <p>Title: Mr. </p>
@@ -45,6 +59,8 @@
       )
 
       // Q3. Write a footer JSX element
+
+      // footer JSX element
 
       const footer = (
         <footer>
