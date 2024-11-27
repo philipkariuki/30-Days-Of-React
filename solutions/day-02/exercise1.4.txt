@@ -1,0 +1,37 @@
+Q. Practice how to make JSX element and injecting dynamic data(string, number, boolean, array, object)
+
+i) Injecting a String
+
+            const name = 'Mzee Msee'
+            const element = <h1>Hello, {name}!</h1>
+
+
+ii) Injecting a Number
+
+            const age = 20
+            const element = <p>He is {age} years old.</p>
+
+
+iii) Injecting a Boolean
+
+            const isLoggedIn = true
+            const element = <div>{isLoggedIn ? 'Welcome back!' : 'Please log in.'}</div>
+
+
+iv) Injecting an Array
+
+            const fruits = ['Apple', 'Banana', 'Cherry']
+            const element = (
+            <ul>
+                {fruits.map((fruit, index) => (
+                <li key={index}>{fruit}</li>
+                ))}
+            </ul>
+            );
+
+
+v) Injecting an Object
+
+            const user = { firstName: 'Mzee', lastName: 'Msee' }
+            const element = <h2>Welcome, {user.firstName} {user.lastName}!</h2>
+
