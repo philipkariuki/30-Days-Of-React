@@ -3,6 +3,8 @@
 
 import React from 'react'
 import ReactDOM from 'react-dom'
+import dogoPicha from './images/dogo.jpg'
+
 
 
 // JSX element, header
@@ -43,6 +45,11 @@ const personAge = (
 const techs = ['HTML', 'CSS', 'JavaScript']
 const techsFormatted = techs.map((tech) => <li>{tech}</li>)
 
+const user = (
+  <div>
+    <img src={dogoPicha} alt='dogo' />
+  </div>
+)
 
 const main = (
   <main>
@@ -52,6 +59,7 @@ const main = (
         {techsFormatted}
       </ul>
       {personAge}
+      {user}
     </div>    
   </main>
 )
@@ -84,8 +92,11 @@ ReactDOM.render(app, rootElement)
 
 
 // Using updated method which is supposed to improve performance
-/* import React from 'react';
-import ReactDOM from 'react-dom/client';
+/* import React from 'react'
+import ReactDOM from 'react-dom/client'
+import dogoPicha from './images/dogo.jpg'
+
+
 
 // JSX element, header
 const welcome = 'Welcome to 30 Days Of React'
@@ -125,6 +136,11 @@ const personAge = (
 const techs = ['HTML', 'CSS', 'JavaScript']
 const techsFormatted = techs.map((tech) => <li>{tech}</li>)
 
+const user = (
+  <div>
+    <img src={dogoPicha} alt='dogo' />
+  </div>
+)
 
 const main = (
   <main>
@@ -134,6 +150,7 @@ const main = (
         {techsFormatted}
       </ul>
       {personAge}
+      {user}
     </div>    
   </main>
 )
@@ -158,6 +175,7 @@ const app = (
     {footer}
   </div>
 )
+
 
 const rootElement = document.getElementById('root');
 
