@@ -1,0 +1,40 @@
+Q1. What is a module?
+
+A. 
+
+Q2. What is package?
+
+A. 
+
+Q3. What is the difference between a module and a package.
+
+A. 
+
+Q4. What is NPM?
+
+A. 
+
+Q5. What is Webpack?
+
+A. 
+
+Q6. How do you create a new React project?
+
+A. 
+
+Q7. What are the files and folders inside a project folder(package.json, package-lock.json or yarn.lock, .gitignore,node_modules and public)?
+
+A. 
+
+Q8. What is your favorite code editor (I believe that it is Visual Studio Code)?
+
+A. 
+
+Q9. Add different Visual Studio Code extensions to improve your productivity(eg. prettier, ESLint etc).
+
+A. 
+
+Q10. Try to make a different custom module in a different file and import it to index.js.
+
+A. 
+
