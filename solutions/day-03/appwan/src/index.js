@@ -57,7 +57,7 @@ const main = (
 )
 
 // JSX element, footer
-const copyRight = 'Copyright 2020'
+const copyRight = 'Copyright 2024'
 
 const footer = (
   <footer>
@@ -87,38 +87,72 @@ ReactDOM.render(app, rootElement)
 /* import React from 'react';
 import ReactDOM from 'react-dom/client';
 
+// JSX element, header
+const welcome = 'Welcome to 30 Days Of React'
+const title = 'Getting Started React'
+const subtitle = 'JavaScript Library'
+const author = {
+  firstName: 'Mzee',
+  lastName: 'Msee',
+}
+const date = 'Nov 29, 2024'
+
+
 const header = (
   <header>
-    <h1>Welcome to 30 Days Of React</h1>
-    <h2>Getting Started React</h2>
-    <h3>JavaScript Library</h3>
-    <p>Mzee Msee</p>
-    <small>Nov 29, 2024</small>
+    <div className='header-wrapper'>
+      <h1>{welcome}</h1>
+      <h2>{title}</h2>
+      <h3>{subtitle}</h3>
+      <p>
+        Instructor: {author.firstName} {author.lastName}
+      </p>
+      <small>Date: {date}</small>
+    </div>    
   </header>
 )
 
+const yearBorn = 1904
+const currentYear = new Date().getFullYear()
+const age = currentYear - yearBorn
+const personAge = (
+  <p>
+    {author.firstName} {author.lastName} is {age} years old
+  </p>
+)
+
 // JSX element, main
+const techs = ['HTML', 'CSS', 'JavaScript']
+const techsFormatted = techs.map((tech) => <li>{tech}</li>)
+
+
 const main = (
   <main>
-    <p>Prerequisite to get started react.js:</p>
-    <ul>
-      <li>HTML</li>
-      <li>CSS</li>
-      <li>JavaScript</li>
-    </ul>
+    <div className='main-wrapper'>
+      <p>Prerequisite to get started react.js:</p>
+      <ul>
+        {techsFormatted}
+      </ul>
+      {personAge}
+    </div>    
   </main>
 )
 
 // JSX element, footer
+const copyRight = 'Copyright 2024'
+
 const footer = (
   <footer>
-    <p>Copyright 2020</p>
+    <div className='footer-wrapper'>
+      <p>{copyRight}</p>
+    </div>
+    
   </footer>
 )
 
 // JSX element, app, a container or a parent
 const app = (
-  <div>
+  <div className='app'>
     {header}
     {main}
     {footer}
