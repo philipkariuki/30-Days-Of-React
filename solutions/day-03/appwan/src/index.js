@@ -4,9 +4,18 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
+
 // JSX element, header
+const headerStyles = {
+  backgroundColor: '#61DBFB',
+  fontFamily: 'Helvetica Neue',
+  padding: 25,
+  lineHeight: 1.5,
+}
+
+
 const header = (
-  <header>
+  <header style={headerStyles}>
     <h1>Welcome to 30 Days Of React</h1>
     <h2>Getting Started React</h2>
     <h3>JavaScript Library</h3>
@@ -16,8 +25,12 @@ const header = (
 )
 
 // JSX element, main
+const mainStyles = {
+  backgroundColor: '#F3F0F5',
+}
+
 const main = (
-  <main>
+  <main style={mainStyles}>
     <p>Prerequisite to get started react.js:</p>
     <ul>
       <li>HTML</li>
@@ -28,8 +41,13 @@ const main = (
 )
 
 // JSX element, footer
+const footerStyles = {
+  backgroundColor: '#61DBFB',
+}
+
+
 const footer = (
-  <footer>
+  <footer style={footerStyles}>
     <p>Copyright 2024</p>
   </footer>
 )
