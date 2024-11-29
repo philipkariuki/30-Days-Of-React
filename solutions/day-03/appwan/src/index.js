@@ -6,55 +6,45 @@ import ReactDOM from 'react-dom'
 
 
 // JSX element, header
-const headerStyles = {
-  backgroundColor: '#61DBFB',
-  fontFamily: 'Helvetica Neue',
-  padding: 25,
-  lineHeight: 1.5,
-}
-
-
 const header = (
-  <header style={headerStyles}>
-    <h1>Welcome to 30 Days Of React</h1>
-    <h2>Getting Started React</h2>
-    <h3>JavaScript Library</h3>
-    <p>Mzee Msee</p>
-    <small>Nov 29, 2024</small>
+  <header>
+    <div className='header-wrapper'>
+      <h1>Welcome to 30 Days Of React</h1>
+      <h2>Getting Started React</h2>
+      <h3>JavaScript Library</h3>
+      <p>Mzee Msee</p>
+      <small>Nov 29, 2024</small>
+    </div>    
   </header>
 )
 
 // JSX element, main
-const mainStyles = {
-  backgroundColor: '#F3F0F5',
-}
-
 const main = (
-  <main style={mainStyles}>
-    <p>Prerequisite to get started react.js:</p>
-    <ul>
-      <li>HTML</li>
-      <li>CSS</li>
-      <li>JavaScript</li>
-    </ul>
+  <main>
+    <div className='main-wrapper'>
+      <p>Prerequisite to get started react.js:</p>
+      <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+      </ul>
+    </div>    
   </main>
 )
 
 // JSX element, footer
-const footerStyles = {
-  backgroundColor: '#61DBFB',
-}
-
-
 const footer = (
-  <footer style={footerStyles}>
-    <p>Copyright 2024</p>
+  <footer>
+    <div className='footer-wrapper'>
+      <p>Copyright 2024</p>
+    </div>
+    
   </footer>
 )
 
 // JSX element, app, a container or a parent
 const app = (
-  <div>
+  <div className='app'>
     {header}
     {main}
     {footer}
