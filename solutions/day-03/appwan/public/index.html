@@ -31,7 +31,7 @@
         padding: 0;
         margin: 0;
       }
-
+    
       html,
       body {
         height: 100%;
@@ -40,54 +40,54 @@
         font-weight: 300;
         color: black;
       }
-
+    
       .root {
         min-height: 100%;
         position: relative;
       }
-
+    
       .header-wrapper,
       .main-wrapper,
       .footer-wrapper {
         width: 85%;
         margin: auto;
       }
-
+    
       .header-wrapper,
       .main-wrapper {
         padding: 10px;
         margin: 2px auto;
       }
-
+    
       h1 {
         font-size: 70px;
         font-weight: 300;
       }
-
+    
       h2,
       h3 {
         font-weight: 300;
       }
-
+    
       header {
         background-color: #61dbfb;
         padding: 10px;
       }
-
+    
       main {
         padding: 10px;
         padding-bottom: 60px;
         /* Height of the footer */
       }
-
+    
       ul {
         margin-left: 15px;
       }
-
+    
       ul li {
         list-style: none;
       }
-
+    
       footer {
         position: absolute;
         bottom: 0;
@@ -96,13 +96,109 @@
         /* Height of the footer */
         background: #6cf;
       }
-
+    
       .footer-wrapper {
         font-weight: 400;
         text-align: center;
         line-height: 60px;
       }
+    
+      /* Button styling */
+      button {
+        background-color: #61dbfb; 
+        border: none; 
+        color: white; /* Text color */
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none; /* Remove underline */
+        display: inline-block; /* Inline-block element */
+        font-size: 16px;
+        margin: 10px 0;
+        cursor: pointer; /* Pointer cursor on hover */
+        border-radius: 5px; /* Rounded corners */
+        transition: background-color 0.3s ease; /* Transition effect for background color */
+      }
+    
+      button:hover {
+        background-color: #4eaff7; /* Change background color on hover */
+      }
+    
+      /* Responsive Design */
+      @media (max-width: 1200px) {
+        .header-wrapper,
+        .main-wrapper,
+        .footer-wrapper {
+          width: 90%;
+        }
+    
+        h1 {
+          font-size: 60px;
+        }
+      }
+    
+      @media (max-width: 992px) {
+        .header-wrapper,
+        .main-wrapper,
+        .footer-wrapper {
+          width: 95%;
+        }
+    
+        h1 {
+          font-size: 50px;
+        }
+    
+        h2, h3 {
+          font-size: 24px;
+        }
+      }
+    
+      @media (max-width: 768px) {
+        .header-wrapper,
+        .main-wrapper,
+        .footer-wrapper {
+          width: 100%;
+          padding: 0 20px;
+        }
+    
+        h1 {
+          font-size: 40px;
+        }
+    
+        h2, h3 {
+          font-size: 20px;
+        }
+    
+        footer {
+          height: 80px;
+          line-height: 80px;
+        }
+    
+        .footer-wrapper {
+          line-height: 80px;
+        }
+      }
+    
+      @media (max-width: 576px) {
+        h1 {
+          font-size: 30px;
+        }
+    
+        h2, h3 {
+          font-size: 18px;
+        }
+    
+        footer {
+          height: 100px;
+          line-height: 100px;
+        }
+    
+        .footer-wrapper {
+          line-height: 100px;
+        }
+      }
     </style>
+    
+    
   </head>
   <body>
     <div id="root"></div>

@@ -4,6 +4,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import dogoPicha from './images/dogo.jpg'
+import { changeHeaderColor } from './util' // Import the changeHeaderColor 
 
 
 
@@ -21,7 +22,7 @@ const date = 'Nov 29, 2024'
 const header = (
   <header>
     <div className='header-wrapper'>
-      <h1>{welcome}</h1>
+      <h1 id='welcome-title'>{welcome}</h1> {/* Add id to the element */}
       <h2>{title}</h2>
       <h3>{subtitle}</h3>
       <p>
@@ -51,6 +52,9 @@ const user = (
   </div>
 )
 
+const handleChangeColor = () => { changeHeaderColor('welcome-title')  
+}
+
 const main = (
   <main>
     <div className='main-wrapper'>
@@ -60,6 +64,7 @@ const main = (
       </ul>
       {personAge}
       {user}
+      <button onClick={handleChangeColor}>Change Header Color</button> {/* Add the button */} 
     </div>    
   </main>
 )

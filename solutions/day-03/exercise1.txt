@@ -1,40 +1,68 @@
 Q1. What is a module?
 
-A. 
+A. A module in programming is like a self-contained chunk of code that serves a specific purpose or function. Think of it as a building block that you can use to construct a larger program. Modules help keep code organized, manageable, and reusable.
 
 Q2. What is package?
 
-A. 
+A. A package is a collection of modules that are grouped together to provide specific functionality. It helps in organizing and managing large codebases by encapsulating related modules. Packages make it easier to share and reuse code across different projects.
 
-Q3. What is the difference between a module and a package.
+Q3. What is the difference between a module and a package?
 
-A. 
+A. A module is a single file containing code, while a package is a collection of related modules organized in a directory.
 
 Q4. What is NPM?
 
-A. 
+A. Node Package Manager(NPM) is the default package manager for Node.js. It allows users to consume and distribute JavaScript modules that are available in the registry. NPM allows to create packages, use packages and distribute packages.NPM makes it easy to install, manage, and share code, as well as handle project dependencies.
 
 Q5. What is Webpack?
 
-A. 
+A. Webpack is a powerful module bundler for JavaScript applications. It takes modules with dependencies and generates static assets representing those modules, making it easier to manage and optimize your application. Webpack helps streamline workflow and improve the performance of applications.
 
 Q6. How do you create a new React project?
 
-A. 
+A. ->
+i. First, make sure you have Node.js and npm (Node Package Manager) installed on your machine.
+
+ii. Install Create React App:
+
+Create React App is a tool that sets up a new React project with a sensible default configuration. You can install it globally via npm:
+            [ npm install -g create-react-app ]
+
+iii. Create a New React Project:
+
+Use Create React App to set up a new project. Open your terminal and run:
+
+            npx create-react-app my-app
+
+iv. Navigate to Your Project Directory:
+
+Move into your project directory using the following command:
+            cd my-app
+
+v. Start the Development Server:
+
+Start the development server to see your React app in action:
+            npm start
+This will open a new browser window with your React application running at http://localhost:3000
 
 Q7. What are the files and folders inside a project folder(package.json, package-lock.json or yarn.lock, .gitignore,node_modules and public)?
 
-A. 
+A:
 
-Q8. What is your favorite code editor (I believe that it is Visual Studio Code)?
+    i. **package.json**: This file contains metadata about the project, including dependencies, scripts, and configuration details. It's essential for managing the project's dependencies and scripts.
 
-A. 
+    ii. **package-lock.json** or **yarn.lock**: These files are used to lock the dependency versions of the project. They ensure that the exact same versions of dependencies are installed across different environments, which helps maintain consistency.
 
-Q9. Add different Visual Studio Code extensions to improve your productivity(eg. prettier, ESLint etc).
+    iii. **.gitignore**: This file specifies which files and directories should be ignored by Git. It's useful for excluding files like `node_modules` or any other files that don't need to be version controlled.
 
-A. 
+    iv. **node_modules**: This directory contains all the project's dependencies installed via npm (Node Package Manager) or yarn. It's usually very large and should be listed in `.gitignore` to avoid being tracked by Git.
+
+    v. **public**: This folder typically contains static files such as HTML, CSS, images, and JavaScript files that are served directly to the client. It's used in web applications to store assets that the server delivers to the client's browser.
 
 Q10. Try to make a different custom module in a different file and import it to index.js.
 
-A. 
+A. Made a new file, util.js, which has a function of changing h1 header colour. We import the function to index.js.
+Within index.js, we create a function a handleChangeColor function to call changeHeaderColor when the button is clicked.
+We add a button in our app to implement that function. 
+We set the onClick event of the button to handleChangeColor.
 
