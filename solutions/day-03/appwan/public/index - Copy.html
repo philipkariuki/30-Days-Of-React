@@ -55,51 +55,22 @@
     
       .header-wrapper,
       .main-wrapper {
-        padding: 40px;
+        padding: 10px;
         margin: 2px auto;
       }
-      
-      .header-wrapper {
-        display: flex; /* Align children in a row */
-        flex-wrap: wrap; /* Wrap children if they overflow */
-        justify-content: center; /* Center children horizontally */
-        align-items: center; /* Align items vertically in the center */
-        gap: 100px; /* Add space between items */
-      }
-
-      .title-container {
-        width: 100%; /* Ensure the title spans the full width */
-        text-align: center; /* Center the text */
-        margin-bottom: 5px; /* Add some space below the title */
-      }
-
-      .header-wrapper img {
-        width: 100px; /* Set a fixed width for each image */
-        height: auto; /* Maintain aspect ratio */
-        max-width: 100%; /* Ensure images don't exceed their container */
-      }
-
-
-
+    
       h1 {
         font-size: 70px;
         font-weight: 300;
       }
-
-      /* Specific styles for the h1 with id 'supscribe' */ 
-      #supscribe {
-      font-size: 23px;
-      text-transform: uppercase;
-    }
     
       h2,
-      h3,
-      h4 {
-        font-weight: bold;
+      h3 {
+        font-weight: 300;
       }
     
       header {
-        background-color: #dfebf3;
+        background-color: #61dbfb;
         padding: 10px;
       }
     
@@ -109,34 +80,32 @@
         /* Height of the footer */
       }
     
-          
+      ul {
+        margin-left: 15px;
+      }
+    
+      ul li {
+        list-style: none;
+      }
+    
       footer {
         position: absolute;
         bottom: 0;
         width: 100%;
-        background: #dfebf3;        
-        padding: 20px;
-        box-sizing: border-box; /* Ensure padding is included in the width */
+        height: 60px;
+        /* Height of the footer */
+        background: #6cf;
       }
     
       .footer-wrapper {
-        background: #b7ddf7;
-        border-radius: 15px; /* Add rounded edges */
         font-weight: 400;
+        text-align: center;
         line-height: 60px;
-        display: flex; /* Align children in a row */
-        flex-wrap: wrap; /* Wrap children if they overflow */
-        justify-content: center; /* Center children horizontally */
-        align-items: center; /* Align items vertically in the center */
-        gap: 100px; /* Add space between items */
-        width: 100%; /* Make sure .footer-wrapper takes the full width */
-        box-sizing: border-box; /* Ensure padding is included in the width */
-        padding: 10px; /* Optional: add padding inside the footer-wrapper */
       }
     
       /* Button styling */
       button {
-        background-color: #11dd77; 
+        background-color: #61dbfb; 
         border: none; 
         color: white; /* Text color */
         padding: 10px 20px;
@@ -144,47 +113,27 @@
         text-decoration: none; /* Remove underline */
         display: inline-block; /* Inline-block element */
         font-size: 16px;
-        margin: 30px 0;
+        margin: 10px 0;
         cursor: pointer; /* Pointer cursor on hover */
         border-radius: 5px; /* Rounded corners */
         transition: background-color 0.3s ease; /* Transition effect for background color */
-        width: 300px; /* Set the width of the button */
-        height: auto; /* Set the height of the button */
       }
     
       button:hover {
-        background-color: #993150; /* Change background color on hover */
+        background-color: #4eaff7; /* Change background color on hover */
       }
-
-      /* Styling the form */
-      .signup-form {
-        display: flex;
-        gap: 10px;
-        /* Space between inputs */
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        /* Make form responsive */
-      }
-
-      /* Styling the inputs */
-      .signup-form input {
-          padding: 10px;
-          border: 1px solid #ccc;
-          border-radius: 5px;
-          width: 200px;
-          /* Fixed width for inputs */
-          box-sizing: border-box;
-      }
-
-      /* Styling the submit button */
-      .signup-form button {
-          padding: 10px;
-          background-color: #4CAF50;
-          color: white;
-          border: none;
-          border-radius: 5px;
-          cursor: pointer;
+    
+      /* Responsive Design */
+      @media (max-width: 1200px) {
+        .header-wrapper,
+        .main-wrapper,
+        .footer-wrapper {
+          width: 90%;
+        }
+    
+        h1 {
+          font-size: 60px;
+        }
       }
     
       @media (max-width: 992px) {
