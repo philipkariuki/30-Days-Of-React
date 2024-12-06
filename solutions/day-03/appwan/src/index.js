@@ -6,6 +6,8 @@ import ReactDOM from 'react-dom'
 import cssPicha from './images/css.jpg'
 import htmlPicha from './images/html.jpg'
 import jsPicha from './images/js.jpg'
+import dogoPicha from './images/dogo.jpg'
+
 
 
 // JSX element, header
@@ -46,13 +48,29 @@ const header = (
 
 // JSX element, main
 
+const user = (
+  <div>
+    <img src={dogoPicha} alt='dogo' />
+  </div>
+)
 
 
 const main = (
   <main>
     <div className='main-wrapper'>
-      
-    </div>    
+      <div className='main-container'>
+        <p>{user}</p>
+        <p>MZEE MSEE <i className="fas fa-check-circle"></i></p>
+        <small>Front End Developer</small>
+        <p><b>Skills</b></p>
+        <div className='skills-container'>
+          <p>
+            <span>HTML</span><span>CSS</span><span>Sass</span><span>JS</span><span>React</span><span>Redux</span><span>Node</span><span>MongoDB</span><span>Python</span><span>Flask</span><span>Django</span><span>NumPy</span><span>Pandas</span><span>Data Analysis</span><span>MYSQL</span><span>PostgreSQL</span><span>Docker</span><span>Heroku</span><span>Git</span><span>Django</span><span>NumPy</span><span>Pandas</span><span>MYSQL</span><span>PostgreSQL</span><span>Docker</span><span>Heroku</span><span>Git</span><span>Django</span><span>NumPy</span><span>Pandas</span><span>MYSQL</span>
+          </p>
+        </div>
+        <small><i className="fas fa-light fa-clock"></i> Joined on Dec 2, 2024</small>
+      </div>  
+    </div>
   </main>
 )
 
@@ -77,8 +95,7 @@ const footer = (
         <SignupForm />
         <button type='submit'>Subscribe</button>
       </div>    
-    </div>
-    
+    </div>    
   </footer>
 )
 

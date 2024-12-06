@@ -8,6 +8,7 @@
       href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500|Roboto:300,400,500&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
@@ -39,45 +40,79 @@
         font-family: 'Montserrat';
         font-weight: 300;
         color: black;
+        margin: 0; /* Ensure there's no default margin */
+        padding: 0; /* Ensure there's no default padding */
+        box-sizing: border-box;
       }
     
       .root {
         min-height: 100%;
         position: relative;
+        overflow: visible; /* Ensure overflow is visible */
       }
     
-      .header-wrapper,
+      /* .header-wrapper,
       .main-wrapper,
       .footer-wrapper {
-        width: 85%;
         margin: auto;
       }
-    
-      .header-wrapper,
-      .main-wrapper {
-        padding: 40px;
+     */
+            
+     .header-wrapper {
         margin: 2px auto;
-      }
-      
-      .header-wrapper {
-        display: flex; /* Align children in a row */
-        flex-wrap: wrap; /* Wrap children if they overflow */
+        padding: 4px;
+        display: grid; /* Use CSS Grid */
+        grid-template-columns: repeat(4, 1fr); /* Create 4 equal columns */
+        grid-gap: 0px 100px; /* First value for row-gap, second value for column-gap */
         justify-content: center; /* Center children horizontally */
         align-items: center; /* Align items vertically in the center */
-        gap: 100px; /* Add space between items */
       }
 
       .title-container {
+        grid-column: 1 / -1; /* Span all columns */
         width: 100%; /* Ensure the title spans the full width */
         text-align: center; /* Center the text */
-        margin-bottom: 5px; /* Add some space below the title */
+        margin-bottom: 3px; /* Add some space below the title */
       }
 
       .header-wrapper img {
-        width: 100px; /* Set a fixed width for each image */
+        width: 100%; /* Ensure images fill their container */
         height: auto; /* Maintain aspect ratio */
-        max-width: 100%; /* Ensure images don't exceed their container */
+        max-width: 120px; /* Ensure images don't exceed their container */
       }
+
+      .header-wrapper img:first-child {
+        margin-left: 120px; /* Adjust this value as needed */
+      }
+
+      /* .header-wrapper img:last-child {
+        margin-right: 20px; /* Adjust this value as needed *
+      } */
+
+
+      /* Media query for mobile devices */
+      @media (max-width: 600px) {
+        .header-wrapper {
+          grid-template-columns: repeat(2, 1fr);
+          /* Adjust to 2 columns for smaller screens */
+          grid-gap: 20px;
+          /* Adjust the gap for smaller screens */
+        }
+
+        .header-wrapper img {
+          max-width: 80px;
+          /* Adjust image size for smaller screens */
+        }
+
+        .header-wrapper img:first-child,
+        .header-wrapper img:last-child {
+          margin-left: 0;
+          /* Remove margins for better fit on mobile */
+          margin-right: 0;
+          /* Remove margins for better fit on mobile */
+        }
+      }
+
 
 
 
@@ -101,21 +136,88 @@
       header {
         background-color: #dfebf3;
         padding: 10px;
+        margin: 0; /* Ensure there's no default margin */
       }
     
       main {
-        padding: 10px;
-        padding-bottom: 60px;
-        /* Height of the footer */
+        display: flex;
+        justify-content: center; /* Center items horizontally */
+        align-items: center; /* Center items vertically */
+        padding: 9px;
+        /* padding-bottom: 60px; */
+        width: 100%;
+        background: #dfebf3;        
+        /* padding: 62px; */
+        box-sizing: border-box; /* Ensure padding is included in the width */
+        margin: 0; /* Ensure there's no default margin */
       }
     
-          
+      .main-wrapper {
+        margin: 12px 4px 2px 4px;
+        padding: 19px;
+        background: #f6f7f7;
+        border-radius: 15px; /* Add rounded edges */
+        font-weight: 400;
+        line-height: 30px;
+        display: flex; /* Align children in a row */
+        flex-wrap: wrap; /* Wrap children if they overflow */
+        justify-content: center; /* Center children horizontally */
+        align-items: center; /* Align items vertically in the center */
+        width: 100%; /* Make sure .footer-wrapper takes the full width */
+        box-sizing: border-box; /* Ensure padding is included in the width */
+        
+      }
+
+      .main-container {
+        grid-column: 1 / -1; /* Span all columns */
+        width: 100%; /* Ensure the title spans the full width */
+        margin-bottom: 3px; /* Add some space below the title */
+      }
+
+      .main-container img {
+        width: 100%; /* Ensure images fill their container */
+        height: auto; /* Maintain aspect ratio */
+        max-width: 110px; /* Ensure images don't exceed their container */
+        border-radius: 50%; /* Make the image circular */
+      }
+
+      .skills-container {
+        margin-left: 20px; /* Indent the skills-container from the Skills paragraph */
+        display: flex; /* Align items in a row */
+        flex-wrap: wrap; /* Wrap children if they overflow */
+        gap: 10px; /* Add space between buttons */
+      }
+
+      .skills-container p {
+        display: flex;
+        flex-wrap: wrap; /* Wrap children if they overflow */
+      }
+
+      .skills-container p span {
+        background-color: rgb(155, 172, 169); /* Green background for the skills */
+        color: white; /* White text color */
+        padding: 2px 5px; /* Reduce padding to make buttons smaller */
+        border-radius: 5px; /* Rounded corners */
+        /* cursor: pointer; Pointer cursor on hover */
+        transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+        margin: 5px 5px; /* Add margin between buttons */
+        font-size: medium;
+        box-sizing: border-box; 
+      }
+
+      .skills-container p span:hover {
+        background-color: rgb(141, 149, 216); /* color on hover */
+        box-shadow: 0 0 10px 2px rgba(141, 149, 216, 0.75); /* Glow effect */
+      }
+
+
+
       footer {
         position: absolute;
         bottom: 0;
         width: 100%;
         background: #dfebf3;        
-        padding: 20px;
+        padding: 12px;
         box-sizing: border-box; /* Ensure padding is included in the width */
       }
     
@@ -123,15 +225,15 @@
         background: #b7ddf7;
         border-radius: 15px; /* Add rounded edges */
         font-weight: 400;
-        line-height: 60px;
+        line-height: 35px;
         display: flex; /* Align children in a row */
         flex-wrap: wrap; /* Wrap children if they overflow */
         justify-content: center; /* Center children horizontally */
         align-items: center; /* Align items vertically in the center */
-        gap: 100px; /* Add space between items */
+        /* gap: 100px;  Add space between items */
         width: 100%; /* Make sure .footer-wrapper takes the full width */
         box-sizing: border-box; /* Ensure padding is included in the width */
-        padding: 10px; /* Optional: add padding inside the footer-wrapper */
+        padding: 7px; /* Optional: add padding inside the footer-wrapper */
       }
     
       /* Button styling */
@@ -169,7 +271,7 @@
 
       /* Styling the inputs */
       .signup-form input {
-          padding: 10px;
+          padding: 8px;
           border: 1px solid #ccc;
           border-radius: 5px;
           width: 200px;
@@ -179,7 +281,7 @@
 
       /* Styling the submit button */
       .signup-form button {
-          padding: 10px;
+          padding: 8px;
           background-color: #4CAF50;
           color: white;
           border: none;
