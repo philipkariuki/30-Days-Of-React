@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import logoNdogo from './images/logors.png'
+// import logoNdogo from './images/logors.png'
 
 
 
@@ -29,6 +29,29 @@ const header = (
   </header>
 )
 
+// React Component
+const Header = () => {
+  return header
+}
+
+
+// const Header = () => {
+//   return (
+//     <header>
+//       <div className='header-wrapper'>
+//         <h1>Welcome to 30 Days Of React</h1>
+//         <h2>Getting Started React</h2>
+//         <h3>JavaScript Library</h3>
+//         <p>Asabeneh Yetayeh</p>
+//         <small>Oct 3, 2020</small>
+//       </div>
+//     </header>
+//   )
+// }
+
+
+
+/* 
 const yearBorn = 1904
 const currentYear = new Date().getFullYear()
 const age = currentYear - yearBorn
@@ -72,14 +95,12 @@ const footer = (
     </div>
     
   </footer>
-)
+) */
 
 // JSX element, app, a container or a parent
 const app = (
   <div className='app'>
-    {header}
-    {main}
-    {footer}
+    <Header /> {/* Render Header as a component */}
   </div>
 )
 
@@ -93,5 +114,3 @@ root.render(
     {app}
   </React.StrictMode>
 );
-
-
