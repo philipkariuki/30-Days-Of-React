@@ -15,7 +15,27 @@ const author = {
 const date = 'Nov 29, 2024'
 
 
-const header = (
+// const header = (
+//   <header>
+//     <div className='header-wrapper'>
+//       <h1>{welcome}</h1>
+//       <h2>{title}</h2>
+//       <h3>{subtitle}</h3>
+//       <p>
+//         Instructor: {author.firstName} {author.lastName}
+//       </p>
+//       <small>Date: {date}</small>
+//     </div>    
+//   </header>
+// )
+
+// // React Component
+// const Header = () => {
+//   return header
+// }
+
+// Explicitly returning the JSX
+const Header = () => (
   <header>
     <div className='header-wrapper'>
       <h1>{welcome}</h1>
@@ -25,15 +45,9 @@ const header = (
         Instructor: {author.firstName} {author.lastName}
       </p>
       <small>Date: {date}</small>
-    </div>    
+    </div> 
   </header>
 )
-
-// React Component
-const Header = () => {
-  return header
-}
-
 
 // const Header = () => {
 //   return (
