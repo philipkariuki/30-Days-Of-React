@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import logoNdogo from './images/logors.png'
+import dogoPicha from './images/dogo.jpg'
 
 
 
@@ -67,8 +67,8 @@ const Header = () => {
 // User card component
 const UserCard = () => (
   <div className='user-card'>
-    <img src={logoNdogo} alt='dogo' />
-    <h4>Mister Recat</h4>
+    <img src={dogoPicha} alt='dogo' />
+    <h4>Cool Dog</h4>
   </div>
 )
 
