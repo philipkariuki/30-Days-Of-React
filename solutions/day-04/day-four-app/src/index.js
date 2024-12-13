@@ -5,14 +5,14 @@ import dogoPicha from './images/dogo.jpg'
 
 
 // JSX element, header
-// const welcome = 'Welcome to 30 Days Of React'
-// const title = 'Getting Started React'
-// const subtitle = 'JavaScript Library'
-// const author = {
-//   firstName: 'Mzee',
-//   lastName: 'Msee',
-// }
-// const date = 'Nov 29, 2024'
+const welcome = 'Welcome to 30 Days Of React'
+const title = 'Getting Started React'
+const subtitle = 'JavaScript Library'
+const author = {
+  firstName: 'Mzee',
+  lastName: 'Msee',
+}
+const date = 'Nov 29, 2024'
 
 
 // const header = (
@@ -35,40 +35,31 @@ import dogoPicha from './images/dogo.jpg'
 // }
 
 // Header component
-// const Header = () => (
-//   <header>
-//     <div className='header-wrapper'>
-//       <h1>{welcome}</h1>
-//       <h2>{title}</h2>
-//       <h3>{subtitle}</h3>
-//       <p>
-//         Instructor: {author.firstName} {author.lastName}
-//       </p>
-//       <small>Date: {date}</small>
-//     </div> 
-//   </header>
-// )
+const Header = () => (
+  <header>
+    <div className='header-wrapper'>
+      <h1>{welcome}</h1>
+      <h2>{title}</h2>
+      <h3>{subtitle}</h3>
+      <p>
+        Instructor: {author.firstName} {author.lastName}
+      </p>
+      <small>Date: {date}</small>
+    </div> 
+  </header>
+)
 
-// Header component
-const Header = () => {
-  return (
-    <header>
-      <div className='header-wrapper'>
-        <h1>Welcome to 30 Days Of React</h1>
-        <h2>Getting Started React</h2>
-        <h3>JavaScript Library</h3>
-        <p>Mzee Msee</p>
-        <small>Nov 29, 2024</small>
-      </div>
-    </header>
-  )
-}
 
 // User card component
+const dog = {
+  firstName: 'Cool',
+  lastName: 'Dog',
+}
+
 const UserCard = () => (
   <div className='user-card'>
     <img src={dogoPicha} alt='dogo' />
-    <h4>Cool Dog</h4>
+    <h4>{dog.firstName} {dog.lastName}</h4>
   </div>
 )
 
@@ -82,6 +73,15 @@ const TechList = () => {
 
 
 // Main Component
+const yearBorn = 1904
+const currentYear = new Date().getFullYear()
+const age = currentYear - yearBorn
+const personAge = (
+  <p>
+    {author.firstName} {author.lastName} is {age} years old
+  </p>
+)
+
 const Main = () => (
   <main>
     <div className='main-wrapper'>
@@ -89,6 +89,7 @@ const Main = () => (
       <ul>
         <TechList />
       </ul>
+      {personAge}
       <UserCard />
     </div>
   </main>
@@ -96,10 +97,12 @@ const Main = () => (
 
 
 // Footer Component
+const copyRight = 'Copyright 2024'
+
 const Footer = () => (
   <footer>
     <div className='footer-wrapper'>
-      <p>Copyright 2024</p>
+      <p>{copyRight}</p>
     </div>
   </footer>
 )
@@ -124,47 +127,3 @@ root.render(
     <App /> {/* Render the App component */}
   </React.StrictMode>
 )
-
-
-
-/* 
-const yearBorn = 1904
-const currentYear = new Date().getFullYear()
-const age = currentYear - yearBorn
-const personAge = (
-  <p>
-    {author.firstName} {author.lastName} is {age} years old
-  </p>
-)
-
-
-
-
-
-
-const main = (
-  <main>
-    <div className='main-wrapper'>
-      <p>Prerequisite to get started react.js:</p>
-      <ul>
-        {techsFormatted}
-      </ul>
-      {personAge}
-      {ogo}
-    </div>    
-  </main>
-)
-
-// JSX element, footer
-const copyRight = 'Copyright 2024'
-
-const footer = (
-  <footer>
-    <div className='footer-wrapper'>
-      <p>{copyRight}</p>
-    </div>
-    
-  </footer>
-) */
-
-
