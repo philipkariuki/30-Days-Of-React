@@ -95,6 +95,18 @@ const Main = () => (
   </main>
 )
 
+// Hexadecimal color generator
+const hexaColor = () => {
+  let str = '0123456789abcdef'
+  let color = ''
+  for (let i = 0; i < 6; i++) {
+    let index = Math.floor(Math.random() * str.length)
+    color += str[index]
+  }
+  return '#' + color
+}
+
+const HexaColor = () => <div>{hexaColor()}</div>
 
 // Footer Component
 const copyRight = 'Copyright 2024'
@@ -113,6 +125,7 @@ const App = () => (
   <div className='app'>
     <Header /> {/* Render Header as a component */}
     <Main /> {/* Render Main as a component */}
+    <HexaColor />
     <Footer /> {/* Render Footer as a component */}
   </div>
 )
