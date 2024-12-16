@@ -65,3 +65,61 @@ const Button = () => <button>action</button>
 
 const InputField = () => <input type="text" />
 
+
+Q7. Make a reusable Button component.
+
+import React from 'react';
+
+const Button = () => {
+  const handleClick = () => {
+    alert('Button clicked!');
+  };
+
+  return (
+    <button onClick={handleClick} style={{ padding: '10px', backgroundColor: 'blue', color: 'white' }}>
+      Click Me
+    </button>
+  );
+};
+
+
+Q8. Make a reusable InputField component.
+
+const InputField = () => { 
+    const handleChange = (event) => { 
+        console.log('Input value:', event.target.value);
+    };
+    return (
+        <input type="text" onChange={handleChange}
+        style={{ padding: '10px', border: '1px solid #ccc', borderRadius: '4px' }} placeholder="Type here..." />
+    );
+};
+
+
+Q9. Make a reusable alert box component with one div parent element and one p child element of the div(warning alert box, success alert box).
+
+const AltBx = () => {
+  const AlertBox = ({ type, message }) => {
+    const alertStyles = {
+      padding: '10px',
+      borderRadius: '4px',
+      margin: '10px 0',
+      color: '#fff',
+      warning: { backgroundColor: '#f44336' },
+      success: { backgroundColor: '#4CAF50' },
+    }
+    return (
+      <div style={{ ...alertStyles, ...alertStyles[type] }}>
+        <p>{message}</p>
+      </div>
+    )
+  }
+  return (
+    <div>
+      <h1>Reusable AlertBox Component</h1>
+      <AlertBox type='warning' message='This is a warning alert.' />
+      <AlertBox type='success' message='This is a success alert.' />
+    </div>
+  )
+}
+
