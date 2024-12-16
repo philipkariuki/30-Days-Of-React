@@ -1,0 +1,67 @@
+Q1. What is the difference between a regular function and an arrow function?
+
+A. 
+Regular Function is defined using the function keyword.
+function add(a, b) {
+  return a + b;
+}
+
+Arrow Function is defined using the => syntax.
+const add = (a, b) => a + b;
+
+
+Q2. What is a React Component?
+
+A. A React component is a small, reusable code, which is responsible for one part of the application UI. A React application is an aggregation of components.
+In React we assemble different components together to create an application. We use JavaScript functions or classes to make components.
+Components are reusable pieces of UI that can be nested, managed, and handled independently. They help in breaking down the UI into smaller, manageable parts.
+If we use a function, the component will be a functional component, but if we use a class, the component will be a class-based component.
+
+
+Q3. How do you make a React functional component?
+
+A. You can make a React functional component by defining a JavaScript function that returns React elements, eg:
+
+function MyComponent() {
+  return <div>Hello, world!</div>;
+}
+
+or
+
+const Header = () => (
+  <header>
+    <div className='header-wrapper'>
+      <h1>Welcome to 30 Days Of React</h1>
+      <h2>Getting Started React</h2>
+      <h3>JavaScript Library</h3>
+    </div>
+  </header>
+)
+
+
+Q4. What is the difference between a pure JavaScript function and a functional component?
+
+A. 
+Pure JavaScript Function: A standalone block of code designed to perform a specific task. It takes input (parameters) and returns an output, with no side effects or dependencies on external states.
+function add(a, b) {
+  return a + b;
+}
+
+React Functional Component: A special kind of function that returns React elements (JSX) and is used to define a part of the UI. Unlike pure functions, it can use hooks to manage state and side effects.
+
+In essence, while both are functions, a React functional component is specifically designed to handle UI logic and rendering within the React framework, leveraging hooks for state and lifecycle management.
+
+Q5. How small is a React component?
+
+A. A component that returns only a single HTML as JSX is considered as a small component, eg, a button component or an alert box component, or just an input field component.
+
+const Button = () => <button>action</button>
+The Button component is made of a single HTML button element.
+
+Q6. Can we make a button or input field component?
+
+A.
+const Button = () => <button>action</button>
+
+const InputField = () => <input type="text" />
+
