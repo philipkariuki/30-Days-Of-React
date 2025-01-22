@@ -3,47 +3,27 @@ import ReactDOM from 'react-dom/client'
 
 
 
-// a) String props type:
+// b) Number props type:
 
 
-// Header Component
-const Header = (props) => {
-console.log(props)
-return (
-    <header>
-    <div className='header-wrapper'>
-        <h1>{props.welcome}</h1>
-        <h2>{props.title}</h2>
-        <h3>{props.subtitle}</h3>
-        <p>
-        {props.firstName} {props.lastName}
-        </p>
-        <small>{props.date}</small>
-    </div>
-    </header>
+const Age = (props) => <div>The person is {props.age} years old.</div>
+const Weight = (props) => (
+<p>The weight of the object on earth is {props.weight} N.</p>
 )
-}
 
 
  // The app or parent or container component
- const App = () => {
-const welcome = 'Welcome to 30 Days Of React'
-const title = 'Getting Started React'
-const subtitle = 'JavaScript Library'
-const firstName = 'Asabeneh'
-const lastName = 'Yetayeh'
-const date = 'Oct 4, 2020'
+const App = () => {
+let currentYear = 2020
+let birthYear = 1820
+const age = currentYear - birthYear
+const gravity = 9.81
+const mass = 75
 
 return (
     <div className='app'>
-    <Header
-        welcome={welcome}
-        title={title}
-        subtitle={subtitle}
-        firstName={firstName}
-        lastName={lastName}
-        date={date}
-    />
+    <Age age={age} />
+    <Weight weight={gravity * mass} />
     </div>
 )
 }
