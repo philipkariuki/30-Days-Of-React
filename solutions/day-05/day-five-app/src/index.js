@@ -3,27 +3,27 @@ import ReactDOM from 'react-dom/client'
 
 
 
-// b) Number props type:
+// c) Boolean props type:
 
 
-const Age = (props) => <div>The person is {props.age} years old.</div>
-const Weight = (props) => (
-<p>The weight of the object on earth is {props.weight} N.</p>
-)
+const Status = (props) => {
+// ternary operator to check the status of the person
+let status = props.status ? 'Old enough to drive' : 'Too young for driving'
+return <p>{status}</p>
+}
 
 
  // The app or parent or container component
 const App = () => {
 let currentYear = 2020
-let birthYear = 1820
-const age = currentYear - birthYear
-const gravity = 9.81
-const mass = 75
+let birthYear = 2015
+const age = currentYear - birthYear // 15 years
+
+let status = age >= 18
 
 return (
     <div className='app'>
-    <Age age={age} />
-    <Weight weight={gravity * mass} />
+    <Status status={status} />
     </div>
 )
 }
