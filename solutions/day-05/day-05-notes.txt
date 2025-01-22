@@ -1,0 +1,493 @@
+Props is a special keyword in React that stands for properties and is used to pass data from one component to another and mostly from parent component to child component. We can say props is a data carrier or a means to transport data.
+Props is a way we pass data or parameters to a component.
+
+Let's see the difference between a function and a component:
+
+---->>> function syntax
+
+        const getUserInfo = (firstName, lastName, country) => {
+        return `${firstName} ${lastName}. Lives in ${country}.`
+        }
+
+// calling a function
+
+        getUserInfo('Asabeneh', 'Yeteyeh', 'Finland')  // Logs: "Asabeneh Yeteyeh. Lives in Finland."
+
+
+---->>> component syntax
+
+// User component, component should start with an uppercase
+
+        const User = (props) => {
+        return (
+            <div>
+            <h1>
+                {props.firstName}
+                {props.lastName}
+            </h1>
+            <small>{props.country}</small>
+            </div>
+        )
+        }
+// calling or instantiating a component, this component has three properties and we call them props:firstName, lastName, country
+        <User firstName = 'Asabeneh', lastName='Yetayeh' country = 'Finland' />
+
+
+
+React props is an object which you get instantly when you create a React component.
+
+
+                import React from 'react'
+                import ReactDOM from 'react-dom'
+
+                // Header Component
+                const Header = (props) => {
+                console.log(props) // {welcome:'Welcome to 30 Days Of React'}
+                return (
+                    <header>
+                    <div className='header-wrapper'>
+                        <h1>{props.welcome}</h1>
+                    </div>
+                    </header>
+                )
+                }
+
+                // The App, or the parent or the container component
+                // Functional Component
+                const App = () => {
+                return (
+                    <div className='app'>
+                    <Header welcome='Welcome to 30 Days Of React' />
+                    </div>
+                )
+                }
+
+                const rootElement = document.getElementById('root')
+
+                ReactDOM.render(<App />, rootElement)
+
+
+A component can have one or many props. Props could be different data types. It could be a string, number, boolean, array, object or a function.
+
+a) String props type:
+
+        import React from 'react'
+        import ReactDOM from 'react-dom'
+
+        // Header Component
+        const Header = (props) => {
+        console.log(props)
+        return (
+            <header>
+            <div className='header-wrapper'>
+                <h1>{props.welcome}</h1>
+                <h2>{props.title}</h2>
+                <h3>{props.subtitle}</h3>
+                <p>
+                {props.firstName} {props.lastName}
+                </p>
+                <small>{props.date}</small>
+            </div>
+            </header>
+        )
+        }
+
+        // The App, or the parent or the container component
+        // Functional Component
+        const App = () => (
+        <div className='app'>
+            <Header
+            welcome='Welcome to 30 Days Of React'
+            title='Getting Started React'
+            subtitle='JavaScript Library'
+            firstName='Asabeneh'
+            lastName='Yetayeh'
+            date='Oct 4, 2020'
+            />
+        </div>
+        )
+
+        const rootElement = document.getElementById('root')
+        ReactDOM.render(<App />, rootElement)
+
+
+
+As you can see from the above example, the value of the props are written statically. However, if we want to apply some logic it is hard to implement with statically written data, so it will be better to use a variable as props. Let's see the following example:
+
+
+        import React from 'react'
+        import ReactDOM from 'react-dom'
+
+        // Header Component
+        const Header = (props) => (
+        <header>
+            <div className='header-wrapper'>
+            <h1>{props.welcome}</h1>
+            <h2>{props.title}</h2>
+            <h3>{props.subtitle}</h3>
+            <p>
+                {props.firstName} {props.lastName}
+            </p>
+            <small>{props.date}</small>
+            </div>
+        </header>
+        )
+
+        // The App, or the parent or the container component
+        // Functional Component
+        const App = () => {
+        const welcome = 'Welcome to 30 Days Of React'
+        const title = 'Getting Started React'
+        const subtitle = 'JavaScript Library'
+        const firstName = 'Asabeneh'
+        const lastName = 'Yetayeh'
+        const date = 'Oct 4, 2020'
+
+        return (
+            <div className='app'>
+            <Header
+                welcome={welcome}
+                title={title}
+                subtitle={subtitle}
+                firstName={firstName}
+                lastName={lastName}
+                date={date}
+            />
+            </div>
+        )
+        }
+        const rootElement = document.getElementById('root')
+        ReactDOM.render(<App />, rootElement)
+
+
+b) Number props type:
+
+        import React from 'react'
+        import ReactDOM from 'react-dom'
+
+        const Age = (props) => <div>The person is {props.age} years old.</div>
+        const Weight = (props) => (
+        <p>The weight of the object on earth is {props.weight} N.</p>
+        )
+
+        // The App, or the parent or the container component
+        const App = () => {
+        let currentYear = 2020
+        let birthYear = 1820
+        const age = currentYear - birthYear
+        const gravity = 9.81
+        const mass = 75
+
+        return (
+            <div className='app'>
+            <Age age={age} />
+            <Weight weight={gravity * mass} />
+            </div>
+        )
+        }
+        const rootElement = document.getElementById('root')
+        ReactDOM.render(<App />, rootElement)
+
+
+
+c) Boolean props type:
+
+        import React from 'react'
+        import ReactDOM from 'react-dom'
+
+        const Status = (props) => {
+        // ternary operator to check the status of the person
+        let status = props.status ? 'Old enough to drive' : 'Too young for driving'
+        return <p>{status}</p>
+        }
+
+        // The App, or the parent or the container component
+        const App = () => {
+        let currentYear = 2020
+        let birthYear = 2015
+        const age = currentYear - birthYear // 15 years
+
+        let status = age >= 18
+
+        return (
+            <div className='app'>
+            <Status status={status} />
+            </div>
+        )
+        }
+        const rootElement = document.getElementById('root')
+        ReactDOM.render(<App />, rootElement)
+
+
+
+
+d) Array props type:
+
+        import React from 'react'
+        import ReactDOM from 'react-dom'
+
+        const Skills = (props) => <ul>{props.skills}</ul>
+
+        const App = () => (
+        <div className='app'>
+            <Skills skills={['HTML', 'CSS', 'JavaScript']} />
+        </div>
+        )
+
+        const rootElement = document.getElementById('root')
+        ReactDOM.render(<App />, rootElement)
+
+
+    If you see the result on the browser, the skills elements needs formatting. To modify the array and to add a li element we can use map method. Let's apply map to modify the array.
+
+
+        import React from 'react'
+        import ReactDOM from 'react-dom'
+
+        
+        const Skills = (props) => {
+        // modifying the skills array
+        const skillList = props.skills.map((skill) => <li>{skill}</li>)
+        return <ul>{skillList}</ul>
+        }
+
+        const App = () => (
+        <div className='app'>
+            <Skills skills={['HTML', 'CSS', 'JavaScript']} />
+        </div>
+        )
+
+        const rootElement = document.getElementById('root')
+        ReactDOM.render(<App />, rootElement)
+
+e) Object props type:
+
+   i) First we change a few properties for better understanding:
+
+        import React from 'react'
+        import ReactDOM from 'react-dom'
+
+        // Header Component
+        const Header = (props) => {
+        return (
+            <header>
+            <div className='header-wrapper'>
+                <h1>{props.data.welcome}</h1>
+                <h2>{props.data.title}</h2>
+                <h3>{props.data.subtitle}</h3>
+            </div>
+            </header>
+        )
+        }
+
+        // The App, or the parent or the container component
+        const App = () => {
+        const data = {
+            welcome: 'Welcome to 30 Days Of React',
+            title: 'Getting Started React',
+            subtitle: 'JavaScript Library',
+        }
+
+        return (
+            <div className='app'>
+            <Header data={data} />
+            </div>
+        )
+        }
+        const rootElement = document.getElementById('root')
+        // we render the JSX element using the ReactDOM package
+        ReactDOM.render(<App />, rootElement)
+
+    ii) Now, let's change all the previous Header properties to an object:
+
+        import React from 'react'
+        import ReactDOM from 'react-dom'
+
+        const showDate = (time) => {
+        const months = [
+            'January',
+            'February',
+            'March',
+            'April',
+            'May',
+            'June',
+            'July',
+            'August',
+            'September',
+            'October',
+            'November',
+            'December',
+        ]
+
+        const month = months[time.getMonth()].slice(0, 3)
+        const year = time.getFullYear()
+        const date = time.getDate()
+        return ` ${month} ${date}, ${year}`
+        }
+        // Header Component
+        const Header = (props) => {
+        return (
+            <header>
+            <div className='header-wrapper'>
+                <h1>{props.data.welcome}</h1>
+                <h2>{props.data.title}</h2>
+                <h3>{props.data.subtitle}</h3>
+                <p>
+                {props.data.author.firstName} {props.data.author.lastName}
+                </p>
+                <small>{showDate(props.data.date)}</small>
+            </div>
+            </header>
+        )
+        }
+
+        // The App, or the parent or the container component
+        // Functional Component
+        const App = () => {
+        const data = {
+            welcome: 'Welcome to 30 Days Of React',
+            title: 'Getting Started React',
+            subtitle: 'JavaScript Library',
+            author: {
+            firstName: 'Asabeneh',
+            lastName: 'Yetayeh',
+            },
+            date: new Date(), // date needs to be formatted to a human readable format
+        }
+
+        return (
+            <div className='app'>
+            <Header data={data} />
+            </div>
+        )
+        }
+        const rootElement = document.getElementById('root')
+        ReactDOM.render(<App />, rootElement)
+        
+
+f) Function props type:
+    i) We can pass a function as props type to a React component. Let's see some examples:
+
+        import React from 'react'
+        import ReactDOM from 'react-dom'
+
+        // A button component
+
+        const Button = (props) => <button onClick={props.onClick}>{props.text}</button>
+
+        // The App, or the parent or the container component
+        const App = () => {
+        const sayHi = () => {
+            alert('Hi')
+        }
+
+        return (
+            <div className='app'>
+            <Button text='Say Hi' onClick={sayHi} />
+            </div>
+        )
+        }
+        const rootElement = document.getElementById('root')
+        // we render the JSX element using the ReactDOM package
+        ReactDOM.render(<App />, rootElement)
+
+
+    ii) We can even write a function inside the curly bracket:
+
+            import React from 'react'
+            import ReactDOM from 'react-dom'
+
+            // A button component
+
+            const Button = (props) => <button onClick={props.onClick}>{props.text}</button>
+
+            // The App, or the parent or the container component
+            const App = () => {
+            return (
+                <div className='app'>
+                <Button text='Say Hi' onClick={() => alert('Hi')} />
+                </div>
+            )
+            }
+            const rootElement = document.getElementById('root')
+            // we render the JSX element using the ReactDOM package
+            ReactDOM.render(<App />, rootElement)
+
+    iii) Now let's implement different functions as props:
+
+            import React from 'react'
+            import ReactDOM from 'react-dom'
+
+            // A button component
+
+            const Button = (props) => <button onClick={props.onClick}>{props.text}</button>
+
+            // The App, or the parent or the container component
+            const App = () => {
+            const greetPeople = () => {
+                alert('Welcome to 30 Days Of React Challenge, 2020')
+            }
+
+            return (
+                <div className='app'>
+                <Button text='Greet People' onClick={greetPeople} />
+                <Button text='Show Time' onClick={() => alert(new Date())} />
+                </div>
+            )
+            }
+            const rootElement = document.getElementById('root')
+            ReactDOM.render(<App />, rootElement)
+        
+        In the above example, onClick is a props to hold the greetPeople function. HTML has onclick, onmouseover, onhover, onkeypress and etc event handlers. In React, these handlers are in camelCase.
+
+    iv) Let's see some more functions as props to give a clear understanding how to handle function as props in a React component. This component shows month, date and year as an alert box:
+
+            import React from 'react'
+            import ReactDOM from 'react-dom'
+
+            // Function to display time in Mon date, year format eg Oct 4, 2020
+            const showDate = (time) => {
+            const months = [
+                'January',
+                'February',
+                'March',
+                'April',
+                'May',
+                'June',
+                'July',
+                'August',
+                'September',
+                'October',
+                'November',
+                'December',
+            ]
+
+            const month = months[time.getMonth()].slice(0, 3)
+            const year = time.getFullYear()
+            const date = time.getDate()
+            return ` ${month} ${date}, ${year}`
+            }
+
+            // A button component
+
+            const Button = (props) => <button onClick={props.onClick}>{props.text}</button>
+
+            // The App, or the parent or the container component
+            const App = () => {
+            const handleTime = () => {
+                alert(showDate(new Date()))
+            }
+            const greetPeople = () => {
+                alert('Welcome to 30 Days Of React Challenge, 2020')
+            }
+            return (
+                <div className='app'>
+                <Button text='show time' onClick={handleTime} />
+                <Button text='Greet People' onClick={greetPeople} />
+                </div>
+            )
+            }
+            const rootElement = document.getElementById('root')
+            ReactDOM.render(<App />, rootElement)
+
+
