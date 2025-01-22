@@ -26,18 +26,27 @@ return (
 
 
  // The app or parent or container component
-const App = () => (
-<div className='app'>
+ const App = () => {
+const welcome = 'Welcome to 30 Days Of React'
+const title = 'Getting Started React'
+const subtitle = 'JavaScript Library'
+const firstName = 'Asabeneh'
+const lastName = 'Yetayeh'
+const date = 'Oct 4, 2020'
+
+return (
+    <div className='app'>
     <Header
-    welcome='Welcome to 30 Days Of React'
-    title='Getting Started React'
-    subtitle='JavaScript Library'
-    firstName='Asabeneh'
-    lastName='Yetayeh'
-    date='Oct 4, 2020'
+        welcome={welcome}
+        title={title}
+        subtitle={subtitle}
+        firstName={firstName}
+        lastName={lastName}
+        date={date}
     />
-</div>
+    </div>
 )
+}
 
 
 const rootElement = document.getElementById('root');
