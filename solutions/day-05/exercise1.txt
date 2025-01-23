@@ -1,0 +1,37 @@
+Q1. What is props in a React component?
+
+A. 
+
+Q2. How do you access props in a React component?
+
+A. 
+
+Q3. What data types can we pass as props to components?
+
+A. 
+
+
+Q4. What is a propTypes?
+
+A. 
+
+Q5. What is a default propTypes?
+
+A. 
+
+
+
+
+
+
+Q8. Make a reusable InputField component.
+
+const InputField = () => { 
+    const handleChange = (event) => { 
+        console.log('Input value:', event.target.value);
+    };
+    return (
+        <input type="text" onChange={handleChange}
+        style={{ padding: '10px', border: '1px solid #ccc', borderRadius: '4px' }} placeholder="Type here..." />
+    );
+};
