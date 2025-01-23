@@ -1,11 +1,11 @@
-// i) Step by step destructuring:
+// ii) Destructuring in one line:
 
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 
 
 const showDate = (time) => {
-  const months = [
+const months = [
     'January',
     'February',
     'March',
@@ -18,51 +18,57 @@ const showDate = (time) => {
     'October',
     'November',
     'December',
-  ]
+]
 
-  const month = months[time.getMonth()].slice(0, 3)
-  const year = time.getFullYear()
-  const date = time.getDate()
-  return ` ${month} ${date}, ${year}`
+const month = months[time.getMonth()].slice(0, 3)
+const year = time.getFullYear()
+const date = time.getDate()
+return ` ${month} ${date}, ${year}`
 }
 // Header Component
 const Header = (props) => {
-  const data = props.data
-  const { welcome, title, subtitle, author, date } = data
-  const { firstName, lastName } = author
-  return (
+const data = props.data
+const {
+    welcome,
+    title,
+    subtitle,
+    author: { firstName, lastName },
+    date,
+} = data
+
+return (
     <header>
-      <div className='header-wrapper'>
+    <div className='header-wrapper'>
         <h1>{welcome}</h1>
         <h2>{title}</h2>
         <h3>{subtitle}</h3>
         <p>
-          {firstName} {lastName}
+        {firstName} {lastName}
         </p>
         <small>{showDate(date)}</small>
-      </div>
+    </div>
     </header>
-  )
+)
 }
 
 // The app or parent or container component
 const App = () => {
-  const data = {
+const data = {
     welcome: 'Welcome to 30 Days Of React',
     title: 'Getting Started React',
     subtitle: 'JavaScript Library',
     author: {
-      firstName: 'Mzee',
-      lastName: 'Msee',
+    firstName: 'Mzee',
+    lastName: 'Msee',
     },
     date: new Date(),
-  }
+}
 
-  return (
+return (
     <div className='app'>
-      <Header data={data} />
+    <Header data={data} />
     </div>
-  )
+)
 }
 
 
