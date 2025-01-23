@@ -1,4 +1,4 @@
-// ii) Destructuring in one line:
+// iii) Destructuring the props inside the parenthesis:
 
 import React from 'react'
 import ReactDOM from 'react-dom/client'
@@ -26,16 +26,15 @@ const date = time.getDate()
 return ` ${month} ${date}, ${year}`
 }
 // Header Component
-const Header = (props) => {
-const data = props.data
-const {
+const Header = ({
+data: {
     welcome,
     title,
     subtitle,
     author: { firstName, lastName },
     date,
-} = data
-
+},
+}) => {
 return (
     <header>
     <div className='header-wrapper'>
