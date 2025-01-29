@@ -26,3 +26,36 @@ In the following examples, we will see how we render an array of numbers, an arr
     ReactDOM.render(<App />, rootElement)
 
 If you check the browser, you will see the numbers are attached together in one line. To avoid this, we modify the array and change the array elements to JSX element.
+
+Let's see examples the array has been modified to a list of JSX elements:
+
+a) Example on Mapping an array of numbers:
+
+    import React from 'react'
+    import ReactDOM from 'react-dom'
+
+    const Numbers = ({ numbers }) => {
+    // modifying array to array of li JSX
+    const list = numbers.map((number) => <li>{number}</li>)
+    return list
+    }
+
+    // App component
+
+    const App = () => {
+    const numbers = [1, 2, 3, 4, 5]
+
+    return (
+        <div className='container'>
+        <div>
+            <h1>Numbers List</h1>
+            <ul>
+            <Numbers numbers={numbers} />
+            </ul>
+        </div>
+        </div>
+    )
+    }
+
+    const rootElement = document.getElementById('root')
+    ReactDOM.render(<App />, rootElement)
