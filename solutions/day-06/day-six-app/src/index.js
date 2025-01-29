@@ -2,26 +2,40 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 
-const Numbers = ({ numbers }) => {
-// modifying array to array of li JSX
-const list = numbers.map((num) => <li key={num}>{num}</li>)
-return list
-}
+const countries = [
+{ name: 'Finland', city: 'Helsinki' },
+{ name: 'Sweden', city: 'Stockholm' },
+{ name: 'Denmark', city: 'Copenhagen' },
+{ name: 'Norway', city: 'Oslo' },
+{ name: 'Iceland', city: 'Reykjavík' },
+]
 
-const App = () => {
-const numbers = [1, 2, 3, 4, 5]
-
+// Country component
+const Country = ({ country: { name, city } }) => {
 return (
-    <div className='container'>
     <div>
-        <h1>Numbers List</h1>
-        <ul>
-        <Numbers numbers={numbers} />
-        </ul>
-    </div>
+    <h1>{name}</h1>
+    <small>{city}</small>
     </div>
 )
 }
+
+// countries component
+const Countries = ({ countries }) => {
+const countryList = countries.map((country) => (
+    <Country key={country.name} country={country} />
+))
+console.log(countryList)
+return <div>{countryList}</div>
+}
+const App = () => (
+<div className='container'>
+    <div>
+    <h1>Countries List</h1>
+    <Countries countries={countries} />
+    </div>
+</div>
+)
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
