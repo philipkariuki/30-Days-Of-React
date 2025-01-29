@@ -1,157 +1,161 @@
-// Destructuring all the components in our code:
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import dogoPicha from './images/dogo.jpg';
+import cssPicha from './images/css.jpg';
+import htmlPicha from './images/html.jpg';
+import jsPicha from './images/js.jpg';
+import rctPicha from './images/logors.png';
 
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import dogoPicha from './images/dogo.jpg'
+// JSX element, header
+const title = 'Front End Technologies';
 
+const Czz = ({ imgSrc }) => (
+  <div className='czz-card'>
+    <img src={imgSrc} alt='czz' />
+  </div>
+);
 
-// Fuction to show month date year
-const showDate = (time) => {
-const months = [
-  'January',
-  'February',
-  'March',
-  'April',
-  'May',
-  'June',
-  'July',
-  'August',
-  'September',
-  'October',
-  'November',
-  'December',
-]
+const Htmls = ({ imgSrc }) => (
+  <div className='html-card'>
+    <img src={imgSrc} alt='htmls' />
+  </div>
+);
 
-const month = months[time.getMonth()].slice(0, 3)
-const year = time.getFullYear()
-const date = time.getDate()
-return ` ${month} ${date}, ${year}`
-}
+const Js = ({ imgSrc }) => (
+  <div className='js-card'>
+    <img src={imgSrc} alt='js' />
+  </div>
+);
 
-// Header Component
-const Header = ({
-data: {
-  welcome,
-  title,
-  subtitle,
-  author: { firstName, lastName },
-  date,
-},
-}) => {
-return (
+const Ract = ({ imgSrc }) => (
+  <div className='ract-card'>
+    <img src={imgSrc} alt='react' />
+  </div>
+);
+
+const Header = ({ title }) => (
   <header>
     <div className='header-wrapper'>
-      <h1>{welcome}</h1>
-      <h2>{title}</h2>
-      <h3>{subtitle}</h3>
-      <p>
-        {firstName} {lastName}
-      </p>
-      <small>{showDate(date)}</small>
-    </div>
+      <div className='title-container'>
+        <h4>{title}</h4>
+      </div>
+      <Htmls imgSrc={htmlPicha} />
+      <Czz imgSrc={cssPicha} />
+      <Js imgSrc={jsPicha} />
+      <Ract imgSrc={rctPicha} />
+    </div>   
   </header>
-)
-}
+);
 
-// TechList Component
-const TechList = ({ techs }) => {
-const techList = techs.map((tech) => <li key={tech}>{tech}</li>)
-return techList
-}
+// User card component
 
-// User Card Component
-const UserCard = ({ user: { firstName, lastName, image } }) => (
-<div className='user-card'>
-  <img src={image} alt={firstName} />
-  <h2>
-    {firstName}
-    {lastName}
-  </h2>
-</div>
-)
-
-// Button component
-const Button = ({ text, onClick, style }) => (
-<button style={style} onClick={onClick}>
-  {text}
-</button>
-)
-
-// CSS styles in JavaScript Object
-const buttonStyles = {
-backgroundColor: '#61dbfb',
-padding: 10,
-border: 'none',
-borderRadius: 5,
-margin: 3,
-cursor: 'pointer',
-fontSize: 18,
-color: 'white',
-}
+const UserCard = ({ imgSrc }) => (
+  <div>
+    <img src={imgSrc} alt='dogo' />
+  </div>
+);
 
 // Main Component
-const Main = ({ user, techs, greetPeople, handleTime }) => (
-<main>
-  <div className='main-wrapper'>
-    <p>Prerequisite to get started react.js:</p>
-    <ul>
-      <TechList techs={techs} />
-    </ul>
-    <UserCard user={user} />
-    <Button text='Greet People' onClick={greetPeople} style={buttonStyles} />
-    <Button text='Show Time' onClick={handleTime} style={buttonStyles} />
-  </div>
-</main>
-)
+
+const Main = ({ userImgSrc, userName, userRole, skills, joinDate }) => (
+  <main>
+    <div className='main-wrapper'>
+      <div className='main-container'>
+        <p><UserCard imgSrc={userImgSrc} /></p>
+        <p>{userName} <i className="fas fa-check-circle"></i></p>
+        <small>{userRole}</small>
+        <p><b>Skills</b></p>
+        <div className='skills-container'>
+          <p>{skills.map(skill => <span key={skill}>{skill}</span>)}</p>
+        </div>
+        <small><i className="fas fa-light fa-clock"></i> Joined on {joinDate}</small>
+      </div>  
+    </div>
+  </main>
+);
+
+// Hexadecimal color generator component
+const generateRandomColor = () => {
+  const letters = '0123456789ABCDEF';
+  let color = '#';
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
+const ColorRows = () => {
+  const rows = Array.from({ length: 4 }, () => generateRandomColor());
+  return (
+    <div className="color-container">
+      {rows.map((color, index) => (
+        <div
+          key={index}
+          className="color-row"
+          style={{ backgroundColor: color }}
+        >
+          {color}
+        </div>
+      ))}
+    </div>
+  );
+}
 
 // Footer Component
-const Footer = ({ copyRight }) => (
-<footer>
-  <div className='footer-wrapper'>
-    <p>Copyright {copyRight.getFullYear()}</p>
-  </div>
-</footer>
-)
+
+const SignupForm = ({ onSubmit }) => (
+  <form className='signup-form' onSubmit={onSubmit}>
+    <input type='text' placeholder='First Name' name='firstname' required/>
+    <input type='text' placeholder='Last Name' name='lastname' required />
+    <input type='email' placeholder='Email' name='email' required />
+    <div className='button-wrapper'>
+      <button type='submit'>Subscribe</button>
+    </div>    
+  </form>
+);
+
+const Footer = ({ subscribe, message, onSubmit }) => (
+  <footer>
+    <div className='footer-wrapper'>
+      <div className='title-container'>
+        <h1 id='supscribe'>{subscribe}</h1>
+        <p>{message}</p>
+        <SignupForm onSubmit={onSubmit} />
+      </div>    
+    </div>    
+  </footer>
+);
 
 // The app or parent or container component
 const App = () => {
-const data = {
-  welcome: 'Welcome to 30 Days Of React',
-  title: 'Getting Started React',
-  subtitle: 'JavaScript Library',
-  author: {
-    firstName: 'Mzee',
-    lastName: 'Msee',
-  },
-  date: new Date(), // date needs to be formatted to a human readable format
-}
-const date = new Date()
-const techs = ['HTML', 'CSS', 'JavaScript']
-// copying the author from data object to user variable using spread operator
-const user = { ...data.author, image: dogoPicha }
+  const skills = [
+    'HTML', 'CSS', 'Sass', 'JS', 'React', 'Redux', 'Node', 'MongoDB', 
+    'Python', 'Flask', 'Django', 'NumPy', 'Pandas', 'Data Analysis', 
+    'MYSQL', 'PostgreSQL', 'Docker', 'Heroku', 'Git', 'Django', 'NumPy', 'Pandas', 'MYSQL', 'PostgreSQL', 'Docker', 'Heroku', 'Git', 'Django', 'NumPy', 'Pandas', 'MYSQL'
+  ];
 
-const handleTime = () => {
-  alert(showDate(new Date()))
+  return (
+    <div className='app'>
+      <Header title={title} /> {/* Render Header as a component */}
+      <Main 
+        userImgSrc={dogoPicha} 
+        userName="MZEE MSEE" 
+        userRole="Front End Developer" 
+        skills={skills}
+        joinDate="Dec 2, 2024"
+      /> {/* Render Main as a component */}
+      <ColorRows />
+      <Footer 
+        subscribe="Subscribe" 
+        message="Sign up with your email address to receive news and updates"
+        onSubmit={(e) => {
+          e.preventDefault();
+          console.log('Form submitted');
+        }}
+      /> {/* Render Footer as a component */}
+    </div>
+  );
 }
-const greetPeople = () => {
-  alert('Welcome to 30 Days Of React Challenge, 2024')
-}
-
-return (
-  <div className='app'>
-    <Header data={data} />
-    <Main
-      user={user}
-      techs={techs}
-      handleTime={handleTime}
-      greetPeople={greetPeople}
-    />
-    <Footer copyRight={date} />
-  </div>
-)
-}
-
-
 
 const rootElement = document.getElementById('root');
 
@@ -161,5 +165,4 @@ root.render(
   <React.StrictMode>
     <App /> {/* Render the App component */}
   </React.StrictMode>
-)
-
+);
