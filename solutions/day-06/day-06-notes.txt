@@ -7,3 +7,22 @@ Most of the time data is in the form of an array or an array of objects. To rend
 In the previous section, we rendered the techs list using map method. In this section, we will see more examples.
 
 In the following examples, we will see how we render an array of numbers, an array of strings, an array of countries and an array of skills on the browser.
+
+
+    import React from 'react'
+    import ReactDOM from 'react-dom'
+    const App = () => {
+    return (
+        <div className='container'>
+        <div>
+            <h1>Numbers List</h1>
+            {[1, 2, 3, 4, 5]}
+        </div>
+        </div>
+    )
+    }
+
+    const rootElement = document.getElementById('root')
+    ReactDOM.render(<App />, rootElement)
+
+If you check the browser, you will see the numbers are attached together in one line. To avoid this, we modify the array and change the array elements to JSX element.
