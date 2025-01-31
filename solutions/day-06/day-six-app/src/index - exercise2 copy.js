@@ -41,7 +41,7 @@ const App = ({ title, subtitle }) => {
     <div className="app">
       <h1 className="heading">{title}</h1>
       <h2 className="subheading">{subtitle}</h2>
-      <Grid numbers={Array.from({ length: 32 }, (_, i) => i)} />
+      <Grid />
     </div>
   );
 }
