@@ -4,31 +4,26 @@ import './index.css';
 
 
 
-// Function to check if a number is prime
-const isPrime = (num) => {
-  if (num <= 1) return false;
-  for (let i = 2; i <= Math.sqrt(num); i++) {
-    if (num % i === 0) return false;
+// Function to generate a random hexadecimal color
+const getRandomHexColor = () => {
+  const letters = '0123456789ABCDEF';
+  let color = '#';
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
   }
-  return true;
+  return color;
 };
 
-// Function to get the appropriate color class
-const getColorClass = (num) => {
-  if (isPrime(num)) return 'prime';
-  return num % 2 === 0 ? 'even' : 'odd';
-};
 
 // Grid Component
 const Grid = () => {
-  const numbers = Array.from({ length: 32 }, (_, i) => i);
-  // Generates an array with 32 elements where each element is its index
+  const colors = Array.from({ length: 32 }, () => getRandomHexColor());
 
   return (
     <div className="grid-container">
-      {numbers.map((num) => (
-        <div key={num} className={`grid-item ${getColorClass(num)}`}>
-          {num}
+      {colors.map((color, index) => (
+        <div key={index} className="grid-item" style={{ backgroundColor: color }}>
+          {color}
         </div>
       ))}
     </div>
@@ -51,7 +46,7 @@ const rootElement = document.getElementById('root');
 const root = ReactDOM.createRoot(rootElement);
 root.render(
   <React.StrictMode>
-    <App title="30 Days of React" subtitle="Number Generator" />
+    <App title="30 Days of React" subtitle="Hexadecimal Colors" />
   </React.StrictMode>
 );
 

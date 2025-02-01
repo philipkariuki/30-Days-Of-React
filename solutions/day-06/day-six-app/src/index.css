@@ -47,23 +47,8 @@ body {
     width: 100px;
     height: 100px; /* Make the boxes square */
     border: 1px solid white; /* Reduced thickness of internal borders */
-    font-size: 20px;
-    font-weight: bold;
-  }
-  
-  /* Colors for different number types */
-  .even {
-    background-color: rgb(114, 161, 114);
-    color: white;
-  }
-  
-  .odd {
-    background-color: rgb(228, 228, 11);
-    color: black;
-  }
-  
-  .prime {
-    background-color: rgb(247, 31, 3);
-    color: white;
+    font-size:smaller;
+    color:azure;
+    text-transform: lowercase;
   }
   
