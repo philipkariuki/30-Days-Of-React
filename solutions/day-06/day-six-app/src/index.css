@@ -1,54 +1,51 @@
 /* General styles */
 body {
-    font-family: 'Montserrat', sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f0f0f0;
-    box-sizing: border-box;
-}
-  
-.app {
-    text-align: center;
-    padding: 20px;
-    margin-top: -150px; /* Move components slightly upwards from the center */
-}
-
-.heading {
-    font-size: 36px;
-    margin: 10px 0;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #eedbdb;
 }
 
 .subheading {
-    font-size: 24px;
-    margin: 10px 0 20px 0;
+  font-size: 24px;
+  margin: 10px 0 20px 0;
+  font-weight: lighter;
 }
 
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  text-align: center;
+}
 
-/* Styling for the grid container */
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    grid-gap: 1px; /* Space between grid items */
-    background-color: white;
-    padding: 10px;
-    width: fit-content;
-    margin: 0 auto; /* Center the grid */
-  }
-  
-  /* Styling for grid items */
-  .grid-item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100px;
-    height: 100px; /* Make the boxes square */
-    border: 1px solid white; /* Reduced thickness of internal borders */
-    font-size:smaller;
-    color:azure;
-    text-transform: lowercase;
-  }
-  
+.chart-container {
+  overflow-x: auto;
+}
+
+.chart-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.country {
+  width: 200px;
+  text-align: left;
+}
+
+.bar-container {
+  flex-grow: 1;
+  height: 40px;
+  background-color: #f0f0f0d3;
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 0 20px;
+}
+
+.bar {
+  background-color: #ff9900e1;
+  border-radius: 5px;
+}
+
+.population {
+  width: 150px;
+  text-align: right;
+}
