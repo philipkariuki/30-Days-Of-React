@@ -2,31 +2,25 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './style.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+// Header Component
+// Functional component
+const Header = () => (
+  <header>
+    <div className='header-wrapper'>
+      <h1>Welcome to 30 Days Of React</h1>
+      <h2>Getting Started React</h2>
+      <h3>JavaScript Library</h3>
+      <p>Mzee Msee</p>
+      <small>Nov 29, 2024</small>
     </div>
-  );
-}
+  </header>
+)
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Header />
   </React.StrictMode>
 );
 
