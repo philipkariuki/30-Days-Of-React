@@ -5,6 +5,10 @@ import './style.css';
 // Header Component
 // Class based component
 class Header extends React.Component {
+  constructor(props) {
+    super(props)
+    // the code inside the constructor run before any other code
+  }
   render() {
     return (
       <header>
@@ -19,7 +23,6 @@ class Header extends React.Component {
     )
   }
 }
-
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

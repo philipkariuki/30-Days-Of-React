@@ -37,7 +37,7 @@ Functional React component Example:
 
 
 Class based React component is a child of React.Component and it has a built-in render method and it may have a constructor.
-Example 1 of Class component:
+i) Example 1 of Class component:
 
         import React from 'react'
         import ReactDOM from 'react-dom'
@@ -59,5 +59,33 @@ Example 1 of Class component:
         }
         }
 
+        const rootElement = document.getElementById('root')
+        ReactDOM.render(<Header />, rootElement)
+
+ii) Let's see the above component with a constructor:
+
+        import React from 'react'
+        import ReactDOM from 'react-dom'
+
+        // class based component
+        class Header extends React.Component {
+        constructor(props) {
+            super(props)
+            // the code inside the constructor run before any other code
+        }
+        render() {
+            return (
+            <header>
+                <div className='header-wrapper'>
+                <h1>Welcome to 30 Days Of React</h1>
+                <h2>Getting Started React</h2>
+                <h3>JavaScript Library</h3>
+                <p>Asabeneh Yetayeh</p>
+                <small>Oct 7, 2020</small>
+                </div>
+            </header>
+            )
+        }
+        }
         const rootElement = document.getElementById('root')
         ReactDOM.render(<Header />, rootElement)
