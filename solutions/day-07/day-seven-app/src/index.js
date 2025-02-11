@@ -24,10 +24,82 @@ class Header extends React.Component {
   }
 }
 
+// TechList Component
+// Class based component
+class TechList extends React.Component {
+  constructor(props) {
+    super(props)
+  }
+  render() {
+    const techs = ['HTML', 'CSS', 'JavaScript']
+    const techsFormatted = techs.map((tech) => <li key={tech}>{tech}</li>)
+    return techsFormatted
+  }
+}
+
+// Main Component
+// Class Component
+class Main extends React.Component {
+  constructor(props) {
+    super(props)
+  }
+  render() {
+    return (
+      <main>
+        <div className='main-wrapper'>
+          <p>Prerequisite to get started react.js:</p>
+          <ul>
+            <TechList />
+          </ul>
+        </div>
+      </main>
+    )
+  }
+}
+
+// Footer Component
+// Class component
+class Footer extends React.Component {
+  constructor(props) {
+    super(props)
+  }
+  render() {
+    return (
+      <footer>
+        <div className='footer-wrapper'>
+          <p>Copyright 2024</p>
+        </div>
+      </footer>
+    )
+  }
+}
+
+// The App, or the parent or the container component
+// Class Component
+class App extends React.Component {
+  constructor(props) {
+    super(props)
+  }
+  render() {
+    return (
+      <div className='app'>
+        <Header />
+        <Main />
+        <Footer />
+      </div>
+    )
+  }
+}
+
+
+
+
+
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Header />
+    <App />
   </React.StrictMode>
 );
 
