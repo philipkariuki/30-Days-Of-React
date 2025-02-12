@@ -1,7 +1,40 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './style.css';
+import dogoPicha from './images/dogo.jpg';
 
+
+// Fuction to show month date year
+
+// User Card Component
+const UserCard = ({ user: { firstName, lastName, image } }) => (
+  <div className='user-card'>
+    <img src={image} alt={firstName} />
+    <h2>
+      {firstName}
+      {lastName}
+    </h2>
+  </div>
+)
+
+// A button component
+const Button = ({ text, onClick, style }) => (
+  <button style={style} onClick={onClick}>
+    {text}
+  </button>
+)
+
+// CSS styles in JavaScript Object
+const buttonStyles = {
+  backgroundColor: '#61dbfb',
+  padding: 10,
+  border: 'none',
+  borderRadius: 3,
+  margin: 3,
+  cursor: 'pointer',
+  fontSize: 15,
+  color: 'white',
+}
 
 // Header Component
 // Class based component
@@ -63,6 +96,17 @@ class Main extends React.Component {
           <ul>
             <TechList techs={this.props.techs} />
           </ul>
+          <UserCard user={this.props.user} />
+          <Button
+            text='Greet People'
+            onClick={this.props.greetPeople}
+            style={buttonStyles}
+          />
+          <Button
+            text='Show Time'
+            onClick={this.props.handleTime}
+            style={buttonStyles}
+          />
         </div>
       </main>
     )
@@ -87,6 +131,33 @@ class Footer extends React.Component {
 }
 
 class App extends React.Component {
+  showDate = (time) => {
+    const months = [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+      'July',
+      'August',
+      'September',
+      'October',
+      'November',
+      'December',
+    ]
+
+    const month = months[time.getMonth()].slice(0, 3)
+    const year = time.getFullYear()
+    const date = time.getDate()
+    return ` ${month} ${date}, ${year}`
+  }
+  handleTime = () => {
+    alert('Today is' + this.showDate(new Date()))
+  }
+  greetPeople = () => {
+    alert('Welcome to 30 Days Of React Challenge, 2024')
+  }
   render() {
     const data = {
       welcome: 'Welcome to 30 Days Of React',
@@ -100,10 +171,19 @@ class App extends React.Component {
     }
     const techs = ['HTML', 'CSS', 'JavaScript']
 
+    // copying the author from data object to user variable using spread operator
+    const user = { ...data.author, image: dogoPicha }
+
     return (
       <div className='app'>
         <Header data={data} />
-        <Main techs={techs} />
+        <Main
+          user={user}
+          techs={techs}
+          handleTime={this.handleTime}
+          greetPeople={this.greetPeople}
+        />
+
         <Footer date={new Date()} />
       </div>
     )
