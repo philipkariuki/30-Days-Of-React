@@ -1,0 +1,41 @@
+Q1. How do you write a pure JavaScript function?
+
+
+
+Q2. What is inheritance and how do you make a child from a parent class?
+
+
+
+Q3. What is class based React component?
+
+
+
+
+
+Q4. What is the difference between functional React component and class based React component?
+
+
+
+
+Q5. When do we need to use class based components instead of functional components?
+
+
+
+
+Q6. What is the use cases of class based component?
+
+
+
+
+Q7. Which type of component do use most frequently ? functional or class-based component?
+
+
+
+
+Q8. What is React life cycle ? (not covered yet)?
+
+
+
+
+Q9. What is state in React ? (not covered yet)?
+
