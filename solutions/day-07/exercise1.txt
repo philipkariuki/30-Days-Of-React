@@ -1,35 +1,354 @@
 Q1. How do you write a pure JavaScript function?
 
+A pure JavaScript function is a function that adheres to certain principles to ensure predictability and reliability in your code. Here are the key concepts explained simply:
+
+    a) Same Input, Same Output:
+
+    A pure function always produces the same output given the same input. This means that no matter how many times you call the function with the same arguments, you will always get the same result.
+
+    Example:
+
+        function add(a, b) {
+        return a + b;
+        }
+
+        console.log(add(2, 3)); // Output: 5
+        console.log(add(2, 3)); // Output: 5
+
+    In this example, the add function is pure because it always returns 5 when you input 2 and 3.
+
+    b) No Side Effects:
+
+    A pure function does not cause any side effects. This means it does not change any state or modify any data outside of its scope. It only performs its task and returns a value.
+
+    Example:
+
+        let counter = 0;
+
+        function increment() {
+        counter++;
+        return counter;
+        }
+
+        console.log(increment()); // Output: 1
+        console.log(increment()); // Output: 2
+
+    In this example, the increment function is not pure because it modifies the counter variable, which is outside its scope.
+
+    Pure Function Example:
+
+        function add(a, b) {
+        return a + b;
+        }
+
+        console.log(add(2, 3)); // Output: 5
+
+    The add function is pure because it does not modify any external state; it simply returns the sum of its inputs.
+
+    c) No Dependence on External State:
+
+    A pure function does not depend on any external state or variables. It only relies on the input parameters passed to it.
+
+    Example:
+
+        let multiplier = 2;
+
+        function multiply(x) {
+        return x * multiplier;
+        }
+
+        console.log(multiply(3)); // Output: 6
+
+    In this example, the multiply function is not pure because it depends on the external variable multiplier.
+
+    Pure Function Example:
+
+        function multiply(x, y) {
+        return x * y;
+        }
+
+        console.log(multiply(3, 2)); // Output: 6
+
+    The multiply function is pure because it only relies on the input parameters x and y.
+
+    d) Idempotence:
+
+    A pure function is idempotent, meaning that calling the function multiple times with the same input will have the same effect as calling it once.
+
+    Example:
+
+        function greet(name) {
+        return `Hello, ${name}!`;
+        }
+
+        console.log(greet('Alice')); // Output: Hello, Alice!
+        console.log(greet('Alice')); // Output: Hello, Alice!
+
+    In this example, the greet function is pure and idempotent because calling it multiple times with the same input 'Alice' will always produce the same output.
+
+    Summary:
+    ->Same Input, Same Output: Always produces the same result for the same input.
+    ->No Side Effects: Does not modify any external state.
+    ->No Dependence on External State: Only relies on input parameters.
+    ->Idempotence: Calling the function multiple times with the same input has the same effect as calling it once.
+
+    Note that a pure function should not use this, arguments, or any external variables, and should not have any side effects, such as:
+
+        ->Modifying external objects or arrays
+        ->Making API calls or sending requests
+        ->Using Math.random() or other non-deterministic functions
+        ->Using Date.now() or other time-dependent functions
+
+    By following these principles, pure functions help make your code more predictable, easier to test, and less prone to bugs.
 
 
 Q2. What is inheritance and how do you make a child from a parent class?
 
+Inheritance is a fundamental concept in object-oriented programming (OOP) that allows a new class (called a child class or subclass) to inherit properties and methods from an existing class (called a parent class or superclass). This promotes code reuse and can make your code more organized and easier to manage.
 
+### Key Concepts:
+
+a) **Parent Class (Superclass)**: This is the base class from which other classes inherit. It contains properties and methods that can be shared with its child classes.
+
+b) **Child Class (Subclass)**: This is a class that inherits from a parent class. It can have its own properties and methods in addition to those inherited from the parent class.
+
+c) **Inheritance**: The process by which a child class acquires the properties and methods of a parent class.
+
+### How to Make a Child from a Parent Class:
+
+In JavaScript, you can create a child class from a parent class using the `extends` keyword. Here’s a simple example:
+
+```javascript
+// Parent class
+class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+
+  speak() {
+    console.log(`${this.name} makes a sound.`);
+  }
+}
+
+// Child class
+class Dog extends Animal {
+  constructor(name, breed) {
+    super(name); // Call the parent class constructor with super()
+    this.breed = breed;
+  }
+
+  speak() {
+    console.log(`${this.name}, who is a ${this.breed}, barks.`);
+  }
+}
+
+// Creating an instance of the child class
+const myDog = new Dog('Buddy', 'Golden Retriever');
+myDog.speak(); // Output: Buddy, who is a Golden Retriever, barks.
+```
+
+### Explanation:
+
+a) **Parent Class (`Animal`)**:
+   - The `Animal` class has a constructor that initializes the `name` property.
+   - It also has a method `speak` that logs a generic message.
+
+b) **Child Class (`Dog`)**:
+   - The `Dog` class extends the `Animal` class, meaning it inherits the `name` property and the `speak` method.
+   - The `Dog` class has its own constructor that calls the parent class constructor using `super(name)` to initialize the `name` property.
+   - It also has an additional property `breed`.
+   - The `Dog` class overrides the `speak` method to provide a specific implementation for dogs.
+
+c) **Creating an Instance**:
+   - An instance of the `Dog` class is created with the name `Buddy` and breed `Golden Retriever`.
+   - When the `speak` method is called on the `myDog` instance, it outputs `Buddy, who is a Golden Retriever, barks.`, demonstrating that the child class has inherited and overridden the method from the parent class.
+
+### Benefits of Inheritance:
+
+-> **Code Reuse**: You can reuse properties and methods from the parent class in the child class.
+-> **Organization**: It helps in organizing your code by creating a hierarchy of classes.
+-> **Maintainability**: Changes in the parent class are automatically reflected in the child classes, making the code easier to maintain.
+
+Inheritance is a powerful feature in OOP that helps in building complex applications by breaking them down into smaller, reusable components.
 
 Q3. What is class based React component?
 
-
-
+Class-based components were the primary way to define components in React before the introduction of hooks in functional components.
+A class-based React component is a way to define a component in React using ES6 classes.  Instead of using a function, you define a component as an ES6 class that extends React.Component. This means it inherits methods and properties from the base React.Component class. Every class component must have a render method. This method returns the JSX that defines what the component will display.
+Class based React component is a child of React.Component and it has a built-in render method and it may have a constructor.
 
 
 Q4. What is the difference between functional React component and class based React component?
 
+### Key Concepts
 
+a) **Functional Components**:
+   - **Definition**: These are simple functions that take props (short for properties) as input and return a React element.
+   - **Syntax**: They are written as JavaScript functions.
+   - **Example**:
+     ```jsx
+     function Greeting(props) {
+       return <h1>Hello, {props.name}!</h1>;
+     }
+     ```
+   - **Usage**: Ideal for presentational components that mainly render UI.
+
+b) **Class-Based Components**:
+   - **Definition**: These are ES6 classes that extend from `React.Component`. They have a `render` method that returns a React element.
+   - **Syntax**: They are written as JavaScript classes.
+   - **Example**:
+     ```jsx
+     class Greeting extends React.Component {
+       render() {
+         return <h1>Hello, {this.props.name}!</h1>;
+       }
+     }
+     ```
+   - **Usage**: Useful when you need to manage state or lifecycle methods.
+
+### Differences
+
+a) **Syntax**:
+   - Functional components are simpler and easier to read.
+   - Class-based components are more verbose but offer more features.
+
+b) **State Management**:
+   - Functional components were traditionally stateless, but with the introduction of React Hooks (like `useState`), they can now manage state.
+   - Class-based components have always been able to manage state using the `this.state` object.
+
+c) **Lifecycle Methods**:
+   - Functional components do not have lifecycle methods, but they can use hooks like `useEffect` to achieve similar functionality.
+   - Class-based components have lifecycle methods like `componentDidMount`, `componentDidUpdate`, and `componentWillUnmount`.
+
+### Examples
+
+a) **Functional Component with Hooks**:
+   ```jsx
+   import React, { useState, useEffect } from 'react';
+
+   function Timer() {
+     const [count, setCount] = useState(0);
+
+     useEffect(() => {
+       const interval = setInterval(() => {
+         setCount(count + 1);
+       }, 1000);
+
+       return () => clearInterval(interval);
+     }, [count]);
+
+     return <div>Count: {count}</div>;
+   }
+   ```
+
+b) **Class-Based Component with Lifecycle Methods**:
+   ```jsx
+   import React, { Component } from 'react';
+
+   class Timer extends Component {
+     constructor(props) {
+       super(props);
+       this.state = { count: 0 };
+     }
+
+     componentDidMount() {
+       this.interval = setInterval(() => {
+         this.setState({ count: this.state.count + 1 });
+       }, 1000);
+     }
+
+     componentWillUnmount() {
+       clearInterval(this.interval);
+     }
+
+     render() {
+       return <div>Count: {this.state.count}</div>;
+     }
+   }
+   ```
+
+### Summary
+
+- **Functional Components**: Simpler syntax, can use hooks for state and side effects.
+- **Class-Based Components**: More features, including state and lifecycle methods.
+
+Both types of components have their use cases, and the choice between them often depends on the specific needs of your application.
 
 
 Q5. When do we need to use class based components instead of functional components?
 
+When to Use Class-Based Components:
 
+a) **State Management**:
+   - If your component needs to maintain its own state (e.g., a counter that increments), you might need a class-based component.
+
+   - **Example**:
+     ```jsx
+     class Counter extends React.Component {
+       constructor(props) {
+         super(props);
+         this.state = { count: 0 };
+       }
+
+       increment = () => {
+         this.setState({ count: this.state.count + 1 });
+       };
+
+       render() {
+         return (
+           <div>
+             <p>Count: {this.state.count}</p>
+             <button onClick={this.increment}>Increment</button>
+           </div>
+         );
+       }
+     }
+     ```
+
+b) **Lifecycle Methods**:
+   - If you need to perform actions at specific times in the component's lifecycle (e.g., fetching data when the component mounts), class-based components are useful.
+
+   - **Example**:
+     ```jsx
+     class DataFetcher extends React.Component {
+       componentDidMount() {
+         // Fetch data when the component mounts
+         fetch('https://api.example.com/data')
+           .then(response => response.json())
+           .then(data => this.setState({ data }));
+       }
+
+       render() {
+         return <div>{this.state.data}</div>;
+       }
+     }
+     ```
+
+### Summary:
+
+- **Class-Based Components**: Use these when you need to manage state or use lifecycle methods.
+- **Functional Components**: Use these for simpler components that just need to render UI based on props. With hooks, functional components can also manage state and side effects.
 
 
 Q6. What is the use cases of class based component?
 
+Use Cases:
 
+a) Stateful Components:
+    When you need a component to maintain its own state, class-based components are useful. For example, a form component that keeps track of user input.
+
+b) Lifecycle Management:
+    If you need to perform actions at specific points in the component's lifecycle, such as fetching data when the component mounts, class-based components are a good choice.
+
+c) Complex Logic:
+    For components with complex logic that might be harder to manage with functional components and hooks, class-based components can be more straightforward.
+
+In summary, class-based components are useful for managing state and lifecycle events in React. They provide a structured way to handle complex component logic.
 
 
 Q7. Which type of component do use most frequently ? functional or class-based component?
 
-
+Functional components due to them being simpler and easier to read. Morever, after React version 16.8.0, functional components can have state and life cycle using React Hooks.
 
 
 Q8. What is React life cycle ? (not covered yet)?
