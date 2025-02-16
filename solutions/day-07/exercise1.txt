@@ -353,8 +353,164 @@ Functional components due to them being simpler and easier to read. Morever, aft
 
 Q8. What is React life cycle ? (not covered yet)?
 
+The React lifecycle refers to the series of methods that are called in different stages of a component's existence. These stages include mounting, updating, and unmounting. Understanding the lifecycle methods is crucial for managing a component's behavior and performance.
 
+### Key Concepts of the React Lifecycle
+
+a) **Mounting**: This is the phase where the component is being inserted into the DOM.
+   - **constructor()**: This is called when the component is initialized. It's a good place to set up the initial state and bind methods.
+     ```javascript
+     constructor(props) {
+       super(props);
+       this.state = { count: 0 };
+     }
+     ```
+   - **componentDidMount()**: This is called immediately after a component is mounted. It's often used to perform side effects like fetching data from an API.
+     ```javascript
+     componentDidMount() {
+       fetch('https://api.example.com/data')
+         .then(response => response.json())
+         .then(data => this.setState({ data }));
+     }
+     ```
+
+b) **Updating**: This phase occurs when the component is being re-rendered due to changes in state or props.
+   - **componentDidUpdate()**: This is called immediately after updating. It's useful for performing side effects after a component's updates are flushed to the DOM.
+     ```javascript
+     componentDidUpdate(prevProps, prevState) {
+       if (prevProps.data !== this.props.data) {
+         // Perform some action based on the new props
+       }
+     }
+     ```
+
+c) **Unmounting**: This is the phase where the component is being removed from the DOM.
+   - **componentWillUnmount()**: This is called just before a component is unmounted and destroyed. It's a good place to clean up any timers, network requests, or subscriptions.
+     ```javascript
+     componentWillUnmount() {
+       clearInterval(this.interval);
+     }
+     ```
+
+### Example of a Component Lifecycle
+
+Here's a simple example of a React component that uses lifecycle methods:
+
+```javascript
+class Counter extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { count: 0 };
+  }
+
+  componentDidMount() {
+    console.log('Component mounted');
+    this.interval = setInterval(() => {
+      this.setState(prevState => ({ count: prevState.count + 1 }));
+    }, 1000);
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.count !== this.state.count) {
+      console.log('Component updated');
+    }
+  }
+
+  componentWillUnmount() {
+    console.log('Component will unmount');
+    clearInterval(this.interval);
+  }
+
+  render() {
+    return (
+      <div>
+        <p>Count: {this.state.count}</p>
+      </div>
+    );
+  }
+}
+```
+
+In this example:
+- The `constructor` initializes the state.
+- The `componentDidMount` method sets up an interval to increment the count every second.
+- The `componentDidUpdate` method logs a message whenever the count changes.
+- The `componentWillUnmount` method clears the interval to prevent memory leaks when the component is removed from the DOM.
+
+Understanding these lifecycle methods helps you manage the behavior and performance of your React components effectively.
 
 
 Q9. What is state in React ? (not covered yet)?
+
+In React, "state" is like a special storage area where you keep information that can change over time. Think of it like a box where you store important things that your app needs to remember and update.
+
+### Key Concepts:
+
+a) **Storage for Data**: State is used to store data that your component needs to keep track of. For example, if you have a counter, the state would store the current count.
+
+b) **Dynamic Updates**: Unlike props, which are passed down from parent components and are read-only, state can be changed. This makes your components interactive and dynamic.
+
+c) **Component-Specific**: Each component manages its own state. This means that the state in one component is separate from the state in another component.
+
+### Examples:
+
+i) **Counter Example**:
+   - Imagine you have a simple counter app. The state would store the current count.
+   - When you click a button to increment the count, the state updates, and the component re-renders to show the new count.
+
+   ```jsx
+   class Counter extends React.Component {
+     constructor(props) {
+       super(props);
+       this.state = { count: 0 };
+     }
+
+     increment = () => {
+       this.setState({ count: this.state.count + 1 });
+     };
+
+     render() {
+       return (
+         <div>
+           <p>Count: {this.state.count}</p>
+           <button onClick={this.increment}>Increment</button>
+         </div>
+       );
+     }
+   }
+   ```
+
+ii) **Toggle Example**:
+   - Suppose you have a toggle switch that turns something on or off. The state would store whether the switch is on or off.
+   - When you click the switch, the state updates to reflect the new status.
+
+   ```jsx
+   class Toggle extends React.Component {
+     constructor(props) {
+       super(props);
+       this.state = { isOn: false };
+     }
+
+     toggle = () => {
+       this.setState({ isOn: !this.state.isOn });
+     };
+
+     render() {
+       return (
+         <div>
+           <p>The switch is {this.state.isOn ? 'On' : 'Off'}</p>
+           <button onClick={this.toggle}>Toggle</button>
+         </div>
+       );
+     }
+   }
+   ```
+
+### Simple Explanation:
+
+- **State** is like a memory for your component. It remembers things like the current count in a counter or whether a switch is on or off.
+- You can change the state using `setState`, and when you do, React automatically updates the component to show the new state.
+- Each component has its own state, so changes in one component don't affect others unless you specifically share the state between them.
+
+By using state, you can make your React components interactive and responsive to user actions.
 
