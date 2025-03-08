@@ -1,0 +1,30 @@
+State is an object in React which lets the component re-render when the state data changes.
+
+## How to set a state
+
+We set an initial state inside the constructor or outside the constructor of a class based component. We do not directly change or mutate the state but we use the setState() method to reset to a new state. As you can see below in the state object we have count with initial value 0. We can access the state object using this.state and the property name. See the example below:
+
+        // index.js
+        import React from 'react'
+        import ReactDOM from 'react-dom'
+
+        class App extends React.Component {
+        // declaring state
+        state = {
+            count: 0,
+        }
+        render() {
+            // accessing the state value
+            const count = this.state.count
+            return (
+            <div className='App'>
+                <h1>{count} </h1>
+            </div>
+            )
+        }
+        }
+        const rootElement = document.getElementById('root')
+        ReactDOM.render(<App />, rootElement)
+
+If you run the above code you will see zero on the browser. We can increase or decrease the value the state by changing the value of the state using JavaScript method.
+

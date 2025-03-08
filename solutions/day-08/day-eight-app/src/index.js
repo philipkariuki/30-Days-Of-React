@@ -2,24 +2,20 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './style.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  // declaring state
+  state = {
+    count: 0,
+  }
+  render() {
+    // accessing the state value
+    const count = this.state.count
+    return (
+      <div className='App'>
+        <h1>{count} </h1>
+      </div>
+    )
+  }
 }
 
 
