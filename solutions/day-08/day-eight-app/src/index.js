@@ -13,6 +13,9 @@ class App extends React.Component {
     return (
       <div className='App'>
         <h1>{count} </h1>
+        <button onClick={() => this.setState({ count: this.state.count + 1 })}>
+          Add One
+        </button>
       </div>
     )
   }
